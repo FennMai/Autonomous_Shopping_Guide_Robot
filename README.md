@@ -2,7 +2,7 @@
 - **Project name: A Smart Shopping Cart**  
 - **Group 8**
 
-### Duidence
+### Guidence
 1. **docs**: Display documents such as project plans and implementation technical routes|
 2. **sensors**: Program basic functions based on existing raspberrypi and sensors.
 
