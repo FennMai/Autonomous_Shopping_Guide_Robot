@@ -61,12 +61,12 @@ Smart shopping cart is a device designed for locating goods within a supermarket
 </p>
 
 
-### Guidence
+## Guidence
 1. **docs**: Display documents such as project plans and implementation technical routes.
 2. **sensors**: Program basic functions based on existing raspberrypi and sensors.
 3. **CMakeLists**: Using Cmake command to build excutable files.
 
-### The latest status
+## The latest status
 
 202400304：
 Since most of the hardware and sensors on hand are still on the road, we will familiarize ourselves with some raspberrypi operations and write classes according to the course tutorials.
