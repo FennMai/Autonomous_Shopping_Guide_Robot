@@ -9,7 +9,7 @@
 
 
 
-### Project Introduction
+## Project Introduction
 
 Smart shopping cart is a device designed for locating goods within a supermarket. This device is dedicated to assisting customers and staff in swiftly and accurately locating desired products or executing logical planning within the supermarket. Throughout its operation, it also aims to avoid foot traffic and attempts to re-plan routes accordingly.
 
