@@ -1,6 +1,6 @@
 #include <pigpio.h>
 #include <iostream>
-#include <unistd.h> // 对于Unix/Linux系统
+#include <unistd.h> 
 
 class Buzzer {
 public:
@@ -10,26 +10,26 @@ public:
             exit(1);
         }
         gpioSetMode(pin_, PI_OUTPUT);
-        gpioWrite(pin_, 1); // 确保蜂鸣器初始状态为不发声
+        gpioWrite(pin_, 1); // setup initial to off state
     }
 
     ~Buzzer() {
-        gpioWrite(pin_, 1); // 确保蜂鸣器关闭
-        gpioTerminate(); // 清理GPIO资源
+        gpioWrite(pin_, 1); // insure gpio is off
+        gpioTerminate(); // clean
     }
 
     void dot() {
-        gpioWrite(pin_, 0); // 开始发声
-        usleep(200000); // 持续200毫秒
-        gpioWrite(pin_, 1); // 停止发声
-        usleep(200000); // 字符间的延时
+        gpioWrite(pin_, 0); // start
+        usleep(200000); // been 20000ms
+        gpioWrite(pin_, 1); // stop
+        usleep(200000); // gap stop for next
     }
 
     void dash() {
-        gpioWrite(pin_, 0); // 开始发声
-        usleep(600000); // 持续600毫秒
-        gpioWrite(pin_, 1); // 停止发声
-        usleep(200000); // 字符间的延时
+        gpioWrite(pin_, 0); 
+        usleep(600000); 
+        gpioWrite(pin_, 1); 
+        usleep(200000); 
     }
 
     void playMorseCode(const std::string& code) {
@@ -40,7 +40,7 @@ public:
                 dash();
             }
         }
-        usleep(600000); // 字母间的额外延时
+        usleep(600000); 
     }
 
 private:
@@ -48,14 +48,14 @@ private:
 };
 
 int main() {
-    Buzzer buzzer(25); // 假设蜂鸣器连接到GPIO25引脚
+    Buzzer buzzer(25); // gpio pin
 
-    // "DOCTOR" 对应的莫斯电码
+    // mos code
     std::string morseCode[] = {"-..", "---", "-.-.", "-", "---", ".-."};
 
     for (const std::string& code : morseCode) {
         buzzer.playMorseCode(code);
-        usleep(1400000); // 单词间的额外延时
+        usleep(1400000); //gep stop for every single word
     }
 
     return 0;
