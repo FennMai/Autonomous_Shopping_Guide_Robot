@@ -23,3 +23,4 @@ void TCRT5000::readAndPrint() {
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 }
+ 
