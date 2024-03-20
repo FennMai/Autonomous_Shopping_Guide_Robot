@@ -1,3 +1,10 @@
+/***
+ * author : ZMai
+ * last modified date: 19/03/2024
+ * drive 4 mg90s, let them be controlled like a system(basic 1.0)
+ * use the Async method
+ */
+
 #include <iostream> // 包含标准输入输出流库，用于输入输出操作
 #include <pigpio.h> // 包含pigpio库，用于控制GPIO
 #include <unistd.h> // 包含unistd库，提供sleep函数
