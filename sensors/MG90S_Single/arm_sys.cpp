@@ -93,21 +93,22 @@ bool mg90s::initialized = false;
 int mg90s::instances = 0;
 
 // 异步顺序控制多个电机
-void moveMotorSequentially(mg90s &motor1, mg90s &motor2, mg90s &motor3, mg90s &motor4)
+// 修改moveMotorSequentially函数，使其接受角度值作为参数
+void moveMotorSequentially(mg90s &motor1, float angle1,
+                           mg90s &motor2, float angle2,
+                           mg90s &motor3, float angle3,
+                           mg90s &motor4, float angle4)
 {
-    // 首先移动motor1到45度，完成后触发motor2的移动
-    motor1.setTargetAngleAsync(45, [&motor2]
+    // 使用提供的角度值控制电机
+    motor1.setTargetAngleAsync(angle1, [&motor2, angle2]
                                {
-        std::cout << "motor1 reached 45 degrees. Now moving motor2.\n";
-        // 然后移动motor2到20度，完成后触发motor3的移动
-        motor2.setTargetAngleAsync(20, [&motor3] {
-            std::cout << "motor2 reached 20 degrees. Now moving motor3.\n";
-            // 接着移动motor3到90度，完成后触发motor4的移动
-            motor3.setTargetAngleAsync(90, [&motor4] {
-                std::cout << "motor3 reached 90 degrees. Now moving motor4.\n";
-                // 最后移动motor4到10度，完成后打印完成消息
-                motor4.setTargetAngleAsync(10, [] {
-                    std::cout << "motor4 reached 10 degrees. Sequence complete.\n";
+        std::cout << "Motor1 reached its target. Now moving Motor2.\n";
+        motor2.setTargetAngleAsync(angle2, [&motor3, angle3] {
+            std::cout << "Motor2 reached its target. Now moving Motor3.\n";
+            motor3.setTargetAngleAsync(angle3, [&motor4, angle4] {
+                std::cout << "Motor3 reached its target. Now moving Motor4.\n";
+                motor4.setTargetAngleAsync(angle4, [] {
+                    std::cout << "Motor4 reached its target. Sequence complete.\n";
                 });
             });
         }); });
@@ -129,7 +130,7 @@ void moveMotorSequentially(mg90s &motor1, mg90s &motor2, mg90s &motor3, mg90s &m
 //     //                              { std::cout << "arm_mtr4 reached 10 degrees.\n"; });
 
 //     // 使用moveMotorSequentially函数异步顺序控制四个舵机
-//     moveMotorSequentially(arm_mtr1, arm_mtr2, arm_mtr3, arm_mtr4);
+//     mmoveMotorSequentially(arm_mtr1, angle1, arm_mtr2, angle2, arm_mtr3, angle3, arm_mtr4, angle4);
 
 //     // 此处主线程可以继续执行其他任务，不会被阻塞
 //     std::cout << "Motor sequence started, continuing with other tasks...\n";
