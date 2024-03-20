@@ -21,21 +21,27 @@ mg90s arm_mtr1(17)
 arm_mtr1.setTargetAngleAsync(45, []{ std::cout << "arm_mtr1 reached 45 degrees.\n"; });
 ```
 
-void **moveMotorSequentially**(mg90s &motor1, mg90s &motor2, mg90s &motor3, mg90s &motor4)
+void **moveMotorSequentially**(mg90s &motor1, float angle1,
+
+​              mg90s &motor2, float angle2,
+
+​              mg90s &motor3, float angle3,
+
+​              mg90s &motor4, float angle4)
 
 > Asynchronous sequential control of multiple motors
 
 ```
-moveMotorSequentially(arm_mtr1, arm_mtr2, arm_mtr3, arm_mtr4);
+mmoveMotorSequentially(arm_mtr1, angle1, arm_mtr2, angle2, arm_mtr3, angle3, arm_mtr4, angle4);
 ```
 
 
 
-| profile           | appendix                                      |
-| ----------------- | --------------------------------------------- |
-| arm_sys_basic.cpp | 4 motor control, Async                        |
-| arm_sys.cpp       | 4 motor control, Async, sequentially function |
-|                   |                                               |
+| profile             | appendix                                      |
+| ------------------- | --------------------------------------------- |
+| arm_sys_basic.cpp   | 4 motor control, Async                        |
+| arm_sys.cpp         | 4 motor control, Async, sequentially function |
+| mai_single_mg90.cpp | Synchronous, single motor, measurement only   |
 
 
 
