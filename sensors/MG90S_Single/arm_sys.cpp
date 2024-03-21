@@ -12,7 +12,7 @@ public:
     using CallbackFunction = std::function<void()>;
 
     // 构造函数，初始化一个舵机控制器
-    mg90s(int gpioPin) : pin(gpioPin)
+    mg90s(int gpioPin) : pin(gpioPin) currentAngle(0.0)
     {
         // 如果pigpio库还没有初始化，则尝试初始化
         if (!initialized)
@@ -48,15 +48,16 @@ public:
     }
 
 private:
-    static bool initialized;          // 静态成员变量，标记pigpio库是否已初始化
-    static int instances;             // 静态成员变量，记录当前类的实例数量
-    int pin;                          // GPIO引脚号，用于控制舵机
+    static bool initialized; // 静态成员变量，标记pigpio库是否已初始化
+    static int instances;    // 静态成员变量，记录当前类的实例数量
+    int pin;
+    float currentAngle;               // GPIO引脚号，用于控制舵机
     CallbackFunction onTargetReached; // 在达到目标角度后调用的回调函数
 
     // 私有方法，用于平滑移动舵机到目标角度
     void moveToAngleSlowly(float targetAngle)
     {
-        float currentAngle = 0;                             // 假设起始角度为0
+
         float step = (targetAngle > currentAngle) ? 1 : -1; // 根据目标角度确定步进方向
 
         // 逐步移动到目标角度
