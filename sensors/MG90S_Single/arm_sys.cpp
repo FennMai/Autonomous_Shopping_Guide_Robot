@@ -1,3 +1,13 @@
+/***
+ * author : ZMai
+ * last modified date: 20/03/2024
+ * drive 4 mg90s, let them be controlled like a system(basic 2.0)
+ * goal:use the Async method, motor running step by step(basic 2.1)
+ * debug(basic 2.1):
+ * fix the error, when run the setTargetAngleAsync, motor will set 0 angle every time
+ * the main reason is that the
+ */
+
 #include <iostream>   // 引入标准输入输出流库，用于打印信息
 #include <pigpio.h>   // 引入pigpio库，用于GPIO操作
 #include <vector>     // 引入vector库，虽然在这段代码中未直接使用，但对于管理多个对象很有用
