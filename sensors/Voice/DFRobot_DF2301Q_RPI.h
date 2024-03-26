@@ -3,60 +3,53 @@
 
 #include <pigpio.h>
 #include <cstdint>
-#include <cstring> // For memcpy
-#include <vector>
 
-// Assuming these are the register addresses or other constants used
-// for I2C communication with the device.
-constexpr uint8_t DF2301Q_I2C_REG_CMDID = 0x01;
-constexpr uint8_t DF2301Q_I2C_REG_PLAY_CMDID = 0x02;
-constexpr uint8_t DF2301Q_I2C_REG_WAKE_TIME = 0x03;
-constexpr uint8_t DF2301Q_I2C_REG_SET_VOLUME = 0x04;
-constexpr uint8_t DF2301Q_I2C_REG_SET_MUTE = 0x05;
+// 定义寄存器地址和其他必要的常量
+constexpr uint8_t DF2301Q_I2C_ADDR = 0x64; // I2C地址
+
+constexpr uint8_t DF2301Q_I2C_REG_CMDID = 0x02;
+constexpr uint8_t DF2301Q_I2C_REG_PLAY_CMDID = 0x03;
+constexpr uint8_t DF2301Q_I2C_REG_SET_MUTE = 0x04;
+constexpr uint8_t DF2301Q_I2C_REG_SET_VOLUME = 0x05;
+constexpr uint8_t DF2301Q_I2C_REG_WAKE_TIME = 0x06;
 
 class DFRobot_DF2301Q_RPi {
 public:
-    // Initialize with the I2C bus and device address
-    DFRobot_DF2301Q_RPi(uint8_t i2cBus = 1, uint8_t deviceAddr = 0x64); // Replace 0xXX with the actual I2C address
-
-    // Destructor to clean up
+    DFRobot_DF2301Q_RPi(uint8_t i2cBus = 1, uint8_t deviceAddr = DF2301Q_I2C_ADDR);
     virtual ~DFRobot_DF2301Q_RPi();
 
-    // Start communication
+    // 初始化函数
     bool begin();
 
-    // Get command ID
+    // 获取命令词ID
     uint8_t getCMDID();
 
-    // Play audio by command ID
+    // 根据命令词ID播放对应回复音频
     void playByCMDID(uint8_t CMDID);
 
-    // Get wake time
+    // 获取唤醒时长
     uint8_t getWakeTime();
 
-    // Set wake time
+    // 设置唤醒时长
     void setWakeTime(uint8_t wakeTime);
 
-    // Set volume
+    // 设置音量
     void setVolume(uint8_t volume);
 
-    // Set mute mode
+    // 设置静音模式
     void setMuteMode(uint8_t mode);
+
+protected:
+    // 写寄存器函数
+    void writeReg(uint8_t reg, uint8_t value);
+
+    // 读寄存器函数
+    uint8_t readReg(uint8_t reg);
 
 private:
     uint8_t _i2cBus;
     uint8_t _deviceAddr;
-    int _i2cHandle;
-
-    // Internal method to write a byte to a register
-    void writeReg(uint8_t reg, uint8_t value);
-
-    // Internal method to read a byte from a register
-    uint8_t readReg(uint8_t reg);
-
-    // Helper function to handle I2C start and end conditions in pigpio
-    void i2cStart();
-    void i2cStop();
+    int _i2cHandle; // pigpio库的I2C句柄
 };
 
 #endif // DFRobot_DF2301Q_RPI_H
