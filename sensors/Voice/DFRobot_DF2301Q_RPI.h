@@ -1,3 +1,11 @@
+/***
+ * author : Geo ZMai
+ * last modified date: 26/03/2024
+ * 
+ * Basic 3.0, date: 26/03/2024
+ * drive the DF2301Q
+ * 
+ */
 #ifndef DFRobot_DF2301Q_RPI_H
 #define DFRobot_DF2301Q_RPI_H
 
@@ -44,7 +52,9 @@ protected:
     void writeReg(uint8_t reg, uint8_t value);
 
     // 读寄存器函数
-    uint8_t readReg(uint8_t reg);
+    // uint8_t readReg(uint8_t reg);
+// 在 DFRobot_DF2301Q_RPi.h 中调整
+    bool readReg(uint8_t reg, uint8_t &data);
 
 private:
     uint8_t _i2cBus;
