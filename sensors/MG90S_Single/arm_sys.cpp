@@ -1,18 +1,28 @@
 /***
  * author : ZMai
- * last modified date: 20/03/2024
- * drive 4 mg90s, let them be controlled like a system(basic 2.0)
- * goal:use the Async method, motor running step by step(basic 2.1)
- * debug(basic 2.1):
+ * last modified date: 26/03/2024
+ * 
+ * drive 4 mg90s, let them be controlled like a system(basic 2.0,reference arm_sys.cpp)
+ * goal:use the Async method, motor running step by step (basic 2.1)
+ * 
+ * basic 2.1, date:20/03/2024 :
  * fix the error, when run the setTargetAngleAsync, motor will set 0 angle every time
- * the main reason is that the
+ * 
+ * sys 2.3, date:25/03/2024:
+ * drive the system, define the initial joints position
+ * 
  */
 
-#include <iostream>   // 引入标准输入输出流库，用于打印信息
-#include <pigpio.h>   // 引入pigpio库，用于GPIO操作
-#include <vector>     // 引入vector库，虽然在这段代码中未直接使用，但对于管理多个对象很有用
-#include <thread>     // 引入thread库，用于支持多线程编程
-#include <functional> // 引入functional库，用于使用std::function功能
+
+#include <iostream>   // 用于标准输入输出
+#include <pigpio.h>   // 用于GPIO操作
+#include <vector>     // 用于存储多个对象
+#include <thread>     // 用于多线程编程
+#include <functional> // 用于std::function
+#include <sstream>    // 用于字符串流操作，包括std::istringstream
+#include <string> 
+#include <unistd.h> // 包含unistd库，提供sleep函数
+#include <iterator>
 
 // 定义mg90s类，代表一个舵机控制器
 class mg90s
@@ -22,7 +32,9 @@ public:
     using CallbackFunction = std::function<void()>;
 
     // 构造函数，初始化一个舵机控制器
-    mg90s(int gpioPin) : pin(gpioPin) currentAngle(0.0)
+    // pin(gpioPin) 对定义的class 输入gpio口，代表控制该口的输出
+    // currentAngle(0.0) 对电机的初始位置设定，假设电机初始角度为0，但针对小臂的电机，可能不是0，可以改
+    mg90s(int gpioPin) : pin(gpioPin), currentAngle(0.0)
     {
         // 如果pigpio库还没有初始化，则尝试初始化
         if (!initialized)
@@ -54,14 +66,27 @@ public:
     void setTargetAngleAsync(float angle, CallbackFunction callback = nullptr)
     {
         onTargetReached = callback;                                   // 存储回调函数
-        std::thread(&mg90s::moveToAngleSlowly, this, angle).detach(); // 创建并分离新线程来异步移动舵机
+        std::thread(&mg90s::detectAngle, this, angle).detach(); // 创建并分离新线程来异步移动舵机
     }
+
+    // input angle pre-processing
+    void detectAngle(float angle){
+        if(angle < -90){
+            angle = -90;
+        }
+        if (angle>90){
+            angle = 90;
+        }
+        moveToAngleSlowly(angle);
+        
+    }
+
 
 private:
     static bool initialized; // 静态成员变量，标记pigpio库是否已初始化
     static int instances;    // 静态成员变量，记录当前类的实例数量
-    int pin;
-    float currentAngle;               // GPIO引脚号，用于控制舵机
+    int pin; // GPIO set 
+    float currentAngle;               
     CallbackFunction onTargetReached; // 在达到目标角度后调用的回调函数
 
     // 私有方法，用于平滑移动舵机到目标角度
@@ -105,30 +130,13 @@ int mg90s::instances = 0;
 
 // 异步顺序控制多个电机
 // 修改moveMotorSequentially函数，使其接受角度值作为参数
-void moveMotorSequentially(mg90s &motor1, float angle1,
-                           mg90s &motor2, float angle2,
-                           mg90s &motor3, float angle3,
-                           mg90s &motor4, float angle4)
-{
-    // 使用提供的角度值控制电机
-    motor1.setTargetAngleAsync(angle1, [&motor2, angle2]
-                               {
-        std::cout << "Motor1 reached its target. Now moving Motor2.\n";
-        motor2.setTargetAngleAsync(angle2, [&motor3, angle3] {
-            std::cout << "Motor2 reached its target. Now moving Motor3.\n";
-            motor3.setTargetAngleAsync(angle3, [&motor4, angle4] {
-                std::cout << "Motor3 reached its target. Now moving Motor4.\n";
-                motor4.setTargetAngleAsync(angle4, [] {
-                    std::cout << "Motor4 reached its target. Sequence complete.\n";
-                });
-            });
-        }); });
-}
 
+
+/**********main********/
 // int main()
 // {
 //     // 初始化舵机控制对象，每个对象控制一个舵机
-//     mg90s arm_mtr1(17), arm_mtr2(18), arm_mtr3(27), arm_mtr4(22);
+//     mg90s arm_mtr1(17), arm_mtr2(18), arm_mtr3(27), arm_mtr4(21);
 
 //     // 异步--移动单个舵机，并在达到目标角度后执行回调
 //     // arm_mtr1.setTargetAngleAsync(45, []
@@ -153,50 +161,57 @@ void moveMotorSequentially(mg90s &motor1, float angle1,
 //     return 0;
 // }
 
+
+
 // 调试，键盘输入使用
-int main()
-{
-    mg90s arm_mtr1(18); // 以arm_mtr1为例，初始化一个电机控制对象
+int main() {
+    mg90s arm_mtr1(12), arm_mtr2(20), arm_mtr3(16), arm_mtr4(21);
 
-    std::string input;
-    std::cout << "Enter target angle (0-180) for the motor, or type 'exit' to quit:\n";
+    while (true) {
+        std::vector<float> angles(4, 0.0); // 用来存储四个电机的角度
+        std::cout << "Enter target angles for 4 motors separated by space (0-180), or type 'exit' to quit:\n";
 
-    while (true)
-    {
         std::cout << "> ";
-        std::getline(std::cin, input); // 从标准输入读取一行
+        std::string line;
+        std::getline(std::cin, line); // 从标准输入读取一行
 
-        if (input == "exit")
-        {          // 检查是否输入了退出命令
+        if (line == "exit") { // 检查是否输入了退出命令
             break; // 退出循环
         }
+        // 这行代码创建了一个std::istringstream对象iss，并用字符串line初始化。
+        // std::istringstream是一个输入字符串流，可以像标准输入流std::cin一样从中读取数据。
+        std::istringstream iss(line);
+        // 迭代器 每次迭代读取的字符串是以空白字符（空格、换行等）分隔的单词。
+        std::vector<std::string> tokens{std::istream_iterator<std::string>{iss},
+                                        std::istream_iterator<std::string>{}};
 
-        try
-        {
-            float angle = std::stof(input); // 尝试将输入转换为浮点数
-            if (angle < -90 || angle > 90)
-            {
-                std::cerr << "Angle must be between -90 and 90.\n";
-            }
-            else
-            {
-                // 如果输入的角度有效，则异步设置电机角度
-                arm_mtr1.setTargetAngleAsync(angle, [angle]
-                                             { std::cout << "Motor reached " << angle << " degrees.\n"; });
-            }
+        if (tokens.size() != 4) {
+            std::cerr << "Please enter exactly 4 angles.\n";
+            continue;
         }
-        catch (const std::invalid_argument &e)
-        {
-            std::cerr << "Invalid input. Please enter a number or 'exit'.\n";
-        }
-        catch (const std::out_of_range &e)
-        {
-            std::cerr << "Input out of range. Please enter a number between -90 and 90.\n";
+
+        try {
+            for (int i = 0; i < 4; ++i) {
+                angles[i] = std::stof(tokens[i]);
+                if (angles[i] < -90 || angles[i] > 90) {
+                    throw std::out_of_range("Angle must be between -90 and 90.");
+                }
+            }
+
+            // 设置电机角度
+            arm_mtr1.setTargetAngleAsync(angles[0], []{ std::cout << "Motor 1 reached its target angle.\n"; });
+            arm_mtr2.setTargetAngleAsync(angles[1], []{ std::cout << "Motor 2 reached its target angle.\n"; });
+            arm_mtr3.setTargetAngleAsync(angles[2], []{ std::cout << "Motor 3 reached its target angle.\n"; });
+            arm_mtr4.setTargetAngleAsync(angles[3], []{ std::cout << "Motor 4 reached its target angle.\n"; });
+        } catch (const std::invalid_argument &e) {
+            std::cerr << "Invalid input. Please enter numbers only.\n";
+        } catch (const std::out_of_range &e) {
+            std::cerr << e.what() << '\n';
         }
     }
 
     std::cout << "Exiting...\n";
-    // 为了确保所有异步操作完成，这里使用sleep。在实际应用中，应该使用更合适的方式等待异步操作完成。
+    // 为了确保所有异步操作完成，这里使用sleep。
     std::this_thread::sleep_for(std::chrono::seconds(2));
 
     return 0;
