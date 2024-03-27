@@ -30,9 +30,9 @@ int main() {
     std::cout << "Begin ok!" << std::endl;
 
     // Set volume, mute mode, and wake time as per the Arduino sketch
-    DF2301Q.setVolume(4);
+    DF2301Q.setVolume(5);
     DF2301Q.setMuteMode(0);
-    DF2301Q.setWakeTime(15);
+    DF2301Q.setWakeTime(20);
 
     // Get and print the wake time
     uint8_t wakeTime = DF2301Q.getWakeTime();
