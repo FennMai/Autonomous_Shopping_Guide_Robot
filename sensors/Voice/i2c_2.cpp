@@ -1,3 +1,11 @@
+/***
+ * author : Geo 
+ * last modified date: 26/03/2024
+ * 
+ * Basic 3.0, date: 26/03/2024
+ * drive the DF2301Q
+ * 
+ */
 #include "DFRobot_DF2301Q_RPI.h"
 #include <iostream>
 #include <pigpio.h>
