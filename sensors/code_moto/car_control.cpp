@@ -1,3 +1,11 @@
+/***
+ * author : Basav
+ * last modified date: 27/03/2024
+ * 
+ * Basic 3.0, date: 25/03/2024
+ * control the motors with L298N
+ * 
+ */
 #include <iostream>
 #include <pigpio.h>
 
