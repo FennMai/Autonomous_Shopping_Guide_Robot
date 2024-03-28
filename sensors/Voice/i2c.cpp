@@ -5,7 +5,7 @@
  * Basic 3.0, date: 26/03/2024
  * drive the DF2301Q
  */
-#include "DFRobot_DF2301Q_RPI.h"
+#include "DF23_voi.h"
 #include <iostream>
 #include <pigpio.h>
 #include <unistd.h> // For sleep()
@@ -30,9 +30,9 @@ int main() {
     std::cout << "Begin ok!" << std::endl;
 
     // Set volume, mute mode, and wake time as per the Arduino sketch
-    DF2301Q.setVolume(5);
+    DF2301Q.setVolume(4);
     DF2301Q.setMuteMode(0);
-    DF2301Q.setWakeTime(20);
+    DF2301Q.setWakeTime(15);
 
     // Get and print the wake time
     uint8_t wakeTime = DF2301Q.getWakeTime();
