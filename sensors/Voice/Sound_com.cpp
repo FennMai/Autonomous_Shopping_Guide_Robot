@@ -1,10 +1,11 @@
 /*!
  * author : Geo
- * last modified date: 28/03/2024 00:16
+ * last modified date: 28/03/2024 01:35
  * 
- * Basic 1.1, date: 27/03/2024
+ * Basic 1.2, date: 28/03/2024
  * drive the DF2301Q
  * is a LED control program of DF2301Q.
+ * find out why the LED is not working as we expected.
  */
 #include "DF23_voi.h" // 更新为正确的头文件名
 #include <iostream>
@@ -68,3 +69,13 @@ int main() {
     gpioTerminate(); // 清理并释放资源
     return 0;
 }
+********************************************************************************************************************
+/*常见阳极连接（低电平有效）：
+*LED的正极（长腿）连接到电源。
+*LED的负极（短腿）通过限流电阻连接到GPIO引脚。
+*当GPIO引脚输出低电平时，LED亮起。
+
+*常见阴极连接（高电平有效）：
+*LED的负极（短腿）连接到地（GND）。
+*LED的正极（长腿）通过限流电阻连接到GPIO引脚。
+*当GPIO引脚输出高电平时，LED亮起。
