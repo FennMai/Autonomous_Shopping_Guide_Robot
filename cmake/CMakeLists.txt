@@ -17,7 +17,7 @@ file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/tools)
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/3rd_party)
 
 # Specify source files
-add_executable(tt car_control.cpp)
+add_executable(tt servo_control.cpp)
 
 # Output target files to the bin directory
 set_target_properties(tt PROPERTIES
