@@ -1,3 +1,11 @@
+/***
+ * author : Basav
+ * last modified date: 02/04/2024
+ * 
+ * Basic 3.0, date: 27/03/2024
+ * changed the code from wiringPi to pigpio to control the servo and DC gear motor 
+ * 
+ */
 /******************************************************************
 
  It will only work with http://www.7gp.cn
@@ -47,7 +55,7 @@ class Emakefun_DCMotor {
   uint8_t motornum;
 };
 
-class Emakefun_StepperMotor {
+/*class Emakefun_StepperMotor {
  public:
   Emakefun_StepperMotor(void);
   void setSpeed(uint16_t);
@@ -67,7 +75,7 @@ class Emakefun_StepperMotor {
   uint8_t currentstep;
   Emakefun_MotorShield *MC;
   uint8_t steppernum;
-};
+};*/
 
 class Emakefun_Servo {
  public:
@@ -94,7 +102,7 @@ class Emakefun_MotorShield {
   void setPWM(uint8_t pin, uint16_t val);
   void setPin(uint8_t pin, uint8_t val);
   Emakefun_DCMotor *getMotor(uint8_t n);
-  Emakefun_StepperMotor *getStepper(uint16_t steps, uint8_t n);
+  //Emakefun_StepperMotor *getStepper(uint16_t steps, uint8_t n);
   Emakefun_Servo *getServo(uint8_t n);
 
  private:
@@ -102,7 +110,7 @@ class Emakefun_MotorShield {
   uint16_t _freq;
   Emakefun_Servo servos[8];
   Emakefun_DCMotor dcmotors[4];
-  Emakefun_StepperMotor steppers[2];
+  //Emakefun_StepperMotor steppers[2];
   Emakefun_MotorDriver _pwm;
 };
 

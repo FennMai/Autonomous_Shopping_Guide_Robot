@@ -1,4 +1,14 @@
+/***
+ * author : Basav
+ * last modified date: 02/04/2024
+ * 
+ * Basic 3.0, date: 27/03/2024
+ * changed the code from wiringPi to pigpio to control the servo and DC gear 
+ * 
+ */
 #include "Emakefun_MotorDriver.h"
+#include <cmath>
+#include <pigpio.h>
 
 Emakefun_MotorDriver::Emakefun_MotorDriver(uint8_t addr) { _i2caddr = addr; }
 
@@ -26,7 +36,7 @@ void Emakefun_MotorDriver::setPWMFreq(float freq) {
   write8(PCA9685_MODE1, newmode);             // go to sleep
   write8(PCA9685_PRESCALE, prescale);         // set the prescaler
   write8(PCA9685_MODE1, oldmode);
-  delay(5);
+  gpioDelay(5000);
   write8(PCA9685_MODE1,
          oldmode | 0xa1);  //  This sets the MODE1 register to turn on auto increment.
                            // This is why the beginTransmission below was not working.

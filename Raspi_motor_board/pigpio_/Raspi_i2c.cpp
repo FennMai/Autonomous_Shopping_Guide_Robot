@@ -1,14 +1,29 @@
+/***
+ * author : Basav
+ * last modified date: 02/04/2024
+ * 
+ * Basic 3.0, date: 27/03/2024
+ * changed the code from wiringPi to pigpio to control the servo and DC gear 
+ * 
+ */
 #include "Raspi_i2c.h"
 
-// Remember to include <unistd.h> only if necessary for your platform.
-#include <unistd.h>
+Raspi_I2C::Raspi_I2C() : fd_(-1), address_(0) {}
 
-void Raspi_I2C::init(uint8_t address) {
-    address_ = address;
-    fd_ = i2cOpen(1, address, 0); // Bus 1 is typically used on Raspberry Pi but adjust if necessary.
-    if (fd_ < 0) {
-        fprintf(stderr, "Error accessing 0x%02X: Check your I2C address\n", address);
+Raspi_I2C::~Raspi_I2C() {
+    if (fd_ != -1) {
+        i2cClose(fd_);
     }
+}
+
+bool Raspi_I2C::init(uint8_t address) {
+    fd_ = i2cOpen(1, address, 0);
+    if (fd_ < 0) {
+        fprintf(stderr, "Unable to open I2C connection\n");
+        return false;
+    }
+    address_ = address;
+    return true;
 }
 
 void Raspi_I2C::WriteReg8(uint8_t reg, uint8_t value) {

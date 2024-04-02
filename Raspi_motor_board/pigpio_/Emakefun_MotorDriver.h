@@ -1,3 +1,11 @@
+/***
+ * author : Basav
+ * last modified date: 02/04/2024
+ * 
+ * Basic 3.0, date: 27/03/2024
+ * changed the code from wiringPi to pigpio to control the servo and DC gear 
+ * 
+ */
 #ifndef _Emakefun_MotorDriver_H
 #define _Emakefun_MotorDriver_H
 
