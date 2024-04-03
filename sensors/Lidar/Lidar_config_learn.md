@@ -1,6 +1,6 @@
-### Lidar learning
+## Lidar learning
 
-**1. Configure environment**
+### **1. Configure environment**
 
 most popular env:
 ubuntu 22.04 + ros2 humble
@@ -26,7 +26,7 @@ ros2 run demo_nodes_py listener
 ![alt text](assets/Lidar_config_learn/image-2.png)
 
 
-**2. test lidar**
+### **2. test lidar**
 
 * oepn source file download
 ensure the situation is true
@@ -60,3 +60,7 @@ ros2 launch sllidar_ros2 view_sllidar_c1_launch.py
     sudo chmod 777 /dev/ttyUSB0
     3. 反复重启运行
     ros2 launch sllidar_ros2 sllidar_c1_launch.py
+
+### transfer path
+20240403： 
+In order to better record the development code and notes of the laser SLAM part, this part is transferred to a new branch.
