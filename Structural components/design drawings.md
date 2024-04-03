@@ -1,3 +1,7 @@
 ![alt text](stru1.jpeg)
 ![alt text](stru2.jpeg)
 ![alt text](stru3.jpeg)
+![alt text](stru4-1.jpg)
+![alt text](stru4-2.jpg)
+![alt text](stru4-3.jpg)
+![alt text](stru7-1.jpg)
