@@ -87,3 +87,5 @@ unfortunally, Hector slam is not useful in ros2
 
 - rplidar_sdk is cpp???
 how to use it?
+
+直接看lidar的sdk代码（cpp），很难！
