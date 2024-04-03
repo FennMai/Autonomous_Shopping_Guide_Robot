@@ -1,4 +1,4 @@
-# Real_Time_Embedded_System_Team_Project
+# Real Time Embedded System Project
 - **Project name: A Smart Shopping Cart**  
 - **Group 12**
 
