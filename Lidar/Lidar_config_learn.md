@@ -83,9 +83,38 @@ In order to better record the development code and notes of the laser SLAM part,
 http://wiki.ros.org/hector_mapping
 ![alt text](assets/Lidar_config_learn/image-5.png)
 
-unfortunally, Hector slam is not useful in ros2
+> unfortunally, Hector slam is not useful in ros2
 
 - rplidar_sdk is cpp???
 how to use it?
 
 直接看lidar的sdk代码（cpp），很难！
+
+bilibili:
+迈达令
+
+
+### **4. ROS2**
+
+![alt text](<assets/Lidar_config_learn/截图 2024-04-05 16-09-24.png>)
+1. g++ build node (c++)
+![alt text](assets/Lidar_config_learn/image-6.png)
+
+2. cmakelist build node
+![alt text](assets/Lidar_config_learn/image-7.png)
+
+make processing method:
+> mkdir build
+> cd build
+> cmake ..   # because the CMakeLists.txt is one level above the **build** file
+> ./first node
+> ros2 node list   # check node
+
+#### node
+四种通信方式:
+
+    话题-topics
+    服务-services
+    动作-Action
+    参数-parameters
+1
