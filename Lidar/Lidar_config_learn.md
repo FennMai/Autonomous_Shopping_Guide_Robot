@@ -117,4 +117,63 @@ make processing method:
     服务-services
     动作-Action
     参数-parameters
-1
+##### start the node
+>ros2 run <package_name> <executable_name>
+e.g.
+>ros2 run turtlesim turtlesim_node
+
+##### CLI（Command-Line Interface）& GUI（Graphical User Interface）
+运行节点(常用)
+
+>ros2 run <package_name> <executable_name>
+
+查看节点列表(常用)：
+
+>ros2 node list
+
+查看节点信息(常用)：
+
+>ros2 node info <node_name>
+
+重映射节点名称
+
+>ros2 run turtlesim turtlesim_node --ros-args --remap __node:=my_turtle
+
+运行节点时设置参数
+
+>ros2 run example_parameters_rclcpp parameters_basic --ros-args -p rcl_log_level:=10
+
+---
+working space ---> packages ---> nodes
+
+install package for function what you want
+>sudo apt install ros-<version>-package_name
+
+#### colcon
+    --packages-select ，仅生成单个包（或选定的包）。
+    --packages-up-to，构建选定的包，包括其依赖项。
+    --packages-above，整个工作区，然后对其中一个包进行了更改。此指令将重构此包以及（递归地）依赖于此包的所有包。
+
+```
+# build package (for example_pp)
+colcon build --package-select example_cpp
+
+# after that, I can active/build the node
+# install source
+source install/setup.bash
+
+# node_03 active
+ros2 run example_cpp node_03
+
+# see it 
+ros2 node list
+
+```
+
+#### Communication principles
+1.TCP/UDP
+e.g. UDP
+> ping 192.168.0.1
+e.g. TCP
+> nc -l 1234
+> ssh team@192.168.1.xx
