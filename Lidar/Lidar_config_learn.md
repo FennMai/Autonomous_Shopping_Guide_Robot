@@ -77,9 +77,15 @@ close:
 20240403： 
 In order to better record the development code and notes of the laser SLAM part, this part is transferred to a new branch.
 
-### **3. mapping method**
+### **3. mapping**
+- metric map
+- topologic map
+- semantic map
+
+
 
 #### Hector slam
+can't use in ros2
 http://wiki.ros.org/hector_mapping
 ![alt text](assets/Lidar_config_learn/image-5.png)
 
@@ -92,6 +98,13 @@ how to use it?
 
 bilibili:
 迈达令
+
+#### cartographer
+https://google-cartographer.readthedocs.io/en/latest/evaluation.html
+
+![alt text](assets/Lidar_config_learn/image-8.png)
+
+
 
 
 ### **4. ROS2**
@@ -177,3 +190,10 @@ e.g. UDP
 e.g. TCP
 > nc -l 1234
 > ssh team@192.168.1.xx
+
+2.zeroMQ
+
+
+
+### 5.practice
+https://zhuanlan.zhihu.com/p/583952047
