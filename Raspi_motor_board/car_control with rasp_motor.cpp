@@ -7,8 +7,13 @@
  * 
  */
 #include "Emakefun_MotorShield.h"
+#include "pigpio.h"
 
 int main() {
+   if (gpioInitialise() < 0) {
+    return 1;
+  }
+  
   Emakefun_MotorShield Pwm = Emakefun_MotorShield();
   Pwm.begin(50);
   Emakefun_DCMotor *DCmotor1 = Pwm.getMotor(1);
@@ -20,10 +25,13 @@ int main() {
   while (1) {
     DCmotor1->run(FORWARD);
     DCmotor2->run(FORWARD);
-    delay(1000);
+    gpioDelay(100000);
     
     DCmotor1->run(BACKWARD);
     DCmotor2->run(BACKWARD);
-    delay(1000);
+    gpioDelay(100000);
   }
+  
+  gpioTerminate(); // 清理
+  return 0;  
 }
