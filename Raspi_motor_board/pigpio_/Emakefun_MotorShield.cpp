@@ -1,6 +1,6 @@
 /***
  * author : Basav
- * last modified date: 02/04/2024
+ * last modified date: 09/04/2024
  * 
  * Basic 3.0, date: 27/03/2024
  * changed the code from wiringPi to pigpio to control the servo and DC gear 
@@ -8,6 +8,7 @@
  */
 #include "Emakefun_MotorShield.h"
 #include <pigpio.h>
+#include <algorithm>
 
 #if (MICROSTEPS == 8)
 static const uint8_t microstepcurve[] = {0, 50, 98, 142, 180, 212, 236, 250, 255};
@@ -169,27 +170,27 @@ Emakefun_DCMotor::Emakefun_DCMotor(void) {
 
 void Emakefun_DCMotor::run(uint8_t cmd) {
     MDIR = cmd;
+    uint8_t pwmValue = std::min(_speed, static_cast<uint8_t>(255)); // Cap the speed at 255
     switch (cmd) {
         case FORWARD:
             gpioWrite(IN2pin, PI_LOW);  // Set IN2pin low
-            gpioPWM(IN1pin, _speed * 16);  // PWM on IN1pin
+            gpioPWM(IN1pin, pwmValue);  // PWM on IN1pin
             break;
         case BACKWARD:
             gpioWrite(IN1pin, PI_LOW);  // Set IN1pin low
-            gpioPWM(IN2pin, _speed * 16);  // PWM on IN2pin
+            gpioPWM(IN2pin, pwmValue);  // PWM on IN2pin
             break;
         case RELEASE:
             gpioWrite(IN1pin, PI_LOW);  // Set both pins low
             gpioWrite(IN2pin, PI_LOW);
             break;
         case BRAKE:
-            // To brake, we could potentially set both pins high. This might depend on your motor driver.
-            // Some drivers might have a specific brake functionality you would need to implement differently.
-            gpioWrite(IN1pin, PI_HIGH);
+            gpioWrite(IN1pin, PI_HIGH); // Set both pins high for braking
             gpioWrite(IN2pin, PI_HIGH);
             break;
     }
 }
+
 
 void Emakefun_DCMotor::setSpeed(uint8_t speed) {
     _speed = speed; // Assume 0-255 for simplicity, conversion may be needed based on your PWM setup.
