@@ -10,12 +10,12 @@
 #include <pigpio.h>
 #include <iostream>
 
-#define MOTOR_A_PIN_1 17 // GPIO pin for Motor A IN1
-#define MOTOR_A_PIN_2 27 // GPIO pin for Motor A IN2
-#define MOTOR_B_PIN_1 22 // GPIO pin for Motor B IN1
-#define MOTOR_B_PIN_2 23 // GPIO pin for Motor B IN2
-//#define MOTOR_PWM_A 18   // PWM pin for Motor A speed control
-//#define MOTOR_PWM_B 24   // PWM pin for Motor B speed control
+#define MOTOR_A_PIN_1 5 // GPIO pin for Motor A IN1
+#define MOTOR_A_PIN_2 6 // GPIO pin for Motor A IN2
+#define MOTOR_B_PIN_1 13 // GPIO pin for Motor B IN1
+#define MOTOR_B_PIN_2 19 // GPIO pin for Motor B IN2
+//#define MOTOR_PWM_A 26   // PWM pin for Motor A speed control
+//#define MOTOR_PWM_B 16   // PWM pin for Motor B speed control
 
 int main() {
     if (gpioInitialise() < 0) {
