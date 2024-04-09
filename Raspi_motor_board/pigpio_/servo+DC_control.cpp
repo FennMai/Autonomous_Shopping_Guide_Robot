@@ -60,8 +60,12 @@ int main() {
     gpioDelay(5000000); // 5 seconds
 
     // Cleanup
-    gpioPWM(MOTOR_PWM_A, 0);
-    gpioPWM(MOTOR_PWM_B, 0);
+    gpioWrite(MOTOR_A_PIN_1, PI_LOW);
+    gpioWrite(MOTOR_A_PIN_2, PI_LOW);
+    gpioWrite(MOTOR_B_PIN_1, PI_LOW);
+    gpioWrite(MOTOR_B_PIN_2, PI_LOW);
+    //gpioPWM(MOTOR_PWM_A, 0);
+    // gpioPWM(MOTOR_PWM_B, 0);
     gpioTerminate();
     return 0;
 }
