@@ -12,10 +12,10 @@
 
 #define MOTOR_A_PIN_1 5 // GPIO pin for Motor A IN1
 #define MOTOR_A_PIN_2 6 // GPIO pin for Motor A IN2
-#define MOTOR_B_PIN_1 13 // GPIO pin for Motor B IN1
-#define MOTOR_B_PIN_2 19 // GPIO pin for Motor B IN2
-//#define MOTOR_PWM_A 26   // PWM pin for Motor A speed control
-//#define MOTOR_PWM_B 16   // PWM pin for Motor B speed control
+#define MOTOR_B_PIN_1 16 // GPIO pin for Motor B IN1
+#define MOTOR_B_PIN_2 20 // GPIO pin for Motor B IN2
+//#define MOTOR_PWM_A 19   // PWM pin for Motor A speed control
+//#define MOTOR_PWM_B 26   // PWM pin for Motor B speed control
 
 int main() {
     if (gpioInitialise() < 0) {
@@ -57,6 +57,7 @@ int main() {
     gpioWrite(MOTOR_A_PIN_2, PI_HIGH);
     gpioWrite(MOTOR_B_PIN_1, PI_LOW);
     gpioWrite(MOTOR_B_PIN_2, PI_HIGH);
+
     gpioDelay(5000000); // 5 seconds
 
     // Cleanup
