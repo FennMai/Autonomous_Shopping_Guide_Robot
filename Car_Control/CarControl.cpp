@@ -10,6 +10,7 @@
 #include <iostream>
 
 CarControl::CarControl() : 
+    _MS(0x60),
     _motorAPin1(5), //GPIO pin for Motor A IN1
     _motorAPin2(6), //GPIO pin for Motor A IN2
     _motorBPin1(16), //GPIO pin for Motor B IN1
@@ -33,7 +34,6 @@ void CarControl::initialize() {
 }
 
 void CarControl::setupServo() {
-    Emakefun_MotorShield MS(0x60);
     MS.begin(50);
     _servo = MS.getServo(1);
     _servo->writeServo(90); // Center servo
@@ -55,15 +55,21 @@ void CarControl::moveForward(int duration) {
 }
 
 void CarControl::turnRight(int duration) {
-    // Example: Adjust servo for a right turn. Angle and duration may need tweaking.
-    _servo->writeServo(120);
-    gpioDelay(duration);
-    // Reset servo to center position if needed
+    if (_servo) {
+        _servo->writeServo(120); // Adjust for a right turn
+        gpioDelay(duration); // Ensure duration is in microseconds for gpioDelay
+    }
+    _servo->writeServo(90); // Reset to center position
+    gpioDelay(1000 * 1000); // Wait for 1 second before next action
 }
 
-void CarControl::turnLeft(int duration) {
-    _servo->writeServo(60);
-    gpioDelay(duration);
+void CarControl::turnRight(int duration) {
+    if (_servo) {
+        _servo->writeServo(120); // Adjust for a right turn
+        gpioDelay(duration); // Ensure duration is in microseconds for gpioDelay
+    }
+    _servo->writeServo(90); // Reset to center position
+    gpioDelay(1000 * 1000); // Wait for 1 second before next action
 }
 
 void CarControl::moveBackward(int duration) {

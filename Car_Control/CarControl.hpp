@@ -36,6 +36,7 @@ private:
     int _motorBPin2;
     int _currentSpeed; // to keep track of current speed
     Emakefun_Servo* _servo;
+    Emakefun_MotorShield _MS;
 };
 
 #endif // CAR_CONTROL_HPP
