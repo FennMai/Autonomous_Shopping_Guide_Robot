@@ -34,8 +34,8 @@ void CarControl::initialize() {
 }
 
 void CarControl::setupServo() {
-    MS.begin(50);
-    _servo = MS.getServo(1);
+    _MS.begin(50);
+    _servo = _MS.getServo(1);
     _servo->writeServo(90); // Center servo
 }
 
