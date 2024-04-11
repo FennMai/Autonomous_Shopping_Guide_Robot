@@ -9,7 +9,7 @@ advantage: tidy file
 # step0
 ls /dev/ttyUSB*
 
-# step1 
+# step1 kv
 chmod +x build.sh
 
 # step2

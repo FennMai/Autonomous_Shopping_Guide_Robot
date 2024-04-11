@@ -83,83 +83,19 @@ void ctrlc(int)
 int main(int argc, const char * argv[]) {
 	const char * opt_is_channel = NULL; 
 	const char * opt_channel = NULL;
-    const char * opt_channel_param_first = NULL;
-	sl_u32         opt_channel_param_second = 0;
+    const char * opt_channel_param_first = "/dev/ttyUSB0";
+	sl_u32         opt_channel_param_second = 460800;
     sl_u32         baudrateArray[2] = {115200, 256000}; // 支持的波特率列表，C1?
     sl_result     op_result;
 	int          opt_channel_type = CHANNEL_TYPE_SERIALPORT;
 
-	bool useArgcBaudrate = false; // 标志位，指示是否使用了命令行指定的波特率
-
+	// bool useArgcBaudrate = false; // no input，用指定的波特率
+    bool useArgcBaudrate = true; // 有输入，用指定的波特率
 
     IChannel* _channel;
 
     printf("Ultra simple LIDAR data grabber for SLAMTEC LIDAR.\n"
            "Version: %s\n", SL_LIDAR_SDK_VERSION);
-
-	// 解析命令行参数，设置通信渠道和参数
-	if (argc>1)
-	{ 
-		opt_is_channel = argv[1]; // 获取命令行给的第一个参数，一般是要求输入的‘--channel’
-	}
-	else
-	{
-		print_usage(argc, argv); // falsed
-		return -1;
-	}
-// 接口匹配的，对在terminal输入的值进行匹配
-	if(strcmp(opt_is_channel, "--channel")==0){
-		opt_channel = argv[2];
-        // opt_channel -- usb 启动
-		if(strcmp(opt_channel, "-s")==0||strcmp(opt_channel, "--serial")==0)
-		{
-			// read serial port from the command line...
-			opt_channel_param_first = argv[3];// or set to a fixed value: e.g. "com3"
-			// read baud rate from the command line if specified...
-            // 获取输入的波特率
-			if (argc>4) opt_channel_param_second = strtoul(argv[4], NULL, 10);	
-			useArgcBaudrate = true; // 有输入，用指定的波特率
-		}
-        // opt_channel -- udp 的情况
-		else if(strcmp(opt_channel, "-u")==0||strcmp(opt_channel, "--udp")==0)
-		{
-			// read ip addr from the command line...
-			opt_channel_param_first = argv[3];//or set to a fixed value: e.g. "192.168.11.2"
-			if (argc>4) opt_channel_param_second = strtoul(argv[4], NULL, 10);//e.g. "8089"
-			opt_channel_type = CHANNEL_TYPE_UDP;
-		}
-		else
-		{
-			print_usage(argc, argv);
-			return -1;
-		}
-	}
-	else
-	{
-		print_usage(argc, argv);
-        return -1;
-	}
-// 跟上面读取近来的重复，没有意义
-// 懂了，假设原本的命令行输入不对，没有值赋给first，那这里定义一个
-	if(opt_channel_type == CHANNEL_TYPE_SERIALPORT)
-	{
-		if (!opt_channel_param_first) {
-#ifdef _WIN32
-		// use default com port
-		opt_channel_param_first = "\\\\.\\com3";
-#elif __APPLE__
-		opt_channel_param_first = "/dev/tty.SLAB_USBtoUART";
-#else
-		opt_channel_param_first = "/dev/ttyUSB0";
-#endif
-		}
-	}
-    // opt_channel_param_first = "/dev/ttyUSB0";
-
-    // Taps    
-    // create the lidar driver
-    // 调用createLidarDriver()函数,创建一个ILidarDriver类型的对象实例。
-    // 将创建的对象实例赋值给名为_drv的变量。
 
 	ILidarDriver * drv = *createLidarDriver();
 
@@ -217,23 +153,6 @@ int main(int argc, const char * argv[]) {
 			}
         }
     }
-    // 如果选择的通信方式是UDP
-    else if(opt_channel_type == CHANNEL_TYPE_UDP){
-        _channel = *createUdpChannel(opt_channel_param_first, opt_channel_param_second);
-        if (SL_IS_OK((drv)->connect(_channel))) {
-            op_result = drv->getDeviceInfo(devinfo);
-
-            if (SL_IS_OK(op_result)) 
-            {
-	            connectSuccess = true;
-            }
-            else{
-                delete drv;
-				drv = NULL;
-            }
-        }
-    }
-
 
     if (!connectSuccess) {
         (opt_channel_type == CHANNEL_TYPE_SERIALPORT)?
@@ -256,7 +175,6 @@ int main(int argc, const char * argv[]) {
             , devinfo.firmware_version>>8
             , devinfo.firmware_version & 0xFF
             , (int)devinfo.hardware_version);
-
 
 
     // check health 前面定义的函数

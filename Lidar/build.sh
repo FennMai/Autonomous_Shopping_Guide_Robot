@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 清空
+rm -rf build
 
 # 创建构建目录
 mkdir -p build
@@ -14,5 +16,6 @@ cmake ..
 make
 
 cd ../output
-./mm --channel --serial /dev/ttyUSB0 460800
+# ./mm --channel --serial /dev/ttyUSB0 460800
+./mm
 
