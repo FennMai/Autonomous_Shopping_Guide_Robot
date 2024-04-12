@@ -1,24 +1,38 @@
 /***
  * author : Basav
- * last modified date: 11/04/2024
+ * last modified date: 12/04/2024
  * 
  * Basic 3.0, date: 10/04/2024
- * iplementating car control with distance as a parameter instead of time(Delay)
+ * implementation of car control using async and callback
  * 
  */
 #include "CarControl.hpp"
 #include <iostream>
 #include <pigpio.h>
+#include <thread>
+#include <functional>
+#include <chrono>
 
-const float speed_cm_per_sec_forward_backward = 5.0; //car's forward and backward speed in cm/s
-const float speed_deg_per_sec_turn = 45.0; //car's turning speed in degrees per second
+using namespace std;
+using namespace std::chrono;
+
+const float speed_cm_per_sec_forward_backward = 5.0; // Car's speed in cm/s
+const float speed_deg_per_sec_turn = 45.0; // Car's turning speed in degrees per second
 
 CarControl::CarControl() : _MS(0x60), _motorAPin1(5), _motorAPin2(6), _motorBPin1(16), _motorBPin2(20), _forwardBackwardSpeed(128), _turnSpeed(64), _servo(nullptr) {
 }
 
-
 CarControl::~CarControl() {
     cleanup();
+}
+
+void CarControl::initialize() {
+    if (gpioInitialise() < 0) {
+        std::cerr << "Failed to initialize pigpio\n";
+        exit(1);
+    }
+    setupServo();
+    setupDCMotors();
 }
 
 void CarControl::setupServo() {
@@ -34,49 +48,51 @@ void CarControl::setupDCMotors() {
     gpioSetMode(_motorBPin2, PI_OUTPUT);
 }
 
-void CarControl::initialize() {
-    if (gpioInitialise() < 0) {
-        std::cerr << "Failed to initialize pigpio\n";
-        exit(1);
+void CarControl::asyncMove(function<void()> callback, int duration_ms) {
+    this_thread::sleep_for(milliseconds(duration_ms));
+    if (callback) {
+        callback();
     }
-    setupServo();
-    setupDCMotors();
 }
 
-void CarControl::moveForward(float distance_cm) {
+void CarControl::moveForward(float distance_cm, function<void()> callback) {
     int duration_ms = static_cast<int>((distance_cm / speed_cm_per_sec_forward_backward) * 1000);
     gpioWrite(_motorAPin1, PI_HIGH);
     gpioWrite(_motorAPin2, PI_LOW);
     gpioWrite(_motorBPin1, PI_HIGH);
     gpioWrite(_motorBPin2, PI_LOW);
-    gpioDelay(duration_ms * 1000);
+    thread moveThread(&CarControl::asyncMove, this, callback, duration_ms);
+    moveThread.detach();
 }
 
-void CarControl::moveBackward(float distance_cm) {
+void CarControl::moveBackward(float distance_cm, function<void()> callback) {
     int duration_ms = static_cast<int>((distance_cm / speed_cm_per_sec_forward_backward) * 1000);
     gpioWrite(_motorAPin1, PI_LOW);
     gpioWrite(_motorAPin2, PI_HIGH);
     gpioWrite(_motorBPin1, PI_LOW);
     gpioWrite(_motorBPin2, PI_HIGH);
-    gpioDelay(duration_ms * 1000);
+    thread moveThread(&CarControl::asyncMove, this, callback, duration_ms);
+    moveThread.detach();
 }
 
-void CarControl::turnRight(int degrees) {
+void CarControl::turnRight(int degrees, function<void()> callback) {
     int duration_ms = static_cast<int>((degrees / speed_deg_per_sec_turn) * 1000);
     if (_servo) {
         _servo->writeServo(120); // Adjust for a right turn
-        gpioDelay(duration_ms * 1000); // Wait for the turn to complete
+        thread turnThread(&CarControl::asyncMove, this, callback, duration_ms);
+        turnThread.detach();
     }
-    _servo->writeServo(90); // Reset to center position
+    _servo->writeServo(90); // Reset to center position after the turn
 }
 
-void CarControl::turnLeft(int degrees) {
+void CarControl::turnLeft(int degrees, function<void()> callback) {
     int duration_ms = static_cast<int>((degrees / speed_deg_per_sec_turn) * 1000);
     if (_servo) {
         _servo->writeServo(60); // Adjust for a left turn
-        gpioDelay(duration_ms * 1000); // Wait for the turn to complete
+        thread turnThread(&CarControl::asyncMove, this, callback, duration_ms);
+        turnThread.detach();
     }
-    _servo->writeServo(90); // Reset to center position
+    _servo->writeServo(90); // Reset to center position after the turn
 }
 
 void CarControl::setSpeed(int forwardBackwardSpeed, int turnSpeed) {
