@@ -82,11 +82,13 @@ Ensure that your Raspberry Pi and motor driver have an adequate power supply. It
 
 ### Troubleshooting
 1. Motor Not Responding:
+
 Check all connections between the Raspberry Pi and the motor driver board.
 
 Ensure that the pigpio daemon is running (sudo pigpiod).
 
 2. Servo Calibration:
+
 If the servo does not accurately align to the specified angles, calibrate the servo limits in the CarControl class.
 
 ### Contributing
