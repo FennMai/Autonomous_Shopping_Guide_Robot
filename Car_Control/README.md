@@ -1,15 +1,13 @@
-# Hardware Part Of Aircraft Cargo auto Blance System
+# Control of Driving System
 
-### Author：Yu Qiao & Yuhan Liu
-
-### Developer 👨‍💻
+### Developer 
 | Author | E-mail |
 | ------ | ----- |
-| [🤔️ Yu Qiao(Joey)](http://github.com/qiaoyu113) | 527324363@qq.com |
-| [Yuhan Liu](yuhanliu123@outlook.com) | yuhanliu123@outlook.com |
+| [Linyunn](https://github.com/Linyunn) | 2940201J@student.gla.ac.uk |
+| [basav-sketch](https://github.com/basav-sketch) | 2961731P@student.gla.ac.uk |
 # 
 
-### Project architecture version
+### Project architecture version (should be edited)
 | boost | nlohmann |
 | ------ | ------ |
 | v1.82.0 | v3.10.2 |
@@ -36,7 +34,7 @@ cat /usr/include/boost/version.hpp | grep "BOOST_LIB_VERSION"
 sudo apt-get install libboost-all-dev
 ```
 
-### install nlohmann
+### install nlohmann (should be edited)
 ```
 cd json-develop
 mkdir build
@@ -46,18 +44,27 @@ make
 make install
 ```
 
-:exclamation: nlohmann下载并编译后要将json-develop中include内的nlohmann移动到/json-develop/nlohmann ！
-:exclamation: After nlohmann is downloaded and compiled, move the nlohmann included in json-develop to /json-develop/nlohmann ！
+#### Transfer documents to Rasberry Pi
+```
+scp /home/lin/temp/DC_Motor_test.cpp team@192.168.1.116:/home/team
+```
+:exclamation: (/home/lin/temp/DC_Motor_test.cpp -- the path of the document which should be transferred ！)
+
+:exclamation: (DC_Motor_test.cpp -- document's name ！)
+
+:exclamation: (team@192.168.1.175 — raspberry username & address ！)
+
+:exclamation: (/home/team -- the path where should the document be transmitted to ！)
 
 ### Compile Project （CMAKE）
 #### Navigate to the project root directory
 ```
-cd backend
+cd Car_Control
 ```
 #### Create a build directory
 ```
-mkdir build
-cd build
+mkdir pp
+cd pp
 ```
 #### Run CMake to generate the build system
 ```
@@ -65,37 +72,29 @@ cmake ..
 ```
 #### Build the project
 ```
-cmake --build .
-```
-Or
-```
 make
 ```
-#### Run the executable
+#### Run the executable file
 ```
-./run
-```
-or
-```
-sudo ./run
-```
-
-#### Close the tcp
-```
-sudo lsof -i
-sudo kill -9 ID
-```
-
-:exclamation: (The packaged build file has been quarantined and will not be uploaded to github ！)
-:exclamation: (The packaged Packages include boost and nlohmann file has been quarantined and will not be uploaded to github ！)
-
-### Run the unit test: 
-```
-./all_tests
+./pp
 ```
 or
 ```
-sudo ./all_tests
+sudo ./pp
+```
+
+#### Close the program
+```
+Ctrl + C
+```
+
+### Run the test code: 
+```
+./main
+```
+or
+```
+sudo ./main
 ```
 
 ### if running code in terminal for single file (demo): 
@@ -110,7 +109,7 @@ g++ led.cpp -o led -lpigpio -lrt -lpthread
 sudo ./led
 ```
 
-### websocket Method for connecting to the web end
+### websocket Method for connecting to the web end (still needs to be modified)
 1. To install cploar in the Raspberry PI, visit https://www.cpolar.com/
 2. Run cpolar http 8022 after installation：
 ```
@@ -127,98 +126,56 @@ this.ws = new WebSocket('ws://xxx.cn');
 5. Refresh web project
 6. The connection is successful. Hardware starts.
 
-## Project Framework and Structure
+## Project Framework and Structure(remark still needs to be modified)
 ```
-Backend/
-|-- app/
-|   |-- balance_rate/
-|   |   |-- balance_rate.cpp          # Manages the rate of balance adjustments.
-|   |   |-- balance_rate.hpp          # Header file for balance rate functions.
-|   |-- controller/
-|   |   |-- controller_lod.cpp        # Logic for Level of Detail in controller.
-|   |   |-- controller_lod.hpp        # Header file for controller Level of Detail.
-|   |   |-- controller.cpp            # The implementation of the primary controller logic.
-|   |   |-- controller.hpp            # The header file defining the controller interface.
-|   |-- conveyor_status/
-|   |   |-- conveyor_status.cpp       # Implementation of conveyor status checks.
-|   |   |-- conveyor_status.hpp       # Header file for conveyor status declarations.
-|   |-- led_control/
-|   |   |-- button.cpp                # Manages button interactions for LEDs.
-|   |   |-- button.hpp                # Header file for button control definitions.
-|   |   |-- led.cpp                   # Contains the logic for LED behavior.
-|   |   |-- led.hpp                   # Header file for LED operations.
-|   |   |-- main.cpp                  # The main entry point for the LED control module.
-|   |-- motor_driver/
-|   |   |-- motor/
-|   |   |   |-- (Contains motor related implementations)
-|   |   |-- motor_driver/
-|   |   |   |-- (Contains motor driver specific files)
-|   |   |-- motor_driver_main.cpp     # Main logic for the motor driver module.
-|   |   |-- motor_driver.cpp          # Manages motor driving operations.
-|   |   |-- motor_driver.hpp          # Header file for motor driver functions.
-|   |-- stepping_motor/
-|   |   |-- alarm/
-|   |   |   |-- alarm.cpp             # Manages the alarm feature of the stepping motor.
-|   |   |   |-- alarm.hpp             # Header file for the alarm feature.
-|   |   |-- left/
-|   |   |   |-- left.cpp              # Controls the left movement of the stepper motor.
-|   |   |   |-- left.hpp              # Header file for left movement definitions.
-|   |   |-- pause/
-|   |   |   |-- pause.cpp             # Manages the pause functionality of the stepper motor.
-|   |   |   |-- pause.hpp             # Header file for pause control definitions.
-|   |   |-- right/
-|   |   |   |-- right.cpp             # Manages the right movement of the stepper motor.
-|   |   |   |-- right.hpp             # Header file for right movement definitions.
-|   |-- weight_reader/
-|   |   |-- weight_reader.cpp         # Implementation for the weight reader module.
-|   |   |-- weight_reader.hpp         # Header file for the weight reader module.
-|   |-- weight_sensor/
-|       |-- hx711_sensor/
-|       |   |-- hx711_sensor.cpp      # Implementation for the HX711 weight sensor logic.
-|       |   |-- hx711_sensor.hpp      # Header file for HX711 weight sensor.
-|       |-- WeightSensor/
-|       |   |-- WeightSensor.cpp      # Manages high-level weight sensor operations.
-|       |   |-- WeightSensor.hpp      # Header file for WeightSensor class.
-|       |-- main.cpp                  # Main entry point for weight sensor module.
+Car_Control/
+|-- DC_Motor/
+|   |-- Emakefun_MotorDrive/
+|   |   |-- Emakefun_MotorDrive.cpp          # Manages the rate of balance adjustments.
+|   |   |-- Emakefun_MotorDrive.hpp          # Header file for balance rate functions.
+|   |-- Emakefun_Motorshield/
+|   |   |-- Emakefun_Motorshield.cpp        # Logic for Level of Detail in controller.
+|   |   |-- Emakefun_Motorshield.hpp        # Header file for controller Level of Detail.
+|   |-- Raspi_i2c/
+|   |   |-- Raspi_i2c.cpp       # Implementation of conveyor status checks.
+|   |   |-- Raspi_i2c.hpp       # Header file for conveyor status declarations.
+|   |-- DC_Motor/
+|   |   |-- DC_Motor.cpp                # Manages button interactions for LEDs.
+|-- Servo_Motor/
+|   |-- Emakefun_MotorDrive/
+|   |   |-- Emakefun_MotorDrive.cpp          # Manages the rate of balance adjustments.
+|   |   |-- Emakefun_MotorDrive.hpp          # Header file for balance rate functions.
+|   |-- Emakefun_Motorshield/
+|   |   |-- Emakefun_Motorshield.cpp        # Logic for Level of Detail in controller.
+|   |   |-- Emakefun_Motorshield.hpp        # Header file for controller Level of Detail.
+|   |-- Raspi_i2c/
+|   |   |-- Raspi_i2c.cpp       # Implementation of conveyor status checks.
+|   |   |-- Raspi_i2c.hpp       # Header file for conveyor status declarations.
+|   |-- Servo_Motor/
+|   |   |-- Servo_Motor.cpp                # Manages button interactions for LEDs.
+|-- Stepper_Motor/
+|   |-- Emakefun_MotorDrive/
+|   |   |-- Emakefun_MotorDrive.cpp          # Manages the rate of balance adjustments.
+|   |   |-- Emakefun_MotorDrive.hpp          # Header file for balance rate functions.
+|   |-- Emakefun_Motorshield/
+|   |   |-- Emakefun_Motorshield.cpp        # Logic for Level of Detail in controller.
+|   |   |-- Emakefun_Motorshield.hpp        # Header file for controller Level of Detail.
+|   |-- Raspi_i2c/
+|   |   |-- Raspi_i2c.cpp       # Implementation of conveyor status checks.
+|   |   |-- Raspi_i2c.hpp       # Header file for conveyor status declarations.
+|   |-- Stepper_Motor/
+|   |   |-- Stepper_Motor.cpp                # Manages button interactions for LEDs.
+|-- tests/
+|   |-- DC_Motor_test.cpp         # Unit tests for the motor driver module.
+|   |-- Servo_Motor_test.cpp         # Unit tests for the motor driver module.
+|   |-- Stepper_Motor_test.cpp         # Unit tests for the motor driver module.
 |-- build/
 |   |-- CMakeFiles/
 |   |   |-- (Generated by CMake)
 |   |-- cmake_install.cmake           # CMake installation script.
 |   |-- CMakeCache.txt                # CMake cache file.
 |   |-- Makefile                      # Generated Makefile for building the project.
-|-- include/
-|   |-- AbstractScale.h               # Abstract definition for scales.
-|   |-- AdvancedHX711.h               # Advanced operations for HX711 sensor.
-|   |-- common.h                      # Common definitions and functions.
-|   |-- GpioException.h               # Exception handling for GPIO operations.
-|   |-- HX711.h                       # Base HX711 sensor class definitions.
-|   |-- IntegrityException.h          # Exception for integrity checks.
-|   |-- Mass.h                        # Definitions for mass measurements.
-|   |-- SimpleHX711.h                 # Simplified operations for HX711 sensor.
-|   |-- TimeoutException.h            # Exception handling for timeouts.
-|   |-- Utility.h                     # Utility functions.
-|   |-- Value.h                       # Value representation definitions.
-|   |-- ValueStack.h                  # Stack implementation for value storage.
-|   |-- Watcher.h                     # Watcher pattern implementation.
-|-- socket/
-|   |-- gpio_lock.hpp                 # Header for GPIO locking mechanisms.
-|   |-- main.cpp                      # Main logic for socket communication.
-|   |-- send_message.cpp              # Logic to send messages via sockets.
-|   |-- send_message.hpp              # Header file for message sending functions.
-|   |-- server.cpp                    # Server-side socket communication handling.
-|   |-- websocket_session/
-|   |   |-- websocket_session_button.cpp  # Manages button-related websocket sessions.
-|   |   |-- websocket_session_button.hpp  # Header file for button websocket sessions.
-|   |   |-- websocket_session_main.cpp   # Main logic for websocket sessions.
-|   |   |-- websocket_session_main.hpp   # Header file for main websocket session logic.
-|   |   |-- websocket_session.cpp        # Generic websocket session management.
-|   |   |-- websocket_session.hpp        # Header file for websocket session definitions.
-|-- tests/
-|   |-- motor_driver_test.cpp         # Unit tests for the motor driver module.
-|   |-- weight_sensor_test.cpp        # Unit tests for weight sensor functionality.
-|-- utils/
-|   |-- __init__.cpp                  # Initializes the utility module.
-|   |-- calculations.cpp              # Includes various calculation functions.
+|-- pp.exe                    # CMake configuration file for build settings.
 |-- CMakeLists.txt                    # CMake configuration file for build settings.
 |-- readme.md                         # The README file for the project with documentation.
 
