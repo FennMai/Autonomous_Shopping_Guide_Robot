@@ -1,23 +1,25 @@
 /***
  * author : Basav
- * last modified date: 10/04/2024
+ * last modified date: 12/04/2024
  * 
  * Basic 3.0, date: 10/04/2024
- * iplementation file for CarControl.hpp
+ * implementation of car control using async and callback
  * 
  */
 #include "CarControl.hpp"
 #include <iostream>
+#include <pigpio.h>
+#include <thread>
+#include <functional>
+#include <chrono>
 
-CarControl::CarControl() : 
-    _MS(0x60),
-    _motorAPin1(5), //GPIO pin for Motor A IN1
-    _motorAPin2(6), //GPIO pin for Motor A IN2
-    _motorBPin1(16), //GPIO pin for Motor B IN1
-    _motorBPin2(20), //GPIO pin for Motor B IN2
-    _currentSpeed(128), // Adjust speed as needed
-    _servo(nullptr) 
-{
+using namespace std;
+using namespace std::chrono;
+
+const float speed_cm_per_sec_forward_backward = 5.0; // Car's speed in cm/s
+const float speed_deg_per_sec_turn = 45.0; // Car's turning speed in degrees per second
+
+CarControl::CarControl() : _MS(0x60), _motorAPin1(5), _motorAPin2(6), _motorBPin1(16), _motorBPin2(20), _forwardBackwardSpeed(128), _turnSpeed(64), _servo(nullptr) {
 }
 
 CarControl::~CarControl() {
@@ -46,48 +48,62 @@ void CarControl::setupDCMotors() {
     gpioSetMode(_motorBPin2, PI_OUTPUT);
 }
 
-void CarControl::moveForward(int duration) {
+void CarControl::asyncMove(function<void()> callback, int duration_ms) {
+    this_thread::sleep_for(milliseconds(duration_ms));
+    if (callback) {
+        callback();
+    }
+}
+
+void CarControl::moveForward(float distance_cm, function<void()> callback) {
+    int duration_ms = static_cast<int>((distance_cm / speed_cm_per_sec_forward_backward) * 1000);
     gpioWrite(_motorAPin1, PI_HIGH);
     gpioWrite(_motorAPin2, PI_LOW);
     gpioWrite(_motorBPin1, PI_HIGH);
     gpioWrite(_motorBPin2, PI_LOW);
-    gpioDelay(duration);
+    thread moveThread(&CarControl::asyncMove, this, callback, duration_ms);
+    moveThread.detach();
 }
 
-void CarControl::turnRight(int duration) {
-    if (_servo) {
-        _servo->writeServo(120); // Adjust for a right turn
-        gpioDelay(duration); // Ensure duration is in microseconds for gpioDelay
-    }
-    _servo->writeServo(90); // Reset to center position
-    gpioDelay(1000 * 1000); // Wait for 1 second before next action
-}
-
-void CarControl::turnRight(int duration) {
-    if (_servo) {
-        _servo->writeServo(120); // Adjust for a right turn
-        gpioDelay(duration); // Ensure duration is in microseconds for gpioDelay
-    }
-    _servo->writeServo(90); // Reset to center position
-    gpioDelay(1000 * 1000); // Wait for 1 second before next action
-}
-
-void CarControl::moveBackward(int duration) {
+void CarControl::moveBackward(float distance_cm, function<void()> callback) {
+    int duration_ms = static_cast<int>((distance_cm / speed_cm_per_sec_forward_backward) * 1000);
     gpioWrite(_motorAPin1, PI_LOW);
     gpioWrite(_motorAPin2, PI_HIGH);
     gpioWrite(_motorBPin1, PI_LOW);
     gpioWrite(_motorBPin2, PI_HIGH);
-    gpioDelay(duration);
+    thread moveThread(&CarControl::asyncMove, this, callback, duration_ms);
+    moveThread.detach();
+}
+
+void CarControl::turnRight(int degrees, function<void()> callback) {
+    int duration_ms = static_cast<int>((degrees / speed_deg_per_sec_turn) * 1000);
+    if (_servo) {
+        _servo->writeServo(120); // Adjust for a right turn
+        thread turnThread(&CarControl::asyncMove, this, callback, duration_ms);
+        turnThread.detach();
+    }
+    _servo->writeServo(90); // Reset to center position after the turn
+}
+
+void CarControl::turnLeft(int degrees, function<void()> callback) {
+    int duration_ms = static_cast<int>((degrees / speed_deg_per_sec_turn) * 1000);
+    if (_servo) {
+        _servo->writeServo(60); // Adjust for a left turn
+        thread turnThread(&CarControl::asyncMove, this, callback, duration_ms);
+        turnThread.detach();
+    }
+    _servo->writeServo(90); // Reset to center position after the turn
+}
+
+void CarControl::setSpeed(int forwardBackwardSpeed, int turnSpeed) {
+    _forwardBackwardSpeed = forwardBackwardSpeed;
+    _turnSpeed = turnSpeed;
+    // Note: Adjust the actual PWM values if necessary as per the hardware
 }
 
 void CarControl::stop() {
     stopDCMotors();
-    // Additional logic to handle servo can be added
-}
-
-void CarControl::setSpeed(int speed) {
-    _currentSpeed = speed;
-    // Optionally, adjust DC motor speeds here
+    // Additional logic to handle servo can be added here
 }
 
 void CarControl::stopDCMotors() {
@@ -98,6 +114,6 @@ void CarControl::stopDCMotors() {
 }
 
 void CarControl::cleanup() {
-    stopDCMotors();
-    gpioTerminate();
+    stopDCMotors(); 
+    gpioTerminate(); // Clean up the library
 }
