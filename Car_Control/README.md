@@ -32,32 +32,32 @@ GPIO access setup on the Raspberry Pi.
 ## Software Installation
 1. Install pigpio:
 Ensure that the Raspberry Pi OS is up to date:
-'''
+```
 sudo apt update
 sudo apt full-upgrade
-'''
+```
 Install the pigpio library:
-'''
+```
 sudo apt install pigpio
-'''
+```
 2. Clone the Repository:
 Clone the project repository to your local Raspberry Pi:
-'''
+```
 git clone https://github.com/FennMai/Real_Time_Embedded_Team_Project/tree/main/Car_Control
 cd CarControl
-'''
+```
 3. Compile the Code:
 Compile the project using CMake and Make:
-'''
+```
 mkdir build && cd build
 cmake ..
 make
-'''
+```
 4. Run the Program:
 Execute the compiled binary to test the car control system:
-'''
+```
 ./car_control
-'''
+```
 
 ### Usage
 To operate the car control system, execute the car_control binary located in the build directory. This program will initialize the motor setup and execute predefined maneuvers to demonstrate the capabilities of the control system. Ensure that your Raspberry Pi is connected to the motor driver and that the motors are properly configured as described in the hardware setup documentation.
