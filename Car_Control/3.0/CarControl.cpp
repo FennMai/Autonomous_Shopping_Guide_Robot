@@ -9,7 +9,8 @@
 // Singleton instance initialization
 CarControl* CarControl::instance = nullptr;
 
-static constexpr float speed_deg_per_sec_turn = 45.0;
+const float speed_cm_per_sec_forward_backward = 5.0; // Car's speed in cm/s
+const float speed_deg_per_sec_turn = 45.0; // Car's turning speed in degrees per second 
 
 // Constructor is private to enforce singleton pattern
 CarControl::CarControl() : _motorAPin1(17), _motorAPin2(22), _motorBPin1(10), _motorBPin2(11),
@@ -106,22 +107,27 @@ inline double degToRad(double degrees) {
 
 // Move the car forward
 void CarControl::moveForward(float distance_cm, std::function<void()> callback) {
-    stop();
-    applyMotorSpeed();
+    stopDCMotors();
     double radians = degToRad(_heading);
     _xPos += distance_cm * cos(radians);
     _yPos += distance_cm * sin(radians);
-    int pulsesNeeded = static_cast<int>((distance_cm / _wheelCircumference) * _ppr);
-    _pulseCountA = 0;
+
     gpioWrite(_motorAPin1, PI_HIGH);
     gpioWrite(_motorAPin2, PI_LOW);
     gpioWrite(_motorBPin1, PI_HIGH);
     gpioWrite(_motorBPin2, PI_LOW);
-    std::thread([=]() {
-        while (_pulseCountA.load(std::memory_order_relaxed) < pulsesNeeded);
+
+    applyMotorSpeed();
+
+    int duration_ms = static_cast<int>((distance_cm / speed_cm_per_sec_forward_backward) * 1000);
+    std::cout << "Moving forward " << distance_cm << " cm, which will take " << duration_ms << " milliseconds.\n";
+
+    std::thread moveThread([=]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(duration_ms));
         stopDCMotors();
         if (callback) callback();
-    }).detach();
+    });
+    moveThread.detach();  // Detach the thread to allow it to run independently
 }
 
 // Turn the car right
@@ -146,22 +152,27 @@ void CarControl::turnRight(int degrees, std::function<void()> callback) {
 
 // Move the car backwards
 void CarControl::moveBackward(float distance_cm, std::function<void()> callback) {
-    stop();
-    applyMotorSpeed();
+    stopDCMotors();
     double radians = degToRad(_heading);
-    _xPos -= distance_cm * cos(radians); // Moving backward
+    _xPos -= distance_cm * cos(radians);
     _yPos -= distance_cm * sin(radians);
-    int pulsesNeeded = static_cast<int>((distance_cm / _wheelCircumference) * _ppr);
-    _pulseCountB = 0; // Reset pulse count B for backward movement
+
     gpioWrite(_motorAPin1, PI_LOW);
     gpioWrite(_motorAPin2, PI_HIGH);
     gpioWrite(_motorBPin1, PI_LOW);
     gpioWrite(_motorBPin2, PI_HIGH);
-    std::thread([=]() {
-        while (_pulseCountB.load(std::memory_order_relaxed) < pulsesNeeded); // Correct variable used
+
+    applyMotorSpeed();
+
+    int duration_ms = static_cast<int>((distance_cm / speed_cm_per_sec_forward_backward) * 1000);
+    std::cout << "Moving backward " << distance_cm << " cm, which will take " << duration_ms << " milliseconds.\n";
+
+    std::thread moveThread([=]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(duration_ms));
         stopDCMotors();
         if (callback) callback();
-    }).detach();
+    });
+    moveThread.detach();  // Detach the thread to allow it to run independently
 }
 
 // Turn the car left
