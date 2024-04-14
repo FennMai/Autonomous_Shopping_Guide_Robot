@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/mai_start.dir/mai_start_autogen/mocs_compilation.cpp.o CMakeFiles/mai_start.dir/main.cpp.o CMakeFiles/mai_start.dir/widget.cpp.o -o mai_start  /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3 

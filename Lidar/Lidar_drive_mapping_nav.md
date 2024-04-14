@@ -1,5 +1,12 @@
 # Lidar drive study
 
+## 
+
+![alt text](assets/Lidar_drive_mapping_nav/image.png)
+
+![alt text](assets/Lidar_drive_mapping_nav/image-1.png)
+
+![alt text](assets/Lidar_drive_mapping_nav/image-2.png)
 ## basic drive (CMakeLists.txt)
 use build.sh
 advantage: tidy file

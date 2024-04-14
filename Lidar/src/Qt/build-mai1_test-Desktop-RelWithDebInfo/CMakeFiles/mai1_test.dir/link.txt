@@ -1,0 +1,1 @@
+/usr/bin/g++ -O2 -g -DNDEBUG CMakeFiles/mai1_test.dir/main.cpp.o -o mai1_test 
