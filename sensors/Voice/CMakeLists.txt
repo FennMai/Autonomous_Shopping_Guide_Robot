@@ -14,7 +14,7 @@ if(NOT PIGPIO_LIBRARY)
 endif()
 
 # 添加要编译的源文件
-add_executable(tt i2c_Asy.cpp DFbot.h)
+add_executable(tt i2c_Asy.cpp DFbot_voi.cpp)
 
 # 链接 pigpio 库
 target_link_libraries(tt ${PIGPIO_LIBRARY})
