@@ -18,7 +18,6 @@ public:
     void turnLeft(int degrees, std::function<void()> callback);
     void stop();
     void applyMotorSpeed();
-    static int map(int x, int in_min, int in_max, int out_min, int out_max);
     void setSpeed(int forwardBackwardSpeed, int turnSpeed);
     float getDistanceTraveled() const;
     float getXPosition() const;  // Get the current X position
@@ -45,6 +44,7 @@ private:
     int _ppr;
     float _wheelCircumference;
     int _forwardBackwardSpeed, _turnSpeed;
+    static int map(int x, int in_min, int in_max, int out_min, int out_max);
     float _xPos, _yPos;  // Position coordinates
     float _heading;  // Current heading in degrees
 };

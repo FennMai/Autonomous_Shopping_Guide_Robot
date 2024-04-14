@@ -15,7 +15,7 @@ static constexpr float speed_deg_per_sec_turn = 45.0;
 CarControl::CarControl() : _motorAPin1(17), _motorAPin2(22), _motorBPin1(10), _motorBPin2(11),
                            _encoderPinA(5), _encoderPinB(13), _ppr(360), _wheelCircumference(31.4),
                            _xPos(0.0), _yPos(0.0), _heading(0.0), _pulseCountA(0), _pulseCountB(0),
-                           _forwardBackwardSpeed(10), _turnSpeed(05) {
+                           _forwardBackwardSpeed(60), _turnSpeed(40) {
     _MS = Emakefun_MotorShield(); // Ensure this is correctly constructed
     _servo = nullptr; // Initial null setup, should be configured in initialize()
 }
@@ -118,18 +118,17 @@ void CarControl::moveForward(float distance_cm, std::function<void()> callback) 
 
 // Turn the car right
 void CarControl::turnRight(int degrees, std::function<void()> callback) {
-    bool motorAState = gpioRead(_motorAPin1);
-    bool motorBState = gpioRead(_motorBPin1);
     stop();
-    applyMotorSpeed(); // Ensure motors are ready to resume after turn
     _heading += degrees;
     _heading = fmod(_heading, 360); // Normalize the angle
 
     if (_servo) {
         _servo->writeServo(160); // Adjust for a right turn
-        gpioWrite(_motorAPin1, motorAState);
-        gpioWrite(_motorBPin1, motorBState);
-        std::this_thread::sleep_for(std::chrono::milliseconds(int(degrees / speed_deg_per_sec_turn * 1000)));
+    }
+    applyMotorSpeed(); // Ensure motors are ready to resume after turn
+    std::this_thread::sleep_for(std::chrono::milliseconds(int(degrees / speed_deg_per_sec_turn * 1000)));
+
+    if (_servo) {
         _servo->writeServo(90); // Reset to center position after the turn
     }
 
@@ -156,22 +155,21 @@ void CarControl::moveBackward(float distance_cm, std::function<void()> callback)
 
 // Turn the car left
 void CarControl::turnLeft(int degrees, std::function<void()> callback) {
-    bool motorAState = gpioRead(_motorAPin1);
-    bool motorBState = gpioRead(_motorBPin1);
     stop();
-    applyMotorSpeed(); // Ensure motors are ready to resume after turn
     _heading -= degrees;
     _heading = fmod(_heading, 360); // Normalize the angle
 
     if (_servo) {
-        _servo->writeServo(20); // Adjust for a left turn
-        std::this_thread::sleep_for(std::chrono::milliseconds(int(degrees / speed_deg_per_sec_turn * 1000)));
+        _servo->writeServo(20); // Adjust for a right turn
+    }
+    applyMotorSpeed(); // Ensure motors are ready to resume after turn
+    std::this_thread::sleep_for(std::chrono::milliseconds(int(degrees / speed_deg_per_sec_turn * 1000)));
+    
+    if (_servo) {
         _servo->writeServo(90); // Reset to center position after the turn
     }
-    gpioWrite(_motorAPin1, motorAState);
-    gpioWrite(_motorBPin1, motorBState);
 
-    std::cout << "Heading after left turn: " << _heading << " degrees\n";
+    std::cout << "Heading after right turn: " << _heading << " degrees\n";
     if (callback) callback();
 }
 
