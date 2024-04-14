@@ -1,50 +1,62 @@
-#include "CarControl.hpp"
 #include <iostream>
-#include <functional>
 #include <thread>
 #include <chrono>
-
-using namespace std;
-using namespace std::chrono;
+#include "CarControl.hpp"
+#include <functional>
 
 int main() {
-    CarControl* car = CarControl::getInstance();  // Get the singleton instance
+    try {
+        // Get singleton instance and initialize hardware
+        CarControl* car = CarControl::getInstance();
+        car->initialize();
 
-    cout << "Initializing car control..." << endl;
-    car->initialize();
+        // First, move forward by 100 cm
+        car->moveForward(100, []() {
+            std::cout << "Moved 100 cm forward.\n";
+        });
+        std::this_thread::sleep_for(std::chrono::seconds(3));
 
-    cout << "Moving forward 10 cm..." << endl;
-    car->moveForward(10.0, []() {
-        cout << "Move forward complete!" << endl;
-    });
+        // Turn right by 90 degrees
+        car->turnRight(90, []() {
+            std::cout << "Turned right by 90 degrees.\n";
+        });
+        std::this_thread::sleep_for(std::chrono::seconds(3));
 
-    this_thread::sleep_for(seconds(3)); // Wait to observe
+        // Move forward by another 50 cm
+        car->moveForward(50, []() {
+            std::cout << "Moved 50 cm forward.\n";
+        });
+        std::this_thread::sleep_for(std::chrono::seconds(3));
 
-    cout << "Turning right 90 degrees..." << endl;
-    car->turnRight(90, []() {
-        cout << "Turn right complete!" << endl;
-    });
+        // Turn left by 90 degrees to face the original direction
+        car->turnLeft(90, []() {
+            std::cout << "Turned left by 90 degrees.\n";
+        });
+        std::this_thread::sleep_for(std::chrono::seconds(3));
 
-    this_thread::sleep_for(seconds(3)); // Wait to observe
+        // Move backward by 50 cm
+        car->moveBackward(50, []() {
+            std::cout << "Moved 50 cm backward.\n";
+        });
+        std::this_thread::sleep_for(std::chrono::seconds(3));
 
-    cout << "Moving backward 10 cm..." << endl;
-    car->moveBackward(10.0, []() {
-        cout << "Move backward complete!" << endl;
-    });
+        car->turnLeft(90, []() {
+            std::cout << "Turned left by 90 degrees.\n";
+        });
+        std::this_thread::sleep_for(std::chrono::seconds(3));
 
-    this_thread::sleep_for(seconds(3)); // Wait to observe
+        // Print the current position and heading of the car
+        std::cout << "Current Position: (" << car->getXPosition() << ", " << car->getYPosition() << ")" << std::endl;
+        std::cout << "Current Heading: " << car->getCurrentAngle() << " degrees" << std::endl;
 
-    cout << "Turning left 90 degrees..." << endl;
-    car->turnLeft(90, []() {
-        cout << "Turn left complete!" << endl;
-    });
+        // Finally, stop all motors
+        car->stop();
+        std::cout << "All motors stopped.\n";
 
-    this_thread::sleep_for(seconds(3)); // Wait to observe
-
-    cout << "Stopping car..." << endl;
-    car->stop();
-
-    cout << "Distance traveled: " << car->getDistanceTraveled() << " cm." << endl;
+    } catch (const std::exception& e) {
+        std::cerr << "An error occurred: " << e.what() << std::endl;
+        return 1;
+    }
 
     return 0;
 }
