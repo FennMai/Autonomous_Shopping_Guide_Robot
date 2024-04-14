@@ -6,8 +6,10 @@
  * drive the DF2301Q
  * is a LED control program of DF2301Q.
  * find out why the LED is not working as we expected.
+ * 
+ * it's a basic program to control the DF2301Q to control the LED.
  */
-#include "DF23_voi.h" // 更新为正确的头文件名
+#include "DFbot_voi.h" // 更新为正确的头文件名
 #include <iostream>
 #include <unistd.h> // 为了使用 usleep 函数
 

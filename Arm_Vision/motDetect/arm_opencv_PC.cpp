@@ -1,3 +1,7 @@
+/*
+this code is run in the PC to detect the object and control the arm to move to the object
+
+*/
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include "arm_sys.h" 
