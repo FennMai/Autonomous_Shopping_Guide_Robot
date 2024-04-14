@@ -99,10 +99,18 @@ float CarControl::calculateDistance(int pulses) const {
     return (pulses / static_cast<float>(_ppr)) * _wheelCircumference;
 }
 
+const double PI = 3.14159265358979323846;
+inline double degToRad(double degrees) {
+    return degrees * (PI / 180.0);
+}
+
 // Move the car forward
 void CarControl::moveForward(float distance_cm, std::function<void()> callback) {
     stop();
     applyMotorSpeed();
+    double radians = degToRad(_heading);
+    _xPos += distance_cm * cos(radians);
+    _yPos += distance_cm * sin(radians);
     int pulsesNeeded = static_cast<int>((distance_cm / _wheelCircumference) * _ppr);
     _pulseCountA = 0;
     gpioWrite(_motorAPin1, PI_HIGH);
@@ -140,6 +148,9 @@ void CarControl::turnRight(int degrees, std::function<void()> callback) {
 void CarControl::moveBackward(float distance_cm, std::function<void()> callback) {
     stop();
     applyMotorSpeed();
+    double radians = degToRad(_heading);
+    _xPos -= distance_cm * cos(radians); // Moving backward
+    _yPos -= distance_cm * sin(radians);
     int pulsesNeeded = static_cast<int>((distance_cm / _wheelCircumference) * _ppr);
     _pulseCountB = 0; // Reset pulse count B for backward movement
     gpioWrite(_motorAPin1, PI_LOW);
