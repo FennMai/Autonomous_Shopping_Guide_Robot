@@ -1,17 +1,12 @@
 # Real Time Embedded System Project
-- **Project name: A Smart Shopping Cart**  
+- **Project name: Smart Shopping Cart**  
 - **Group 12**
-
-<p align="center">
-    <img alt="logo" src="https://github.com/FennMai/Real_Time_Embedded_Team_Project/assets/149116473/337aef0c-f780-489a-915a-8d2585d6f239.jpg" width="250" height="250" style="margin-bottom: 10px;">
-</p>
-
-
 
 
 ## Project Introduction
 
 Smart shopping cart is a device designed for locating goods within a supermarket. This device is dedicated to assisting customers and staff in swiftly and accurately locating desired products or executing logical planning within the supermarket. Throughout its operation, it also aims to avoid foot traffic and attempts to re-plan routes accordingly.
+![alt text](assets/README/image.png)
 
 ## Project Members
 
