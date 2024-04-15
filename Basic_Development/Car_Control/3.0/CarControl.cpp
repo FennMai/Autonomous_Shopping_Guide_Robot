@@ -9,7 +9,7 @@
 // Singleton instance initialization
 CarControl* CarControl::instance = nullptr;
 
-const float speed_cm_per_sec_forward_backward = 5.0; // Car's speed in cm/s
+const float speed_cm_per_sec_forward_backward = 24.0; // Car's speed in cm/s (30 dc motor speed)
 const float speed_deg_per_sec_turn = 45.0; // Car's turning speed in degrees per second 
 
 // Constructor is private to enforce singleton pattern
@@ -47,7 +47,7 @@ void CarControl::initialize() {
 void CarControl::setupServo() {
     _MS.begin(50);
     _servo = _MS.getServo(1);
-    _servo->writeServo(90); // Center servo position
+    _servo->writeServo(80); // Center servo position is 80 not 90 
 }
 
 // Setup DC motors
@@ -142,7 +142,7 @@ void CarControl::turnRight(int degrees, std::function<void()> callback) {
     std::this_thread::sleep_for(std::chrono::milliseconds(int(degrees / speed_deg_per_sec_turn * 1000)));
 
     if (_servo) {
-        _servo->writeServo(90); // Reset to center position after the turn
+        _servo->writeServo(80); // Reset to center position after the turn
     }
 
     std::cout << "Heading after right turn: " << _heading << " degrees\n";
@@ -189,13 +189,13 @@ void CarControl::turnLeft(int degrees, std::function<void()> callback) {
     _heading = fmod(_heading, 360); // Normalize the angle
 
     if (_servo) {
-        _servo->writeServo(20); // Adjust for a right turn
+        _servo->writeServo(10); // Adjust for a right turn
     }
     applyMotorSpeed(); // Ensure motors are ready to resume after turn
     std::this_thread::sleep_for(std::chrono::milliseconds(int(degrees / speed_deg_per_sec_turn * 1000)));
     
     if (_servo) {
-        _servo->writeServo(90); // Reset to center position after the turn
+        _servo->writeServo(80); // Reset to center position after the turn
     }
 
     std::cout << "Heading after right turn: " << _heading << " degrees\n";
