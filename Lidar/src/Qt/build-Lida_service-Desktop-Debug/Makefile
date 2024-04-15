@@ -166,6 +166,30 @@ Lida_service_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lida_service.dir/build.make CMakeFiles/Lida_service.dir/Lida_service_autogen/mocs_compilation.cpp.s
 .PHONY : Lida_service_autogen/mocs_compilation.cpp.s
 
+PCLDetect.o: PCLDetect.cpp.o
+.PHONY : PCLDetect.o
+
+# target to build an object file
+PCLDetect.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lida_service.dir/build.make CMakeFiles/Lida_service.dir/PCLDetect.cpp.o
+.PHONY : PCLDetect.cpp.o
+
+PCLDetect.i: PCLDetect.cpp.i
+.PHONY : PCLDetect.i
+
+# target to preprocess a source file
+PCLDetect.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lida_service.dir/build.make CMakeFiles/Lida_service.dir/PCLDetect.cpp.i
+.PHONY : PCLDetect.cpp.i
+
+PCLDetect.s: PCLDetect.cpp.s
+.PHONY : PCLDetect.s
+
+# target to generate assembly for a file
+PCLDetect.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lida_service.dir/build.make CMakeFiles/Lida_service.dir/PCLDetect.cpp.s
+.PHONY : PCLDetect.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -635,6 +659,9 @@ help:
 	@echo "... Lida_service_autogen/mocs_compilation.o"
 	@echo "... Lida_service_autogen/mocs_compilation.i"
 	@echo "... Lida_service_autogen/mocs_compilation.s"
+	@echo "... PCLDetect.o"
+	@echo "... PCLDetect.i"
+	@echo "... PCLDetect.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

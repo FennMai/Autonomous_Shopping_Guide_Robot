@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "Lida_service_autogen"
   "CMakeFiles/Lida_service.dir/Lida_service_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/Lida_service.dir/Lida_service_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/Lida_service.dir/PCLDetect.cpp.o"
+  "CMakeFiles/Lida_service.dir/PCLDetect.cpp.o.d"
   "CMakeFiles/Lida_service.dir/main.cpp.o"
   "CMakeFiles/Lida_service.dir/main.cpp.o.d"
   "CMakeFiles/Lida_service.dir/qcustomplot.cpp.o"

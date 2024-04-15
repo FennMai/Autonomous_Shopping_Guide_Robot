@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
 project(Lida_service VERSION 0.1 LANGUAGES CXX)
-
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -11,6 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets PrintSupport REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets PrintSupport REQUIRED)
+find_package(PCL 1.8 REQUIRED)
 
 file(GLOB_RECURSE Lidar_SDK_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/sdk/src/*.cpp")
 
@@ -22,6 +22,9 @@ set(PROJECT_SOURCES
     qcustomplot.cpp
     qcustomplot.h
     CppTimer.h
+    PCLDetect.cpp
+    PCLDetect.h
+    common.h
     ${Lidar_SDK_SOURCES}
 )
 
@@ -43,9 +46,13 @@ else()
 endif()
 
 include_directories(sdk/include sdk/src)
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
 
-target_link_libraries(Lida_service PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::PrintSupport)
+target_link_libraries(Lida_service PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::PrintSupport ${PCL_LIBRARIES})
 target_include_directories(Lida_service PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/sdk/include)
+#target_link_libraries(Lida_service ${PCL_LIBRARIES})
 #target_include_directories(Lida_service PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/sdk/src)
 
 

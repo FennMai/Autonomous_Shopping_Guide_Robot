@@ -17,6 +17,7 @@
 #define __WINT_MAX__ 0xffffffffU
 #define __FLT32_MIN_EXP__ (-125)
 #define __cpp_static_assert 201411L
+#define TBB_USE_DEBUG 1
 #define QT_GUI_LIB 1
 #define __ORDER_LITTLE_ENDIAN__ 1234
 #define __SIZE_MAX__ 0xffffffffffffffffUL
@@ -51,6 +52,7 @@
 #define __INT_LEAST8_WIDTH__ 8
 #define __cpp_variadic_using 201611L
 #define __UINT_LEAST64_MAX__ 0xffffffffffffffffUL
+#define QT_OPENGL_LIB 1
 #define __INT_LEAST8_MAX__ 0x7f
 #define __cpp_capture_star_this 201603L
 #define __SHRT_MAX__ 0x7fff
@@ -172,11 +174,13 @@
 #define __cpp_hex_float 201603L
 #define __GXX_ABI_VERSION 1016
 #define __FLT128_HAS_INFINITY__ 1
+#define kiss_fft_scalar double
 #define __FLT_MIN_EXP__ (-125)
 #define __GCC_HAVE_DWARF2_CFI_ASM 1
 #define __x86_64 1
 #define __cpp_lambdas 200907L
 #define __INT_FAST64_TYPE__ long int
+#define BOOST_ALL_NO_LIB 1
 #define __FLT64_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F64
 #define __cpp_template_auto 201606L
 #define __DBL_MIN__ double(2.22507385850720138309023271733240406e-308L)
@@ -202,6 +206,7 @@
 #define __FLT_MANT_DIG__ 24
 #define __LDBL_DECIMAL_DIG__ 21
 #define __VERSION__ "11.4.0"
+#define BOOST_IOSTREAMS_DYN_LINK 1
 #define __UINT64_C(c) c ## UL
 #define __cpp_unicode_characters 201411L
 #define _STDC_PREDEF_H 1
@@ -334,6 +339,7 @@
 #define __FLT32_NORM_MAX__ 3.40282346638528859811704183484516925e+38F32
 #define __SSE__ 1
 #define __LDBL_MIN_EXP__ (-16381)
+#define BOOST_DATE_TIME_DYN_LINK 1
 #define __FLT64_MAX__ 1.79769313486231570814527423731704357e+308F64
 #define __amd64__ 1
 #define __WINT_WIDTH__ 32
@@ -345,6 +351,7 @@
 #define __LDBL_MAX_10_EXP__ 4932
 #define __ATOMIC_RELAXED 0
 #define __DBL_EPSILON__ double(2.22044604925031308084726333618164062e-16L)
+#define BOOST_SYSTEM_DYN_LINK 1
 #define __FLT128_MIN__ 3.36210314311209350626267781732175260e-4932F128
 #define _LP64 1
 #define __UINT8_C(c) c
@@ -377,6 +384,7 @@
 #define __cpp_alias_templates 200704L
 #define __FLT_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F
 #define __FLT128_IS_IEC_60559__ 2
+#define BOOST_FILESYSTEM_DYN_LINK 1
 #define __INT8_MAX__ 0x7f
 #define __LONG_WIDTH__ 64
 #define __PIC__ 2
@@ -410,7 +418,9 @@
 #define __STDC__ 1
 #define __FLT32X_DIG__ 15
 #define __PTRDIFF_TYPE__ long int
+#define DISABLE_PCAP 1
 #define __ATOMIC_SEQ_CST 5
+#define BOOST_SERIALIZATION_DYN_LINK 1
 #define __FLT32X_MIN_10_EXP__ (-307)
 #define __UINTPTR_TYPE__ long unsigned int
 #define __DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD

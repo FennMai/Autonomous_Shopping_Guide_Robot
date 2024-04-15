@@ -7,6 +7,26 @@
 ![alt text](assets/Lidar_drive_mapping_nav/image-1.png)
 
 ![alt text](assets/Lidar_drive_mapping_nav/image-2.png)
+
+## mapping filter
+filter condition:
+1. 0<distance<1 (meter)
+2. quality >0
+3. limit angle:
+0-90度 对应于 0 - π/2 弧度
+270-360度 对应于 3π/2 - 2π 弧度
+
+LidarCenteredPoints
+![alt text](src/Qt/build-Lida_service-Desktop-Debug/Map/Lidar_itself.png) 
+mapping
+![alt text](src/Qt/build-Lida_service-Desktop-Debug/Map/Mapping.png)
+3. limit angle test
+![alt text](assets/Lidar_drive_mapping_nav/image-3.png)
+
+4. PCL package
+>sudo apt update
+sudo apt install libpcl-dev
+
 ## basic drive (CMakeLists.txt)
 use build.sh
 advantage: tidy file

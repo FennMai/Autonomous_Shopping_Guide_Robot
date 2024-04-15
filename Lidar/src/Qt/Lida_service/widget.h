@@ -15,7 +15,8 @@
 #include <QMutex>
 #include "sl_lidar.h"
 #include "sl_lidar_driver.h"
-
+#include "PCLDetect.h"
+#include "common.h"
 
 
 
@@ -23,13 +24,12 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
 QT_END_NAMESPACE
 
-struct LidarPoint {
-    float phi;
-    float r;
+
+// real-time location ; should receive the data from car_sys
+struct RT_location {
     float x;
     float y;
-    unsigned int signal_strength;
-    bool valid;
+    float orientation;
 };
 
 class Widget : public QWidget
@@ -48,7 +48,7 @@ public:
     void getData();
     void startLidarScan();
     void stopLidarScan();
-
+    void saveLidarData(const QString &filePath);
 
 private slots:
 
@@ -60,10 +60,15 @@ private slots:
 
     void on_lidar_mapping_clear_clicked();
 
+    void on_lidar_mapping_stop_clicked();
+
+    void on_lidar_mapping_save_clicked();
+
 private:
     Ui::Widget *ui;
     QCustomPlot *LidarPlot; // 添加一个 QCustomPlot 指针作为私有成员
-
+    QCustomPlot *MapPlot;
+    QCustomPlot *pclplot;
     QVector<double> cloud_x;
     QVector<double> cloud_y;
     int scatter_size =30;
@@ -82,8 +87,15 @@ private:
     const char *netport = "/dev/ttyUSB0";
 
     QTimer *dataTimer; // 这个学习一下
-    QVector<LidarPoint> lidarData;
+    QVector<LidarPoint> pathMappingPoints;
     QMutex dataMutex;
+
+    int lidar_cal_range_low = 0;
+    int lidar_cal_range_upper = 4000;
+    RT_location rt_location;
+
+    PCLDetect pclDetector;
+
 
 };
 

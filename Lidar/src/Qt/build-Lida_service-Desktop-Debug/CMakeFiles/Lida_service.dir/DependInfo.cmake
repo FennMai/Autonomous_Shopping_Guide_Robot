@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/Lida_service_autogen/mocs_compilation.cpp" "CMakeFiles/Lida_service.dir/Lida_service_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/Lida_service.dir/Lida_service_autogen/mocs_compilation.cpp.o.d"
+  "/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/Lida_service/PCLDetect.cpp" "CMakeFiles/Lida_service.dir/PCLDetect.cpp.o" "gcc" "CMakeFiles/Lida_service.dir/PCLDetect.cpp.o.d"
   "/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/Lida_service/main.cpp" "CMakeFiles/Lida_service.dir/main.cpp.o" "gcc" "CMakeFiles/Lida_service.dir/main.cpp.o.d"
   "/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/Lida_service/qcustomplot.cpp" "CMakeFiles/Lida_service.dir/qcustomplot.cpp.o" "gcc" "CMakeFiles/Lida_service.dir/qcustomplot.cpp.o.d"
   "/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/Lida_service/sdk/src/arch/linux/net_serial.cpp" "CMakeFiles/Lida_service.dir/sdk/src/arch/linux/net_serial.cpp.o" "gcc" "CMakeFiles/Lida_service.dir/sdk/src/arch/linux/net_serial.cpp.o.d"
