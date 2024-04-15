@@ -16,7 +16,7 @@ const float speed_deg_per_sec_turn = 45.0; // Car's turning speed in degrees per
 CarControl::CarControl() : _motorAPin1(17), _motorAPin2(22), _motorBPin1(10), _motorBPin2(11),
                            _encoderPinA(5), _encoderPinB(13), _ppr(360), _wheelCircumference(31.4),
                            _xPos(0.0), _yPos(0.0), _heading(0.0), _pulseCountA(0), _pulseCountB(0),
-                           _forwardBackwardSpeed(60), _turnSpeed(40) {
+                           _forwardBackwardSpeed(30), _turnSpeed(40) {
     _MS = Emakefun_MotorShield(); // Ensure this is correctly constructed
     _servo = nullptr; // Initial null setup, should be configured in initialize()
 }
@@ -107,27 +107,26 @@ inline double degToRad(double degrees) {
 
 // Move the car forward
 void CarControl::moveForward(float distance_cm, std::function<void()> callback) {
-    stopDCMotors();
+    stopDCMotors(); // Ensure motors are not running before starting
     double radians = degToRad(_heading);
-    _xPos += distance_cm * cos(radians);
-    _yPos += distance_cm * sin(radians);
+    _xPos += distance_cm * cos(radians); // Update x position based on heading and distance
+    _yPos += distance_cm * sin(radians); // Update y position based on heading and distance
 
-    gpioWrite(_motorAPin1, PI_HIGH);
-    gpioWrite(_motorAPin2, PI_LOW);
-    gpioWrite(_motorBPin1, PI_HIGH);
-    gpioWrite(_motorBPin2, PI_LOW);
+    gpioWrite(_motorAPin1, PI_HIGH); // Set motor A forward
+    gpioWrite(_motorAPin2, PI_LOW);  // Ensure motor A is set correctly
+    gpioWrite(_motorBPin1, PI_HIGH); // Set motor B forward
+    gpioWrite(_motorBPin2, PI_LOW);  // Ensure motor B is set correctly
 
-    applyMotorSpeed();
+    applyMotorSpeed(); // Apply the current speed setting to motors
 
     int duration_ms = static_cast<int>((distance_cm / speed_cm_per_sec_forward_backward) * 1000);
     std::cout << "Moving forward " << distance_cm << " cm, which will take " << duration_ms << " milliseconds.\n";
 
-    std::thread moveThread([=]() {
-        std::this_thread::sleep_for(std::chrono::milliseconds(duration_ms));
-        stopDCMotors();
-        if (callback) callback();
-    });
-    moveThread.detach();  // Detach the thread to allow it to run independently
+    gpioDelay(duration_ms * 1000); // Delay to allow the car to move the required distance
+
+    stopDCMotors(); // Stop motors after moving the required distance
+
+    if (callback) callback(); // Execute callback function if provided
 }
 
 // Turn the car right
@@ -152,27 +151,35 @@ void CarControl::turnRight(int degrees, std::function<void()> callback) {
 
 // Move the car backwards
 void CarControl::moveBackward(float distance_cm, std::function<void()> callback) {
-    stopDCMotors();
+    stopDCMotors(); // Ensure motors are not running before starting
     double radians = degToRad(_heading);
-    _xPos -= distance_cm * cos(radians);
-    _yPos -= distance_cm * sin(radians);
+    _xPos -= distance_cm * cos(radians); // Update x position based on heading and distance
+    _yPos -= distance_cm * sin(radians); // Update y position based on heading and distance
 
-    gpioWrite(_motorAPin1, PI_LOW);
-    gpioWrite(_motorAPin2, PI_HIGH);
-    gpioWrite(_motorBPin1, PI_LOW);
-    gpioWrite(_motorBPin2, PI_HIGH);
+    gpioWrite(_motorAPin1, PI_LOW); // Set motor A backward
+    gpioWrite(_motorAPin2, PI_HIGH);  // Ensure motor A is set correctly
+    gpioWrite(_motorBPin1, PI_LOW); // Set motor B backward
+    gpioWrite(_motorBPin2, PI_HIGH);  // Ensure motor B is set correctly
 
-    applyMotorSpeed();
+    int pwmValue = static_cast<int>(_forwardBackwardSpeed * 2.55); // Convert speed (0-100) to PWM range (0-255)
+    std::cout << "Setting PWM value to " << pwmValue << " for backward motion." << std::endl;
+
+    // Apply PWM to the motors
+    if (gpioPWM(_motorAPin1, 0) != 0 || gpioPWM(_motorAPin2, pwmValue) != 0 ||
+        gpioPWM(_motorBPin1, 0) != 0 || gpioPWM(_motorBPin2, pwmValue) != 0) {
+        std::cerr << "Failed to apply PWM settings to motors." << std::endl;
+    } else {
+        std::cout << "PWM settings applied successfully." << std::endl;
+    }
 
     int duration_ms = static_cast<int>((distance_cm / speed_cm_per_sec_forward_backward) * 1000);
     std::cout << "Moving backward " << distance_cm << " cm, which will take " << duration_ms << " milliseconds.\n";
 
-    std::thread moveThread([=]() {
-        std::this_thread::sleep_for(std::chrono::milliseconds(duration_ms));
-        stopDCMotors();
-        if (callback) callback();
-    });
-    moveThread.detach();  // Detach the thread to allow it to run independently
+    gpioDelay(duration_ms * 1000); // Delay to allow the car to move the required distance
+
+    stopDCMotors(); // Stop motors after moving the required distance
+
+    if (callback) callback(); // Execute callback function if provided
 }
 
 // Turn the car left
