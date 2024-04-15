@@ -1,0 +1,4 @@
+/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/SSC.dir
+/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/edit_cache.dir
+/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/rebuild_cache.dir
+/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/SSC_autogen.dir

@@ -1,13 +1,11 @@
-/***
- * author : ZMai
- * last modified date: 05/03/2024
- * 
-*/
-#include <iostream>
-#include <pigpio.h>
+#include "ssc_widget.h"
 
+#include <QApplication>
 
-int main()
+int main(int argc, char *argv[])
 {
-
+    QApplication a(argc, argv);
+    SSC_Widget w;
+    w.show();
+    return a.exec();
 }

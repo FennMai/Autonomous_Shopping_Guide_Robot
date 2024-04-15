@@ -8,6 +8,18 @@
 Smart shopping cart is a device designed for locating goods within a supermarket. This device is dedicated to assisting customers and staff in swiftly and accurately locating desired products or executing logical planning within the supermarket. Throughout its operation, it also aims to avoid foot traffic and attempts to re-plan routes accordingly.
 ![alt text](assets/README/image.png)
 
+## Build it
+```
+# Grant execute permissions to the build script
+chmod +x build.sh
+
+# Run the build script to configure, build, and run the project
+./build.sh
+
+# Run the SSC
+./data/bin/SSC
+```
+
 ## Project Members
 
 | Name      | Email                                   | Contribution                                       | GitHub                              |
@@ -19,7 +31,7 @@ Smart shopping cart is a device designed for locating goods within a supermarket
 
 
 ## Web link: 
-
+https://fennmai.github.io/Real_Time_Embedded_Team_Project/
 
 ## Key Features
 1. **Real-time Response:** Our product immediately stops to maintain a distance when encountering pedestrians blocking the way. At the same time, it replans a new route with less crowd density.
