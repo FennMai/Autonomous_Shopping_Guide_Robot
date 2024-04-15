@@ -12,10 +12,10 @@ version 1.4
 searching prograss need a loop control and callback function
 
 version 1.5
-All function 
+All function is OK, but the searching prograss is not perfect, need to be improved
 
 version 1.51
-update full 
+add the searching prograss, but the searching prograss is not perfect, change red color to green color
 */
 #include <iostream>
 #include <opencv2/opencv.hpp>
