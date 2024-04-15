@@ -27,7 +27,6 @@ public:
     void moveBackward(float distance_cm, std::function<void()> callback);
     void turnRight(int degrees, std::function<void()> callback);
     void turnLeft(int degrees, std::function<void()> callback);
-    void turnByAngle(float angle);  // method to turn by a specific angle
     void navigateToPoint(float xTarget, float yTarget);  // method to move to point
     void stop();
     

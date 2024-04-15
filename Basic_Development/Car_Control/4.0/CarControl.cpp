@@ -236,10 +236,18 @@ void CarControl::navigateToPoint(float xTarget, float yTarget) {
         angleToTurn += 360;
     }
 
-    if (angleToTurn != 0) {
-        turnByAngle(angleToTurn);  // Turn to calculated angle
-        std::cout << (angleToTurn > 0 ? "Turning right " : "Turning left ") << fabs(angleToTurn) << " degrees.\n";
+    // Use turnRight or turnLeft based on the sign of the angle
+    if (angleToTurn > 0) {
+        turnRight(angleToTurn, []() {
+            std::cout << "Car turned right by " << angleToTurn << " degrees.\n";
+        });  // Turn to the right by the calculated angle
+    } else {
+        turnLeft(-angleToTurn, []() {
+            std::cout << "Car turned left by " << -angleToTurn << " degrees.\n";
+        });  // Turn to the left by the calculated angle (negative because angleToTurn is negative)
     }
+
+    // Use moveForward or moveBackward based on the calculated distance
     if (distance >= 0) {
         moveForward(distance, []() {
             std::cout << "Moved forward to the target position.\n";
@@ -250,47 +258,6 @@ void CarControl::navigateToPoint(float xTarget, float yTarget) {
         });
     }
 }
-
-void CarControl::turnByAngle(float angle) {
-    if (angle == 0) return;  // No need to turn if the angle is zero
-
-    // Determine turn direction and adjust servo position
-    int servoPosition = 80;  // Center position adjusted to 80 degrees
-    if (angle > 0) {
-        servoPosition += 30; // Right adjustment for positive angles
-    } else {
-        servoPosition -= 30; // Left adjustment for negative angles
-    }
-
-    // Apply the calculated servo position to turn the wheels
-    if (_servo) {
-        _servo->writeServo(servoPosition);
-    }
-
-    // Calculate the duration needed to perform the turn based on the turning speed
-    int turnTimeMs = static_cast<int>((fabs(angle) / speed_deg_per_sec_turn) * 1000);
-
-    // Use gpioDelay to wait for the turn to complete, blocking this thread
-    gpioDelay(turnTimeMs * 1000);  // Delay in microseconds
-
-    // Reset servo to the center position after the turn
-    if (_servo) {
-        _servo->writeServo(80);  // Reset to adjusted center position
-    }
-
-    // Update the heading of the car
-    _heading += angle;
-    if (_heading >= 360) _heading -= 360;
-    else if (_heading < 0) _heading += 360;
-
-    // Log or notify that the turn is complete
-    if (angle > 0) {
-        std::cout << "Turned right by " << angle << " degrees.\n";
-    } else {
-        std::cout << "Turned left by " << -angle << " degrees.\n";
-    }
-}
-
 
 // Cleanup resources and GPIO on object destruction
 void CarControl::cleanup() {
