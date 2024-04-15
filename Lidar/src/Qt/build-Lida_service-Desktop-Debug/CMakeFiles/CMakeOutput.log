@@ -1,6 +1,6 @@
 The system is: Linux - 6.5.0-27-generic - x86_64
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: /usr/bin/c++ 
+Compiler: /usr/bin/g++ 
 Build flags: 
 Id flags:  
 
@@ -10,17 +10,17 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/3.22.1/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/3.22.1/CompilerIdCXX/a.out"
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8442f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8442f.dir/build.make CMakeFiles/cmTC_8442f.dir/build
-gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++   -v -o CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_2590d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2590d.dir/build.make CMakeFiles/cmTC_2590d.dir/build
+gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/g++   -v -o CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
-COLLECT_GCC=/usr/bin/c++
+COLLECT_GCC=/usr/bin/g++
 OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
 OFFLOAD_TARGET_DEFAULT=1
 Target: x86_64-linux-gnu
@@ -28,8 +28,8 @@ Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~2
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8442f.dir/'
- /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_8442f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccnYCi1r.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_2590d.dir/'
+ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_2590d.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccbypyWD.s
 GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
 	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
 
@@ -53,17 +53,17 @@ GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: d591828bb4d392ae8b7b160e5bb0b95f
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8442f.dir/'
- as -v --64 -o CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccnYCi1r.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_2590d.dir/'
+ as -v --64 -o CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccbypyWD.s
 GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.'
-Linking CXX executable cmTC_8442f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8442f.dir/link.txt --verbose=1
-/usr/bin/c++  -v CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8442f 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.'
+Linking CXX executable cmTC_2590d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2590d.dir/link.txt --verbose=1
+/usr/bin/g++  -v CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_2590d 
 Using built-in specs.
-COLLECT_GCC=/usr/bin/c++
+COLLECT_GCC=/usr/bin/g++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
 OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
 OFFLOAD_TARGET_DEFAULT=1
@@ -74,10 +74,10 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8442f' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8442f.'
- /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqe8P0W.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8442f /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8442f' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8442f.'
-gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2590d' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_2590d.'
+ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cctyTYLG.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2590d /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2590d' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_2590d.'
+gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
 
 
 
@@ -104,14 +104,14 @@ Parsed CXX implicit include dir info from above output: rv=done
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8442f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8442f.dir/build.make CMakeFiles/cmTC_8442f.dir/build]
-  ignore line: [gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_2590d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2590d.dir/build.make CMakeFiles/cmTC_2590d.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/g++   -v -o CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_GCC=/usr/bin/g++]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
   ignore line: [OFFLOAD_TARGET_DEFAULT=1]
   ignore line: [Target: x86_64-linux-gnu]
@@ -119,8 +119,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8442f.dir/']
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_8442f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccnYCi1r.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_2590d.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_2590d.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccbypyWD.s]
   ignore line: [GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
   ignore line: []
@@ -144,17 +144,17 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: d591828bb4d392ae8b7b160e5bb0b95f]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8442f.dir/']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccnYCi1r.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_2590d.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccbypyWD.s]
   ignore line: [GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.']
-  ignore line: [Linking CXX executable cmTC_8442f]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8442f.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8442f ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [Linking CXX executable cmTC_2590d]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2590d.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/g++  -v CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_2590d ]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_GCC=/usr/bin/g++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
   ignore line: [OFFLOAD_TARGET_DEFAULT=1]
@@ -165,13 +165,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8442f' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8442f.']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqe8P0W.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8442f /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2590d' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_2590d.']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cctyTYLG.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2590d /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccqe8P0W.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cctyTYLG.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -189,7 +189,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_8442f] ==> ignore
+    arg [cmTC_2590d] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
@@ -201,7 +201,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
-    arg [CMakeFiles/cmTC_8442f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_2590d.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -229,30 +229,30 @@ Parsed CXX implicit link information from above output:
 
 
 Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_1cd9d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1cd9d.dir/build.make CMakeFiles/cmTC_1cd9d.dir/build
-gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_1cd9d.dir/CheckIncludeFile.cxx.o
-/usr/bin/c++   -std=gnu++11 -o CMakeFiles/cmTC_1cd9d.dir/CheckIncludeFile.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
-Linking CXX executable cmTC_1cd9d
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1cd9d.dir/link.txt --verbose=1
-/usr/bin/c++ CMakeFiles/cmTC_1cd9d.dir/CheckIncludeFile.cxx.o -o cmTC_1cd9d 
-gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_74d1c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_74d1c.dir/build.make CMakeFiles/cmTC_74d1c.dir/build
+gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_74d1c.dir/CheckIncludeFile.cxx.o
+/usr/bin/g++   -std=gnu++11 -o CMakeFiles/cmTC_74d1c.dir/CheckIncludeFile.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+Linking CXX executable cmTC_74d1c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74d1c.dir/link.txt --verbose=1
+/usr/bin/g++ CMakeFiles/cmTC_74d1c.dir/CheckIncludeFile.cxx.o -o cmTC_74d1c 
+gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
 
 
 
 Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
-Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_185ce/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_185ce.dir/build.make CMakeFiles/cmTC_185ce.dir/build
-gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_185ce.dir/src.cxx.o
-/usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++11 -o CMakeFiles/cmTC_185ce.dir/src.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp/src.cxx
-Linking CXX executable cmTC_185ce
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_185ce.dir/link.txt --verbose=1
-/usr/bin/c++ CMakeFiles/cmTC_185ce.dir/src.cxx.o -o cmTC_185ce 
-gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_16755/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_16755.dir/build.make CMakeFiles/cmTC_16755.dir/build
+gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_16755.dir/src.cxx.o
+/usr/bin/g++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++11 -o CMakeFiles/cmTC_16755.dir/src.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_16755
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_16755.dir/link.txt --verbose=1
+/usr/bin/g++ CMakeFiles/cmTC_16755.dir/src.cxx.o -o cmTC_16755 
+gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
 
 
 Source file was:
@@ -277,86 +277,86 @@ int main(void)
 }
 
 Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
-Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e5935/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e5935.dir/build.make CMakeFiles/cmTC_e5935.dir/build
-gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_e5935.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -std=gnu++11 -o CMakeFiles/cmTC_e5935.dir/CheckFunctionExists.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_e5935
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5935.dir/link.txt --verbose=1
-/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_e5935.dir/CheckFunctionExists.cxx.o -o cmTC_e5935  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
-gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_23e08/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_23e08.dir/build.make CMakeFiles/cmTC_23e08.dir/build
+gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_23e08.dir/CheckFunctionExists.cxx.o
+/usr/bin/g++   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -std=gnu++11 -o CMakeFiles/cmTC_23e08.dir/CheckFunctionExists.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_23e08
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23e08.dir/link.txt --verbose=1
+/usr/bin/g++  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_23e08.dir/CheckFunctionExists.cxx.o -o cmTC_23e08  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
 
 
 
 Determining if the function gethostbyname exists passed with the following output:
-Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f3f19/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f3f19.dir/build.make CMakeFiles/cmTC_f3f19.dir/build
-gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_f3f19.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=gethostbyname -std=gnu++11 -o CMakeFiles/cmTC_f3f19.dir/CheckFunctionExists.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_f3f19
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f3f19.dir/link.txt --verbose=1
-/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_f3f19.dir/CheckFunctionExists.cxx.o -o cmTC_f3f19 
-gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c9c8b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c9c8b.dir/build.make CMakeFiles/cmTC_c9c8b.dir/build
+gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c9c8b.dir/CheckFunctionExists.cxx.o
+/usr/bin/g++   -DCHECK_FUNCTION_EXISTS=gethostbyname -std=gnu++11 -o CMakeFiles/cmTC_c9c8b.dir/CheckFunctionExists.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_c9c8b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c9c8b.dir/link.txt --verbose=1
+/usr/bin/g++  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_c9c8b.dir/CheckFunctionExists.cxx.o -o cmTC_c9c8b 
+gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
 
 
 
 Determining if the function connect exists passed with the following output:
-Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_775c1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_775c1.dir/build.make CMakeFiles/cmTC_775c1.dir/build
-gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_775c1.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=connect -std=gnu++11 -o CMakeFiles/cmTC_775c1.dir/CheckFunctionExists.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_775c1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_775c1.dir/link.txt --verbose=1
-/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_775c1.dir/CheckFunctionExists.cxx.o -o cmTC_775c1 
-gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_bd9c6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_bd9c6.dir/build.make CMakeFiles/cmTC_bd9c6.dir/build
+gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_bd9c6.dir/CheckFunctionExists.cxx.o
+/usr/bin/g++   -DCHECK_FUNCTION_EXISTS=connect -std=gnu++11 -o CMakeFiles/cmTC_bd9c6.dir/CheckFunctionExists.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_bd9c6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd9c6.dir/link.txt --verbose=1
+/usr/bin/g++  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_bd9c6.dir/CheckFunctionExists.cxx.o -o cmTC_bd9c6 
+gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
 
 
 
 Determining if the function remove exists passed with the following output:
-Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6fd95/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6fd95.dir/build.make CMakeFiles/cmTC_6fd95.dir/build
-gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_6fd95.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=remove -std=gnu++11 -o CMakeFiles/cmTC_6fd95.dir/CheckFunctionExists.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_6fd95
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6fd95.dir/link.txt --verbose=1
-/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_6fd95.dir/CheckFunctionExists.cxx.o -o cmTC_6fd95 
-gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c1464/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c1464.dir/build.make CMakeFiles/cmTC_c1464.dir/build
+gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c1464.dir/CheckFunctionExists.cxx.o
+/usr/bin/g++   -DCHECK_FUNCTION_EXISTS=remove -std=gnu++11 -o CMakeFiles/cmTC_c1464.dir/CheckFunctionExists.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_c1464
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1464.dir/link.txt --verbose=1
+/usr/bin/g++  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_c1464.dir/CheckFunctionExists.cxx.o -o cmTC_c1464 
+gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
 
 
 
 Determining if the function shmat exists passed with the following output:
-Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3e9b9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3e9b9.dir/build.make CMakeFiles/cmTC_3e9b9.dir/build
-gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3e9b9.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=shmat -std=gnu++11 -o CMakeFiles/cmTC_3e9b9.dir/CheckFunctionExists.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_3e9b9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e9b9.dir/link.txt --verbose=1
-/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_3e9b9.dir/CheckFunctionExists.cxx.o -o cmTC_3e9b9 
-gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_24865/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_24865.dir/build.make CMakeFiles/cmTC_24865.dir/build
+gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_24865.dir/CheckFunctionExists.cxx.o
+/usr/bin/g++   -DCHECK_FUNCTION_EXISTS=shmat -std=gnu++11 -o CMakeFiles/cmTC_24865.dir/CheckFunctionExists.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_24865
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24865.dir/link.txt --verbose=1
+/usr/bin/g++  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_24865.dir/CheckFunctionExists.cxx.o -o cmTC_24865 
+gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
 
 
 
 Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
-Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp
+Change Dir: /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4ba49/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4ba49.dir/build.make CMakeFiles/cmTC_4ba49.dir/build
-gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_4ba49.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -std=gnu++11 -o CMakeFiles/cmTC_4ba49.dir/CheckFunctionExists.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_4ba49
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4ba49.dir/link.txt --verbose=1
-/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_4ba49.dir/CheckFunctionExists.cxx.o -o cmTC_4ba49  -lICE 
-gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_904e4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_904e4.dir/build.make CMakeFiles/cmTC_904e4.dir/build
+gmake[1]: Entering directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_904e4.dir/CheckFunctionExists.cxx.o
+/usr/bin/g++   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -std=gnu++11 -o CMakeFiles/cmTC_904e4.dir/CheckFunctionExists.cxx.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_904e4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_904e4.dir/link.txt --verbose=1
+/usr/bin/g++  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_904e4.dir/CheckFunctionExists.cxx.o -o cmTC_904e4  -lICE 
+gmake[1]: Leaving directory '/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/CMakeTmp'
 
 
 
