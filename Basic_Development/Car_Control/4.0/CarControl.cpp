@@ -240,9 +240,14 @@ void CarControl::navigateToPoint(float xTarget, float yTarget) {
         turnByAngle(angleToTurn);  // Turn to calculated angle
         std::cout << (angleToTurn > 0 ? "Turning right " : "Turning left ") << fabs(angleToTurn) << " degrees.\n";
     }
-    if (distance > 0) {
-        moveForward(distance);    // Move forward by the calculated distance
-        std::cout << "Moving forward " << distance << " cm.\n";
+    if (distance >= 0) {
+        moveForward(distance, []() {
+            std::cout << "Moved forward to the target position.\n";
+        });
+    } else {
+        moveBackward(-distance, []() {
+            std::cout << "Moved backward to the target position.\n";
+        });
     }
 }
 
