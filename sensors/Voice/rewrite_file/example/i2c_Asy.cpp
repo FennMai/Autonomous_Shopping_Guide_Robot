@@ -1,10 +1,10 @@
 /***
- * 作者 : Geo 
- * 最后修改日期: 2024年3月26日
+ * Author : Geo 
+ * last modify: 14/04/2024
  * 
- * 基本版本 3.0, 日期: 2024年3月26日
- * 驱动 DF2301Q 设备
- * muti-thread
+ * Version 3.0, date: 26/03/2024
+ * drive DF2301Q device
+ * multithreading
  */
 #include "DFbot_voi.h" // 自定义的设备控制头文件
 #include <iostream>  // 包含标准输入输出流
@@ -42,16 +42,37 @@ int main() {
     std::cout << "设备初始化成功！" << std::endl;
 
     // 设置设备音量、静音模式和唤醒时间
-    DF2301Q.setVolume(4);
+    DF2301Q.setVolume(3);
     DF2301Q.setMuteMode(0);
     DF2301Q.setWakeTime(15);
 
     // 获取并显示设备的唤醒时间
     uint8_t wakeTime = DF2301Q.getWakeTime();
     std::cout << "当前唤醒时间 = " << static_cast<int>(wakeTime) << std::endl;
+    
+    if (CMDID == 5) {
+    // 条件1满足时的代码
+    DF2301Q.playByCMDID(9);
+    cout << "mapping start" << endl;
+} else if (CMDID == 6) {
+    // 条件2满足时的代码
+    DF2301Q.playByCMDID(10);
+    cout << "moving to banana" << endl;
+} else if (CMDID == 7) {
+    // 条件3满足时的代码
+    DF2301Q.playByCMDID(11);
+    cout << "执行条件3对应的操作" << endl;
+} else if (CMDID == 8) {
+    // 条件4满足时的代码
+    DF2301Q.playByCMDID(12);
+    cout << "执行条件4对应的操作" << endl;
+} else {
+    // 所有条件都不满足时的代码
+    cout << "没有条件被满足" << endl;
+}
 
     // 根据命令ID播放音频（示例中为ID 23）
-    DF2301Q.playByCMDID(23);
+    //DF2301Q.playByCMDID(23);
 
     // 创建一个新线程，用于周期性地检查命令ID
     std::thread checkCMDIDThread(checkCMDID, std::ref(DF2301Q));

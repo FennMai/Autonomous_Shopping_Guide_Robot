@@ -12,13 +12,13 @@
 
 #include <iostream>
 #include <vector>
-#include <cstdint> // 用于 uint8_t 等类型
-#include <pigpio.h> // 用于树莓派上的 I2C 通信
+#include <cstdint> 
+#include <pigpio.h> 
 
 // 调试宏
 #ifdef ENABLE_DBG
   #include <iostream>
-  #define DBG(...) { std::cout << "[" << __FUNCTION__ << "(): " << __LINE__ << " ] " << __VA_ARGS__ << std::endl; }
+  #define DBG(...) { std::cout << "[" << __FUNCTION__ << "(): " << __LINE__ << " ] " << __VA_ARGS__ << std::endl; } // 调试信息输出
 #else
   #define DBG(...)
 #endif
@@ -73,4 +73,4 @@ private:
   uint8_t _deviceAddr;  // I2C 设备地址
 };
 
-#endif // DFRobot_DF2301Q_H
+#endif 

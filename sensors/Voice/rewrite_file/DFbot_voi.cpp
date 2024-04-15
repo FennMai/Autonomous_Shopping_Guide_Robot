@@ -54,16 +54,19 @@ uint8_t DFRobot_DF2301Q_RPi::getWakeTime() {
 // 设置唤醒时间
 void DFRobot_DF2301Q_RPi::setWakeTime(uint8_t wakeTime) {
     writeReg(DF2301Q_I2C_REG_WAKE_TIME, wakeTime);  // 将唤醒时间写入寄存器
+    //Wake time value(1~255)
 }
 
 // 设置音量
 void DFRobot_DF2301Q_RPi::setVolume(uint8_t volume) {
-    writeReg(DF2301Q_I2C_REG_SET_VOLUME, volume);  // 将音量值写入寄存器
+    writeReg(DF2301Q_I2C_REG_SET_VOLUME, volume);  // 将音量值写入寄存器 
+    //Volume value(1~7)
 }
 
 // 设置静音模式
 void DFRobot_DF2301Q_RPi::setMuteMode(uint8_t mode) {
     writeReg(DF2301Q_I2C_REG_SET_MUTE, mode);  // 将静音模式写入寄存器
+    //0: unmute, 1: mute
 }
 
 // 通过I2C写寄存器
