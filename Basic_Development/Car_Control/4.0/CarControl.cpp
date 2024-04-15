@@ -238,11 +238,11 @@ void CarControl::navigateToPoint(float xTarget, float yTarget) {
 
     // Use turnRight or turnLeft based on the sign of the angle
     if (angleToTurn > 0) {
-        turnRight(angleToTurn, []() {
+        turnRight(angleToTurn, [angleToTurn]() {
             std::cout << "Car turned right by " << angleToTurn << " degrees.\n";
         });  // Turn to the right by the calculated angle
     } else {
-        turnLeft(-angleToTurn, []() {
+        turnLeft(-angleToTurn, [angleToTurn]() {
             std::cout << "Car turned left by " << -angleToTurn << " degrees.\n";
         });  // Turn to the left by the calculated angle (negative because angleToTurn is negative)
     }
@@ -258,6 +258,7 @@ void CarControl::navigateToPoint(float xTarget, float yTarget) {
         });
     }
 }
+
 
 // Cleanup resources and GPIO on object destruction
 void CarControl::cleanup() {
