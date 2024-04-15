@@ -23,6 +23,9 @@ Smart shopping cart is a device designed for locating goods within a supermarket
 | Jiahao Yang | [2841007Y@student.gla.ac.uk](mailto:2841007Y@student.gla.ac.uk) | ... | [RedAmancy918](https://github.com/RedAmancy918)    |
 
 
+## Web link: 
+
+
 ## Key Features
 1. **Real-time Response:** Our product immediately stops to maintain a distance when encountering pedestrians blocking the way. At the same time, it replans a new route with less crowd density.
 2. **Convenience:** When customers have many products to buy and find them hard to locate, our friend will help them quickly pinpoint the items, avoiding aimless wandering.
