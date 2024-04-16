@@ -17,8 +17,8 @@
 // Singleton instance initialization
 CarControl* CarControl::instance = nullptr;
 
-const float speed_cm_per_sec_forward_backward = 24.0; // Car's speed in cm/s (30 dc motor speed)
-const float speed_deg_per_sec_turn = 45.0; // Car's turning speed in degrees per second 
+const float speed_cm_per_sec_forward_backward = 26.0; // Car's speed in cm/s (30 dc motor speed)
+const float speed_deg_per_sec_turn = 50.0; // Car's turning speed in degrees per second 
 
 // Constructor is private to enforce singleton pattern
 CarControl::CarControl() : _motorAPin1(5), _motorAPin2(13), _motorBPin1(26), _motorBPin2(16),
@@ -55,7 +55,7 @@ void CarControl::initialize() {
 void CarControl::setupServo() {
     _MS.begin(50);
     _servo = _MS.getServo(1);
-    _servo->writeServo(80); // Center servo position is 80 not 90 
+    _servo->writeServo(82); // Center servo position is 80 not 90 
 }
 
 // Setup DC motors
