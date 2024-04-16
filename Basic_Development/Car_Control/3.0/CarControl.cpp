@@ -55,7 +55,7 @@ void CarControl::initialize() {
 void CarControl::setupServo() {
     _MS.begin(50);
     _servo = _MS.getServo(1);
-    _servo->writeServo(82); // Center servo position is 80 not 90 
+    _servo->writeServo(83); // Center servo position is 80 not 90 
 }
 
 // Setup DC motors
@@ -150,7 +150,7 @@ void CarControl::turnRight(int degrees, std::function<void()> callback) {
     std::this_thread::sleep_for(std::chrono::milliseconds(int(degrees / speed_deg_per_sec_turn * 1000)));
 
     if (_servo) {
-        _servo->writeServo(82); // Reset to center position after the turn
+        _servo->writeServo(83); // Reset to center position after the turn
     }
 
     stopDCMotors();
@@ -205,7 +205,7 @@ void CarControl::turnLeft(int degrees, std::function<void()> callback) {
     std::this_thread::sleep_for(std::chrono::milliseconds(int(degrees / speed_deg_per_sec_turn * 1000)));
     
     if (_servo) {
-        _servo->writeServo(82); // Reset to center position after the turn
+        _servo->writeServo(83); // Reset to center position after the turn
     }
 
     stopDCMotors();
