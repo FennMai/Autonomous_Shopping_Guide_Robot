@@ -104,4 +104,5 @@ int main() {
 // cmdid 7 (check out)
 // cmdid 8 (moving to start) failed
 // cmdid 2 (ok)
-// cdid 10 (moving now) failed
+// cmdid 10 (moving now) failed
+// cmdid 11 (start shopping) waiting for recording
