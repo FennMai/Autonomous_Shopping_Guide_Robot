@@ -17,7 +17,7 @@ file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/tools)
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/3rd_party)
 
 # Specify source files
-add_executable(tt main(3.0).cpp Car_Control(3.0).cpp Car_Control(3.0).hpp Emakefun_MotorDriver.cpp Emakefun_MotorDriver.h Emakefun_MotorShield.cpp Emakefun_MotorShield.h Raspi_i2c.cpp Raspi_i2c.h)
+add_executable(tt main.cpp CarControl.cpp CarControl.hpp Emakefun_MotorDriver.cpp Emakefun_MotorDriver.h Emakefun_MotorShield.cpp Emakefun_MotorShield.h Raspi_i2c.cpp Raspi_i2c.h)
 
 # Output target files to the bin directory
 set_target_properties(tt PROPERTIES
