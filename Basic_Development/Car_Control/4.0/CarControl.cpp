@@ -150,8 +150,10 @@ void CarControl::turnRight(int degrees, std::function<void()> callback) {
     std::this_thread::sleep_for(std::chrono::milliseconds(int(degrees / speed_deg_per_sec_turn * 1000)));
 
     if (_servo) {
-        _servo->writeServo(80); // Reset to center position after the turn
+        _servo->writeServo(82); // Reset to center position after the turn
     }
+
+    stopDCMotors();
 
     std::cout << "Heading after right turn: " << _heading << " degrees\n";
     if (callback) callback();
@@ -203,8 +205,10 @@ void CarControl::turnLeft(int degrees, std::function<void()> callback) {
     std::this_thread::sleep_for(std::chrono::milliseconds(int(degrees / speed_deg_per_sec_turn * 1000)));
     
     if (_servo) {
-        _servo->writeServo(80); // Reset to center position after the turn
+        _servo->writeServo(82); // Reset to center position after the turn
     }
+
+    stopDCMotors();
 
     std::cout << "Heading after right turn: " << _heading << " degrees\n";
     if (callback) callback();
