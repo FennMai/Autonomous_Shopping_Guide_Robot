@@ -238,6 +238,486 @@ src/qt/ssc_widget.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/qt/ssc_widget.cpp.s
 .PHONY : src/qt/ssc_widget.cpp.s
 
+src/sensors/arch/linux/net_serial.o: src/sensors/arch/linux/net_serial.cpp.o
+.PHONY : src/sensors/arch/linux/net_serial.o
+
+# target to build an object file
+src/sensors/arch/linux/net_serial.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.o
+.PHONY : src/sensors/arch/linux/net_serial.cpp.o
+
+src/sensors/arch/linux/net_serial.i: src/sensors/arch/linux/net_serial.cpp.i
+.PHONY : src/sensors/arch/linux/net_serial.i
+
+# target to preprocess a source file
+src/sensors/arch/linux/net_serial.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.i
+.PHONY : src/sensors/arch/linux/net_serial.cpp.i
+
+src/sensors/arch/linux/net_serial.s: src/sensors/arch/linux/net_serial.cpp.s
+.PHONY : src/sensors/arch/linux/net_serial.s
+
+# target to generate assembly for a file
+src/sensors/arch/linux/net_serial.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.s
+.PHONY : src/sensors/arch/linux/net_serial.cpp.s
+
+src/sensors/arch/linux/net_socket.o: src/sensors/arch/linux/net_socket.cpp.o
+.PHONY : src/sensors/arch/linux/net_socket.o
+
+# target to build an object file
+src/sensors/arch/linux/net_socket.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.o
+.PHONY : src/sensors/arch/linux/net_socket.cpp.o
+
+src/sensors/arch/linux/net_socket.i: src/sensors/arch/linux/net_socket.cpp.i
+.PHONY : src/sensors/arch/linux/net_socket.i
+
+# target to preprocess a source file
+src/sensors/arch/linux/net_socket.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.i
+.PHONY : src/sensors/arch/linux/net_socket.cpp.i
+
+src/sensors/arch/linux/net_socket.s: src/sensors/arch/linux/net_socket.cpp.s
+.PHONY : src/sensors/arch/linux/net_socket.s
+
+# target to generate assembly for a file
+src/sensors/arch/linux/net_socket.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.s
+.PHONY : src/sensors/arch/linux/net_socket.cpp.s
+
+src/sensors/arch/linux/timer.o: src/sensors/arch/linux/timer.cpp.o
+.PHONY : src/sensors/arch/linux/timer.o
+
+# target to build an object file
+src/sensors/arch/linux/timer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.o
+.PHONY : src/sensors/arch/linux/timer.cpp.o
+
+src/sensors/arch/linux/timer.i: src/sensors/arch/linux/timer.cpp.i
+.PHONY : src/sensors/arch/linux/timer.i
+
+# target to preprocess a source file
+src/sensors/arch/linux/timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.i
+.PHONY : src/sensors/arch/linux/timer.cpp.i
+
+src/sensors/arch/linux/timer.s: src/sensors/arch/linux/timer.cpp.s
+.PHONY : src/sensors/arch/linux/timer.s
+
+# target to generate assembly for a file
+src/sensors/arch/linux/timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.s
+.PHONY : src/sensors/arch/linux/timer.cpp.s
+
+src/sensors/dataunpacker/dataunpacker.o: src/sensors/dataunpacker/dataunpacker.cpp.o
+.PHONY : src/sensors/dataunpacker/dataunpacker.o
+
+# target to build an object file
+src/sensors/dataunpacker/dataunpacker.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.o
+.PHONY : src/sensors/dataunpacker/dataunpacker.cpp.o
+
+src/sensors/dataunpacker/dataunpacker.i: src/sensors/dataunpacker/dataunpacker.cpp.i
+.PHONY : src/sensors/dataunpacker/dataunpacker.i
+
+# target to preprocess a source file
+src/sensors/dataunpacker/dataunpacker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.i
+.PHONY : src/sensors/dataunpacker/dataunpacker.cpp.i
+
+src/sensors/dataunpacker/dataunpacker.s: src/sensors/dataunpacker/dataunpacker.cpp.s
+.PHONY : src/sensors/dataunpacker/dataunpacker.s
+
+# target to generate assembly for a file
+src/sensors/dataunpacker/dataunpacker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.s
+.PHONY : src/sensors/dataunpacker/dataunpacker.cpp.s
+
+src/sensors/dataunpacker/unpacker/handler_capsules.o: src/sensors/dataunpacker/unpacker/handler_capsules.cpp.o
+.PHONY : src/sensors/dataunpacker/unpacker/handler_capsules.o
+
+# target to build an object file
+src/sensors/dataunpacker/unpacker/handler_capsules.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.o
+.PHONY : src/sensors/dataunpacker/unpacker/handler_capsules.cpp.o
+
+src/sensors/dataunpacker/unpacker/handler_capsules.i: src/sensors/dataunpacker/unpacker/handler_capsules.cpp.i
+.PHONY : src/sensors/dataunpacker/unpacker/handler_capsules.i
+
+# target to preprocess a source file
+src/sensors/dataunpacker/unpacker/handler_capsules.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.i
+.PHONY : src/sensors/dataunpacker/unpacker/handler_capsules.cpp.i
+
+src/sensors/dataunpacker/unpacker/handler_capsules.s: src/sensors/dataunpacker/unpacker/handler_capsules.cpp.s
+.PHONY : src/sensors/dataunpacker/unpacker/handler_capsules.s
+
+# target to generate assembly for a file
+src/sensors/dataunpacker/unpacker/handler_capsules.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.s
+.PHONY : src/sensors/dataunpacker/unpacker/handler_capsules.cpp.s
+
+src/sensors/dataunpacker/unpacker/handler_hqnode.o: src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.o
+.PHONY : src/sensors/dataunpacker/unpacker/handler_hqnode.o
+
+# target to build an object file
+src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.o
+.PHONY : src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.o
+
+src/sensors/dataunpacker/unpacker/handler_hqnode.i: src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.i
+.PHONY : src/sensors/dataunpacker/unpacker/handler_hqnode.i
+
+# target to preprocess a source file
+src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.i
+.PHONY : src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.i
+
+src/sensors/dataunpacker/unpacker/handler_hqnode.s: src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.s
+.PHONY : src/sensors/dataunpacker/unpacker/handler_hqnode.s
+
+# target to generate assembly for a file
+src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.s
+.PHONY : src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.s
+
+src/sensors/dataunpacker/unpacker/handler_normalnode.o: src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.o
+.PHONY : src/sensors/dataunpacker/unpacker/handler_normalnode.o
+
+# target to build an object file
+src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.o
+.PHONY : src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.o
+
+src/sensors/dataunpacker/unpacker/handler_normalnode.i: src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.i
+.PHONY : src/sensors/dataunpacker/unpacker/handler_normalnode.i
+
+# target to preprocess a source file
+src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.i
+.PHONY : src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.i
+
+src/sensors/dataunpacker/unpacker/handler_normalnode.s: src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.s
+.PHONY : src/sensors/dataunpacker/unpacker/handler_normalnode.s
+
+# target to generate assembly for a file
+src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.s
+.PHONY : src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.s
+
+src/sensors/hal/thread.o: src/sensors/hal/thread.cpp.o
+.PHONY : src/sensors/hal/thread.o
+
+# target to build an object file
+src/sensors/hal/thread.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.o
+.PHONY : src/sensors/hal/thread.cpp.o
+
+src/sensors/hal/thread.i: src/sensors/hal/thread.cpp.i
+.PHONY : src/sensors/hal/thread.i
+
+# target to preprocess a source file
+src/sensors/hal/thread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.i
+.PHONY : src/sensors/hal/thread.cpp.i
+
+src/sensors/hal/thread.s: src/sensors/hal/thread.cpp.s
+.PHONY : src/sensors/hal/thread.s
+
+# target to generate assembly for a file
+src/sensors/hal/thread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.s
+.PHONY : src/sensors/hal/thread.cpp.s
+
+src/sensors/rplidar_driver.o: src/sensors/rplidar_driver.cpp.o
+.PHONY : src/sensors/rplidar_driver.o
+
+# target to build an object file
+src/sensors/rplidar_driver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.o
+.PHONY : src/sensors/rplidar_driver.cpp.o
+
+src/sensors/rplidar_driver.i: src/sensors/rplidar_driver.cpp.i
+.PHONY : src/sensors/rplidar_driver.i
+
+# target to preprocess a source file
+src/sensors/rplidar_driver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.i
+.PHONY : src/sensors/rplidar_driver.cpp.i
+
+src/sensors/rplidar_driver.s: src/sensors/rplidar_driver.cpp.s
+.PHONY : src/sensors/rplidar_driver.s
+
+# target to generate assembly for a file
+src/sensors/rplidar_driver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.s
+.PHONY : src/sensors/rplidar_driver.cpp.s
+
+src/sensors/sl_async_transceiver.o: src/sensors/sl_async_transceiver.cpp.o
+.PHONY : src/sensors/sl_async_transceiver.o
+
+# target to build an object file
+src/sensors/sl_async_transceiver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.o
+.PHONY : src/sensors/sl_async_transceiver.cpp.o
+
+src/sensors/sl_async_transceiver.i: src/sensors/sl_async_transceiver.cpp.i
+.PHONY : src/sensors/sl_async_transceiver.i
+
+# target to preprocess a source file
+src/sensors/sl_async_transceiver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.i
+.PHONY : src/sensors/sl_async_transceiver.cpp.i
+
+src/sensors/sl_async_transceiver.s: src/sensors/sl_async_transceiver.cpp.s
+.PHONY : src/sensors/sl_async_transceiver.s
+
+# target to generate assembly for a file
+src/sensors/sl_async_transceiver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.s
+.PHONY : src/sensors/sl_async_transceiver.cpp.s
+
+src/sensors/sl_crc.o: src/sensors/sl_crc.cpp.o
+.PHONY : src/sensors/sl_crc.o
+
+# target to build an object file
+src/sensors/sl_crc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.o
+.PHONY : src/sensors/sl_crc.cpp.o
+
+src/sensors/sl_crc.i: src/sensors/sl_crc.cpp.i
+.PHONY : src/sensors/sl_crc.i
+
+# target to preprocess a source file
+src/sensors/sl_crc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.i
+.PHONY : src/sensors/sl_crc.cpp.i
+
+src/sensors/sl_crc.s: src/sensors/sl_crc.cpp.s
+.PHONY : src/sensors/sl_crc.s
+
+# target to generate assembly for a file
+src/sensors/sl_crc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.s
+.PHONY : src/sensors/sl_crc.cpp.s
+
+src/sensors/sl_lidar_driver.o: src/sensors/sl_lidar_driver.cpp.o
+.PHONY : src/sensors/sl_lidar_driver.o
+
+# target to build an object file
+src/sensors/sl_lidar_driver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.o
+.PHONY : src/sensors/sl_lidar_driver.cpp.o
+
+src/sensors/sl_lidar_driver.i: src/sensors/sl_lidar_driver.cpp.i
+.PHONY : src/sensors/sl_lidar_driver.i
+
+# target to preprocess a source file
+src/sensors/sl_lidar_driver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.i
+.PHONY : src/sensors/sl_lidar_driver.cpp.i
+
+src/sensors/sl_lidar_driver.s: src/sensors/sl_lidar_driver.cpp.s
+.PHONY : src/sensors/sl_lidar_driver.s
+
+# target to generate assembly for a file
+src/sensors/sl_lidar_driver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.s
+.PHONY : src/sensors/sl_lidar_driver.cpp.s
+
+src/sensors/sl_lidarprotocol_codec.o: src/sensors/sl_lidarprotocol_codec.cpp.o
+.PHONY : src/sensors/sl_lidarprotocol_codec.o
+
+# target to build an object file
+src/sensors/sl_lidarprotocol_codec.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.o
+.PHONY : src/sensors/sl_lidarprotocol_codec.cpp.o
+
+src/sensors/sl_lidarprotocol_codec.i: src/sensors/sl_lidarprotocol_codec.cpp.i
+.PHONY : src/sensors/sl_lidarprotocol_codec.i
+
+# target to preprocess a source file
+src/sensors/sl_lidarprotocol_codec.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.i
+.PHONY : src/sensors/sl_lidarprotocol_codec.cpp.i
+
+src/sensors/sl_lidarprotocol_codec.s: src/sensors/sl_lidarprotocol_codec.cpp.s
+.PHONY : src/sensors/sl_lidarprotocol_codec.s
+
+# target to generate assembly for a file
+src/sensors/sl_lidarprotocol_codec.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.s
+.PHONY : src/sensors/sl_lidarprotocol_codec.cpp.s
+
+src/sensors/sl_serial_channel.o: src/sensors/sl_serial_channel.cpp.o
+.PHONY : src/sensors/sl_serial_channel.o
+
+# target to build an object file
+src/sensors/sl_serial_channel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.o
+.PHONY : src/sensors/sl_serial_channel.cpp.o
+
+src/sensors/sl_serial_channel.i: src/sensors/sl_serial_channel.cpp.i
+.PHONY : src/sensors/sl_serial_channel.i
+
+# target to preprocess a source file
+src/sensors/sl_serial_channel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.i
+.PHONY : src/sensors/sl_serial_channel.cpp.i
+
+src/sensors/sl_serial_channel.s: src/sensors/sl_serial_channel.cpp.s
+.PHONY : src/sensors/sl_serial_channel.s
+
+# target to generate assembly for a file
+src/sensors/sl_serial_channel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.s
+.PHONY : src/sensors/sl_serial_channel.cpp.s
+
+src/sensors/sl_tcp_channel.o: src/sensors/sl_tcp_channel.cpp.o
+.PHONY : src/sensors/sl_tcp_channel.o
+
+# target to build an object file
+src/sensors/sl_tcp_channel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.o
+.PHONY : src/sensors/sl_tcp_channel.cpp.o
+
+src/sensors/sl_tcp_channel.i: src/sensors/sl_tcp_channel.cpp.i
+.PHONY : src/sensors/sl_tcp_channel.i
+
+# target to preprocess a source file
+src/sensors/sl_tcp_channel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.i
+.PHONY : src/sensors/sl_tcp_channel.cpp.i
+
+src/sensors/sl_tcp_channel.s: src/sensors/sl_tcp_channel.cpp.s
+.PHONY : src/sensors/sl_tcp_channel.s
+
+# target to generate assembly for a file
+src/sensors/sl_tcp_channel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.s
+.PHONY : src/sensors/sl_tcp_channel.cpp.s
+
+src/sensors/sl_udp_channel.o: src/sensors/sl_udp_channel.cpp.o
+.PHONY : src/sensors/sl_udp_channel.o
+
+# target to build an object file
+src/sensors/sl_udp_channel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.o
+.PHONY : src/sensors/sl_udp_channel.cpp.o
+
+src/sensors/sl_udp_channel.i: src/sensors/sl_udp_channel.cpp.i
+.PHONY : src/sensors/sl_udp_channel.i
+
+# target to preprocess a source file
+src/sensors/sl_udp_channel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.i
+.PHONY : src/sensors/sl_udp_channel.cpp.i
+
+src/sensors/sl_udp_channel.s: src/sensors/sl_udp_channel.cpp.s
+.PHONY : src/sensors/sl_udp_channel.s
+
+# target to generate assembly for a file
+src/sensors/sl_udp_channel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.s
+.PHONY : src/sensors/sl_udp_channel.cpp.s
+
+src/sys/CarControl.o: src/sys/CarControl.cpp.o
+.PHONY : src/sys/CarControl.o
+
+# target to build an object file
+src/sys/CarControl.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sys/CarControl.cpp.o
+.PHONY : src/sys/CarControl.cpp.o
+
+src/sys/CarControl.i: src/sys/CarControl.cpp.i
+.PHONY : src/sys/CarControl.i
+
+# target to preprocess a source file
+src/sys/CarControl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sys/CarControl.cpp.i
+.PHONY : src/sys/CarControl.cpp.i
+
+src/sys/CarControl.s: src/sys/CarControl.cpp.s
+.PHONY : src/sys/CarControl.s
+
+# target to generate assembly for a file
+src/sys/CarControl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sys/CarControl.cpp.s
+.PHONY : src/sys/CarControl.cpp.s
+
+src/sys/Emakefun_MotorDriver.o: src/sys/Emakefun_MotorDriver.cpp.o
+.PHONY : src/sys/Emakefun_MotorDriver.o
+
+# target to build an object file
+src/sys/Emakefun_MotorDriver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.o
+.PHONY : src/sys/Emakefun_MotorDriver.cpp.o
+
+src/sys/Emakefun_MotorDriver.i: src/sys/Emakefun_MotorDriver.cpp.i
+.PHONY : src/sys/Emakefun_MotorDriver.i
+
+# target to preprocess a source file
+src/sys/Emakefun_MotorDriver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.i
+.PHONY : src/sys/Emakefun_MotorDriver.cpp.i
+
+src/sys/Emakefun_MotorDriver.s: src/sys/Emakefun_MotorDriver.cpp.s
+.PHONY : src/sys/Emakefun_MotorDriver.s
+
+# target to generate assembly for a file
+src/sys/Emakefun_MotorDriver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.s
+.PHONY : src/sys/Emakefun_MotorDriver.cpp.s
+
+src/sys/Emakefun_MotorShield.o: src/sys/Emakefun_MotorShield.cpp.o
+.PHONY : src/sys/Emakefun_MotorShield.o
+
+# target to build an object file
+src/sys/Emakefun_MotorShield.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.o
+.PHONY : src/sys/Emakefun_MotorShield.cpp.o
+
+src/sys/Emakefun_MotorShield.i: src/sys/Emakefun_MotorShield.cpp.i
+.PHONY : src/sys/Emakefun_MotorShield.i
+
+# target to preprocess a source file
+src/sys/Emakefun_MotorShield.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.i
+.PHONY : src/sys/Emakefun_MotorShield.cpp.i
+
+src/sys/Emakefun_MotorShield.s: src/sys/Emakefun_MotorShield.cpp.s
+.PHONY : src/sys/Emakefun_MotorShield.s
+
+# target to generate assembly for a file
+src/sys/Emakefun_MotorShield.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.s
+.PHONY : src/sys/Emakefun_MotorShield.cpp.s
+
+src/sys/Raspi_i2c.o: src/sys/Raspi_i2c.cpp.o
+.PHONY : src/sys/Raspi_i2c.o
+
+# target to build an object file
+src/sys/Raspi_i2c.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.o
+.PHONY : src/sys/Raspi_i2c.cpp.o
+
+src/sys/Raspi_i2c.i: src/sys/Raspi_i2c.cpp.i
+.PHONY : src/sys/Raspi_i2c.i
+
+# target to preprocess a source file
+src/sys/Raspi_i2c.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.i
+.PHONY : src/sys/Raspi_i2c.cpp.i
+
+src/sys/Raspi_i2c.s: src/sys/Raspi_i2c.cpp.s
+.PHONY : src/sys/Raspi_i2c.s
+
+# target to generate assembly for a file
+src/sys/Raspi_i2c.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SSC.dir/build.make CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.s
+.PHONY : src/sys/Raspi_i2c.cpp.s
+
 src/utils/PCLDetect.o: src/utils/PCLDetect.cpp.o
 .PHONY : src/utils/PCLDetect.o
 
@@ -284,6 +764,66 @@ help:
 	@echo "... src/qt/ssc_widget.o"
 	@echo "... src/qt/ssc_widget.i"
 	@echo "... src/qt/ssc_widget.s"
+	@echo "... src/sensors/arch/linux/net_serial.o"
+	@echo "... src/sensors/arch/linux/net_serial.i"
+	@echo "... src/sensors/arch/linux/net_serial.s"
+	@echo "... src/sensors/arch/linux/net_socket.o"
+	@echo "... src/sensors/arch/linux/net_socket.i"
+	@echo "... src/sensors/arch/linux/net_socket.s"
+	@echo "... src/sensors/arch/linux/timer.o"
+	@echo "... src/sensors/arch/linux/timer.i"
+	@echo "... src/sensors/arch/linux/timer.s"
+	@echo "... src/sensors/dataunpacker/dataunpacker.o"
+	@echo "... src/sensors/dataunpacker/dataunpacker.i"
+	@echo "... src/sensors/dataunpacker/dataunpacker.s"
+	@echo "... src/sensors/dataunpacker/unpacker/handler_capsules.o"
+	@echo "... src/sensors/dataunpacker/unpacker/handler_capsules.i"
+	@echo "... src/sensors/dataunpacker/unpacker/handler_capsules.s"
+	@echo "... src/sensors/dataunpacker/unpacker/handler_hqnode.o"
+	@echo "... src/sensors/dataunpacker/unpacker/handler_hqnode.i"
+	@echo "... src/sensors/dataunpacker/unpacker/handler_hqnode.s"
+	@echo "... src/sensors/dataunpacker/unpacker/handler_normalnode.o"
+	@echo "... src/sensors/dataunpacker/unpacker/handler_normalnode.i"
+	@echo "... src/sensors/dataunpacker/unpacker/handler_normalnode.s"
+	@echo "... src/sensors/hal/thread.o"
+	@echo "... src/sensors/hal/thread.i"
+	@echo "... src/sensors/hal/thread.s"
+	@echo "... src/sensors/rplidar_driver.o"
+	@echo "... src/sensors/rplidar_driver.i"
+	@echo "... src/sensors/rplidar_driver.s"
+	@echo "... src/sensors/sl_async_transceiver.o"
+	@echo "... src/sensors/sl_async_transceiver.i"
+	@echo "... src/sensors/sl_async_transceiver.s"
+	@echo "... src/sensors/sl_crc.o"
+	@echo "... src/sensors/sl_crc.i"
+	@echo "... src/sensors/sl_crc.s"
+	@echo "... src/sensors/sl_lidar_driver.o"
+	@echo "... src/sensors/sl_lidar_driver.i"
+	@echo "... src/sensors/sl_lidar_driver.s"
+	@echo "... src/sensors/sl_lidarprotocol_codec.o"
+	@echo "... src/sensors/sl_lidarprotocol_codec.i"
+	@echo "... src/sensors/sl_lidarprotocol_codec.s"
+	@echo "... src/sensors/sl_serial_channel.o"
+	@echo "... src/sensors/sl_serial_channel.i"
+	@echo "... src/sensors/sl_serial_channel.s"
+	@echo "... src/sensors/sl_tcp_channel.o"
+	@echo "... src/sensors/sl_tcp_channel.i"
+	@echo "... src/sensors/sl_tcp_channel.s"
+	@echo "... src/sensors/sl_udp_channel.o"
+	@echo "... src/sensors/sl_udp_channel.i"
+	@echo "... src/sensors/sl_udp_channel.s"
+	@echo "... src/sys/CarControl.o"
+	@echo "... src/sys/CarControl.i"
+	@echo "... src/sys/CarControl.s"
+	@echo "... src/sys/Emakefun_MotorDriver.o"
+	@echo "... src/sys/Emakefun_MotorDriver.i"
+	@echo "... src/sys/Emakefun_MotorDriver.s"
+	@echo "... src/sys/Emakefun_MotorShield.o"
+	@echo "... src/sys/Emakefun_MotorShield.i"
+	@echo "... src/sys/Emakefun_MotorShield.s"
+	@echo "... src/sys/Raspi_i2c.o"
+	@echo "... src/sys/Raspi_i2c.i"
+	@echo "... src/sys/Raspi_i2c.s"
 	@echo "... src/utils/PCLDetect.o"
 	@echo "... src/utils/PCLDetect.i"
 	@echo "... src/utils/PCLDetect.s"

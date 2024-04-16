@@ -1,0 +1,4 @@
+/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/Lida_service.dir
+/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/Lidar/src/Qt/build-Lida_service-Desktop-Debug/CMakeFiles/Lida_service_autogen.dir

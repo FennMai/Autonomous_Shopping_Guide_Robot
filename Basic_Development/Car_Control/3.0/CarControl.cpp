@@ -21,7 +21,7 @@ const float speed_cm_per_sec_forward_backward = 26.0; // Car's speed in cm/s (30
 const float speed_deg_per_sec_turn = 50.0; // Car's turning speed in degrees per second 
 
 // Constructor is private to enforce singleton pattern
-CarControl::CarControl() : _motorAPin1(5), _motorAPin2(13), _motorBPin1(26), _motorBPin2(16),
+CarControl::CarControl() : _motorAiPn1(5), _motorAPin2(13), _motorBPin1(26), _motorBPin2(16),
                            _encoderPinA(20), _encoderPinB(21), _ppr(360), _wheelCircumference(31.4),
                            _xPos(0.0), _yPos(0.0), _heading(0.0), _pulseCountA(0), _pulseCountB(0),
                            _forwardBackwardSpeed(30), _turnSpeed(40) {

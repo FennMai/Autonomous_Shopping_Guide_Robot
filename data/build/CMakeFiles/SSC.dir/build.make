@@ -139,13 +139,313 @@ CMakeFiles/SSC.dir/src/utils/PCLDetect.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/utils/PCLDetect.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/utils/PCLDetect.cpp -o CMakeFiles/SSC.dir/src/utils/PCLDetect.cpp.s
 
+CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.o: ../../src/sensors/arch/linux/net_serial.cpp
+CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/arch/linux/net_serial.cpp
+
+CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/arch/linux/net_serial.cpp > CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/arch/linux/net_serial.cpp -o CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.o: ../../src/sensors/arch/linux/net_socket.cpp
+CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/arch/linux/net_socket.cpp
+
+CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/arch/linux/net_socket.cpp > CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/arch/linux/net_socket.cpp -o CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.o: ../../src/sensors/arch/linux/timer.cpp
+CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/arch/linux/timer.cpp
+
+CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/arch/linux/timer.cpp > CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/arch/linux/timer.cpp -o CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.o: ../../src/sensors/dataunpacker/dataunpacker.cpp
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/dataunpacker/dataunpacker.cpp
+
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/dataunpacker/dataunpacker.cpp > CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/dataunpacker/dataunpacker.cpp -o CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.o: ../../src/sensors/dataunpacker/unpacker/handler_capsules.cpp
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/dataunpacker/unpacker/handler_capsules.cpp
+
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/dataunpacker/unpacker/handler_capsules.cpp > CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/dataunpacker/unpacker/handler_capsules.cpp -o CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.o: ../../src/sensors/dataunpacker/unpacker/handler_hqnode.cpp
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp
+
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp > CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp -o CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.o: ../../src/sensors/dataunpacker/unpacker/handler_normalnode.cpp
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp
+
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp > CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp -o CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.o: ../../src/sensors/hal/thread.cpp
+CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/hal/thread.cpp
+
+CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/hal/thread.cpp > CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/hal/thread.cpp -o CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.o: ../../src/sensors/rplidar_driver.cpp
+CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/rplidar_driver.cpp
+
+CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/rplidar_driver.cpp > CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/rplidar_driver.cpp -o CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.o: ../../src/sensors/sl_async_transceiver.cpp
+CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_async_transceiver.cpp
+
+CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_async_transceiver.cpp > CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_async_transceiver.cpp -o CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.o: ../../src/sensors/sl_crc.cpp
+CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_crc.cpp
+
+CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_crc.cpp > CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_crc.cpp -o CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.o: ../../src/sensors/sl_lidar_driver.cpp
+CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_lidar_driver.cpp
+
+CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_lidar_driver.cpp > CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_lidar_driver.cpp -o CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.o: ../../src/sensors/sl_lidarprotocol_codec.cpp
+CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_lidarprotocol_codec.cpp
+
+CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_lidarprotocol_codec.cpp > CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_lidarprotocol_codec.cpp -o CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.o: ../../src/sensors/sl_serial_channel.cpp
+CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_serial_channel.cpp
+
+CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_serial_channel.cpp > CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_serial_channel.cpp -o CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.o: ../../src/sensors/sl_tcp_channel.cpp
+CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_tcp_channel.cpp
+
+CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_tcp_channel.cpp > CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_tcp_channel.cpp -o CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.s
+
+CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.o: ../../src/sensors/sl_udp_channel.cpp
+CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.o -MF CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.o.d -o CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_udp_channel.cpp
+
+CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_udp_channel.cpp > CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.i
+
+CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sensors/sl_udp_channel.cpp -o CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.s
+
+CMakeFiles/SSC.dir/src/sys/CarControl.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sys/CarControl.cpp.o: ../../src/sys/CarControl.cpp
+CMakeFiles/SSC.dir/src/sys/CarControl.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/SSC.dir/src/sys/CarControl.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sys/CarControl.cpp.o -MF CMakeFiles/SSC.dir/src/sys/CarControl.cpp.o.d -o CMakeFiles/SSC.dir/src/sys/CarControl.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sys/CarControl.cpp
+
+CMakeFiles/SSC.dir/src/sys/CarControl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sys/CarControl.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sys/CarControl.cpp > CMakeFiles/SSC.dir/src/sys/CarControl.cpp.i
+
+CMakeFiles/SSC.dir/src/sys/CarControl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sys/CarControl.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sys/CarControl.cpp -o CMakeFiles/SSC.dir/src/sys/CarControl.cpp.s
+
+CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.o: ../../src/sys/Emakefun_MotorDriver.cpp
+CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.o -MF CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.o.d -o CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sys/Emakefun_MotorDriver.cpp
+
+CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sys/Emakefun_MotorDriver.cpp > CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.i
+
+CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sys/Emakefun_MotorDriver.cpp -o CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.s
+
+CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.o: ../../src/sys/Emakefun_MotorShield.cpp
+CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.o -MF CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.o.d -o CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sys/Emakefun_MotorShield.cpp
+
+CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sys/Emakefun_MotorShield.cpp > CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.i
+
+CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sys/Emakefun_MotorShield.cpp -o CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.s
+
+CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.o: CMakeFiles/SSC.dir/flags.make
+CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.o: ../../src/sys/Raspi_i2c.cpp
+CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.o: CMakeFiles/SSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.o -MF CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.o.d -o CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.o -c /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sys/Raspi_i2c.cpp
+
+CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sys/Raspi_i2c.cpp > CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.i
+
+CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/src/sys/Raspi_i2c.cpp -o CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.s
+
 # Object files for target SSC
 SSC_OBJECTS = \
 "CMakeFiles/SSC.dir/SSC_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/SSC.dir/src/main.cpp.o" \
 "CMakeFiles/SSC.dir/src/qt/ssc_widget.cpp.o" \
 "CMakeFiles/SSC.dir/src/qt/qcustomplot.cpp.o" \
-"CMakeFiles/SSC.dir/src/utils/PCLDetect.cpp.o"
+"CMakeFiles/SSC.dir/src/utils/PCLDetect.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.o" \
+"CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.o" \
+"CMakeFiles/SSC.dir/src/sys/CarControl.cpp.o" \
+"CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.o" \
+"CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.o" \
+"CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.o"
 
 # External object files for target SSC
 SSC_EXTERNAL_OBJECTS =
@@ -155,6 +455,26 @@ SSC_EXTERNAL_OBJECTS =
 ../bin/SSC: CMakeFiles/SSC.dir/src/qt/ssc_widget.cpp.o
 ../bin/SSC: CMakeFiles/SSC.dir/src/qt/qcustomplot.cpp.o
 ../bin/SSC: CMakeFiles/SSC.dir/src/utils/PCLDetect.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/arch/linux/net_serial.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/arch/linux/net_socket.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/arch/linux/timer.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/dataunpacker/dataunpacker.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_capsules.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_hqnode.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/dataunpacker/unpacker/handler_normalnode.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/hal/thread.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/rplidar_driver.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/sl_async_transceiver.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/sl_crc.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/sl_lidar_driver.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/sl_lidarprotocol_codec.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/sl_serial_channel.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/sl_tcp_channel.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sensors/sl_udp_channel.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sys/CarControl.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sys/Emakefun_MotorDriver.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sys/Emakefun_MotorShield.cpp.o
+../bin/SSC: CMakeFiles/SSC.dir/src/sys/Raspi_i2c.cpp.o
 ../bin/SSC: CMakeFiles/SSC.dir/build.make
 ../bin/SSC: /usr/lib/x86_64-linux-gnu/libpcl_apps.so
 ../bin/SSC: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so
@@ -240,7 +560,7 @@ SSC_EXTERNAL_OBJECTS =
 ../bin/SSC: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3
 ../bin/SSC: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3
 ../bin/SSC: CMakeFiles/SSC.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../bin/SSC"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zmai/文档/code_program/git_ku/Real_Time_Embedded_Team_Project/data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable ../bin/SSC"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SSC.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
