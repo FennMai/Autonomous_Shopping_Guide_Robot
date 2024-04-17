@@ -280,6 +280,10 @@ ul#filterOptions li.active a { background: #ed0c4c;
 	-o-transition-duration: 300ms;
 	-ms-transition-duration: 300ms; 
 }
+.gallery-img {
+    width: 200px;  /* 你想要的宽度 */
+    height: 150px;  /* 高度设置为auto，保持宽高比 */
+}
 .gallery-item{
 	float: left;
 	margin-right: 3%;
@@ -376,7 +380,7 @@ ul#filterOptions li.active a { background: #ed0c4c;
 }
 .about ul li{
 	float: left;
-	margin-right: 8%;
+	margin-right: 1%;
 	background-color: rgba(22,22,22,0.25);
 	padding: 20px;
 }
@@ -386,6 +390,8 @@ ul#filterOptions li.active a { background: #ed0c4c;
 	-moz-transition-duration: 300ms;
 	-o-transition-duration: 300ms;
 	-ms-transition-duration: 300ms;
+	width: 184px; /* 新添加的宽度 */
+        height: auto; /* 新添加的高度，保持宽高比 */
 }
 .about ul li img:hover{
 	opacity: 1;
