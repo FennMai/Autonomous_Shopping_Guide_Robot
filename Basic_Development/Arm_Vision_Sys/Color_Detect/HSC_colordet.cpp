@@ -3,8 +3,8 @@ Author: Geo date: 15 Apr 2024 time:12:37
 Version: 1.0
 it is using for color detection, because we need to know the color HSV value of the object.
 */
-#include "libcam2opencv.h"
-#include "ColorDetectionCallback.h"
+#include "libcam2opencv.cpp"
+#include "ColorDetectionCallback.cpp"
 
 int main() {
     try {

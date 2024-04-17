@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
-project(ColorDetection)
+project(ArmOpencv)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
@@ -16,7 +16,7 @@ include_directories(${OpenCV_INCLUDE_DIRS} ${LIBCAMERA_INCLUDE_DIRS})
 link_directories(${LIBCAMERA_LIBRARY_DIRS})
 
 # 添加源代码文件到可执行文件
-add_executable(ColorDetection HSC_colordet.cpp libcam2opencv.cpp ColorDetectionCallback.cpp)
+add_executable(ArmOpencv arm_opencv_cb.cpp libcam2opencv.cpp arm_sys.cpp)
 
 # 查找pigpio库，确保其已安装
 find_library(PIGPIO_LIBRARY NAMES pigpio REQUIRED)
@@ -27,7 +27,7 @@ if(NOT PIGPIO_LIBRARY)
 endif()
 
 # 链接OpenCV、libcamera和pigpio库
-target_link_libraries(ColorDetection ${OpenCV_LIBS} ${LIBCAMERA_LIBRARIES} ${PIGPIO_LIBRARY})
+target_link_libraries(ArmOpencv ${OpenCV_LIBS} ${LIBCAMERA_LIBRARIES} ${PIGPIO_LIBRARY})
 
 # 如果需要额外的编译选项或者定义，可以在这里添加
 # add_definitions(-DUSE_SOME_FEATURE)

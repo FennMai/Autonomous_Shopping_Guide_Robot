@@ -19,6 +19,11 @@ add the searching prograss, but the searching prograss is not perfect, change re
 
 version 1.52 date: 17/04/2024 01:22
 modify the specific color HSV value(MD add red color cant detect ,and the HSV value is not i expected)
+
+version 1.53 date: 17/04/2024 03:47
+I found that the colors displayed through OPENCV are very different from calling libcamera 
+directly, and finally added the code to convert the RGB space to Opencv to solve this problem. 
+and the problem of red recognition jumping has also been solved.
 */
 #include <iostream>
 #include <opencv2/opencv.hpp>
@@ -30,7 +35,7 @@ using namespace std;
 
 class MyCallback : public Libcam2OpenCV::Callback {
 public:
-    mg90s servo0, servo1, servo2, servo3;  // 初始化四个舵机控制器
+    mg90s servo0, servo1, servo2, servo3;  // 初始化四个舵机控制器 0 (21)is left and right, 1(16) is up and down, 2(20) is forward and backward, 3(26) is grip
     bool redDetected = false;  // 用于标志是否检测到红色物体
 
     MyCallback() : servo0(21), servo1(16), servo2(20), servo3(26) {
@@ -52,10 +57,13 @@ public:
 
     // 处理每一帧图像，检测红色物体或进行物体追踪
     virtual void hasFrame(const cv::Mat &frame, const libcamera::ControlList &metadata) override {
+        cv::Mat convertedFrame;
+        cv::cvtColor(frame, convertedFrame, cv::COLOR_RGB2BGR); // 转换色彩空间从RGB到BGR
+
         if (!redDetected) {
-            processFrameForRedDetection(frame);  // 继续寻找红色物体
+            processFrameForRedDetection(convertedFrame);  // 继续寻找红色物体
         } else {
-            processFrame(frame);  // 如果检测到红色物体，进入ALE程序
+            processFrame(convertedFrame);  // 如果检测到红色物体，进入ALE程序
         }
     }
 
@@ -128,34 +136,52 @@ public:
     void checkAndAdjustCentering(int objCenterX, int frameCenterX, int objCenterY, int frameCenterY) {
         if (abs(objCenterX - frameCenterX) > 20) {
             if (objCenterX < frameCenterX) {
-                servo0.setTargetAngleAsync(-10, []() { cout << "Adjusting left." << endl; });
+                servo0.setTargetAngleAsync(10, []() { cout << "Adjusting left." << endl; });
             } else {
-                servo0.setTargetAngleAsync(10, []() { cout << "Adjusting right." << endl; });
+                servo0.setTargetAngleAsync(-10, []() { cout << "Adjusting right." << endl; });
             }
         }
 
         if (abs(objCenterY - frameCenterY) > 20) {
             if (objCenterY < frameCenterY) {
-                servo1.setTargetAngleAsync(5, []() { cout << "Adjusting up." << endl; });
+                servo1.setTargetAngleAsync(5, []() { cout << "Adjusting up." << endl; });//max 75
             } else {
-                servo1.setTargetAngleAsync(-5, []() { cout << "Adjusting down." << endl; });
+                servo1.setTargetAngleAsync(-5, []() { cout << "Adjusting down." << endl; });//-90
             }
         }
     }
 
     // BLE程序中调整2号电机控制前进，同时保持ALE条件
     void adjustForScale(int objCenterX, int frameCenterX, int objCenterY, int frameCenterY) {
-        servo2.setTargetAngleAsync(10, []() { cout << "Moving forward." << endl; });
+        if (objCenterY < frameCenterY) {
+            servo2.setTargetAngleAsync(-5, []() { cout << "Moving backward." << endl; });//-32
+        } else {
+        servo2.setTargetAngleAsync(5, []() { cout << "Moving forward." << endl; });//75
         checkAndAdjustCentering(objCenterX, frameCenterX, objCenterY, frameCenterY);
     }
 
-    // CLE程序: 执行最终抓取动作并重置舵机位置
-    void performFinalAdjustments() {
-        servo3.setTargetAngleAsync(90, []() { cout << "Gripping." << endl; });
-        servo0.setTargetAngleAsync(90, []() { cout << "Centering." << endl; });  // 回到中心位置
-        servo3.setTargetAngleAsync(-90, []() { cout << "Releasing grip." << endl; });
-        exit(0); // 完成后退出程序
-    }
+    // CLE程序: 执行最终抓取动作，并在完成后保持静止待机，输出完成信息
+void performFinalAdjustments() {
+    // 执行抓取动作
+    servo3.setTargetAngleAsync(-90, [this]() {
+        cout << "Gripping." << endl;
+        // 释放抓取
+        servo3.setTargetAngleAsync(25, [this]() {
+            cout << "Releasing grip." << endl;
+            // 回到中心位置
+            servo0.setTargetAngleAsync(90, [this]() {
+                cout << "Centering." << endl;
+                // 再次释放以确保稳定
+                servo3.setTargetAngleAsync(-90, [this]() {
+                    cout << "Releasing grip." << endl;
+                    // 最终完成动作，打印完成购物并保持待机
+                    cout << "完成购物" << endl;
+                });
+            });
+        });
+    });
+}
+
 };
 
 int main() {
