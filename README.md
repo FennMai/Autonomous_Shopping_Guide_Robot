@@ -10,6 +10,7 @@ Smart shopping cart is a device designed for locating goods within a supermarket
 
 ## Build it
 ```
+method 
 # Grant execute permissions to the build script
 chmod +x build.sh
 
@@ -18,6 +19,11 @@ chmod +x build.sh
 
 # Run the SSC
 ./data/bin/SSC
+
+# method 2
+cd data/build
+cmake ../..
+make
 ```
 
 ## Project Members
