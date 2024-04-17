@@ -18,7 +18,7 @@
 CarControl* CarControl::instance = nullptr;
 
 const float speed_cm_per_sec_forward_backward = 26.0; // Car's speed in cm/s (30 dc motor speed)
-const float speed_deg_per_sec_turn = 50.0; // Car's turning speed in degrees per second 
+const float speed_deg_per_sec_turn = 47.0; // Car's turning speed in degrees per second 
 
 // Constructor is private to enforce singleton pattern
 CarControl::CarControl() : _motorAiPn1(5), _motorAPin2(13), _motorBPin1(26), _motorBPin2(16),

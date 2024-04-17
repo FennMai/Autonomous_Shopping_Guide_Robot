@@ -342,10 +342,63 @@ void SSC_Widget::on_pushButton_3_clicked()
 
 void SSC_Widget::on_pushButton_4_clicked()
 {
-    carControl->moveForward(100, []() {
-        std::cout << "Moved 100 cm forward.\n";});
-// edit car drive
+    //boundary of the shop
+    carControl->moveForward(155, []() {
+        std::cout << "Moved 155 cm forward.\n";
+    });
 
+    carControl->turnRight(90, []() {
+        std::cout << "Turned right by 90 degrees.\n";
+    });
+
+    carControl->moveForward(35, []() {
+        std::cout << "Moved 35 cm forward.\n";
+    });
+
+    carControl->turnRight(90, []() {
+        std::cout << "Turned right by 90 degrees.\n";
+    });
+
+    carControl->moveForward(133, []() {
+        std::cout << "Moved 133 cm forward.\n";
+    });
+
+    carControl->turnRight(90, []() {
+        std::cout << "Turned right by 90 degrees.\n";
+    });
+
+    carControl->moveForward(57, []() {
+        std::cout << "Moved 57 cm forward.\n";
+    });
+
+/*  carControl->moveForward(100, []() {
+        std::cout << "Moved 100 cm forward.\n";
+    });
+
+    carControl->turnRight(90, []() {
+        std::cout << "Turned right by 90 degrees.\n";
+    });
+
+    carControl->moveForward(100, []() {
+        std::cout << "Moved 100 cm forward.\n";
+    });
+
+    carControl->turnRight(90, []() {
+        std::cout << "Turned right by 90 degrees.\n";
+    });
+
+    carControl->moveForward(100, []() {
+        std::cout << "Moved 100 cm forward.\n";
+    });
+
+    carControl->turnRight(90, []() {
+        std::cout << "Turned right by 90 degrees.\n";
+    });
+
+    carControl->moveForward(100, []() {
+        std::cout << "Moved 100 cm forward.\n";
+    });
+*/
 
 }
 
