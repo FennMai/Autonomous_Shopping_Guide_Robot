@@ -19,7 +19,7 @@ int main() {
         car->initialize();
 
         //boundary of the shop
-    car->moveForward(155, []() {
+    car->moveForward(160, []() {
         std::cout << "Moved 180 cm forward.\n";
     });
 
@@ -31,19 +31,19 @@ int main() {
         std::cout << "Moved 100 cm forward.\n";
     });
 
-    car->turnRight(90, []() {
+    car->turnRight(87, []() {
         std::cout << "Turned right by 90 degrees.\n";
     });
 
-    car->moveForward(133, []() {
+    car->moveForward(130, []() {
         std::cout << "Moved 100 cm forward.\n";
     });
 
-    car->turnRight(90, []() {
+    car->turnRight(85, []() {
         std::cout << "Turned right by 90 degrees.\n";
     });
 
-    car->moveForward(57, []() {
+    car->moveForward(45, []() {
         std::cout << "Moved 100 cm forward.\n";
     });
 

@@ -343,8 +343,8 @@ void SSC_Widget::on_pushButton_3_clicked()
 void SSC_Widget::on_pushButton_4_clicked()
 {
     //boundary of the shop
-    carControl->moveForward(155, []() {
-        std::cout << "Moved 155 cm forward.\n";
+    carControl->moveForward(160, []() {
+        std::cout << "Moved 160 cm forward.\n";
     });
 
     carControl->turnRight(90, []() {
@@ -355,20 +355,20 @@ void SSC_Widget::on_pushButton_4_clicked()
         std::cout << "Moved 35 cm forward.\n";
     });
 
-    carControl->turnRight(90, []() {
+    carControl->turnRight(87, []() {
         std::cout << "Turned right by 90 degrees.\n";
     });
 
-    carControl->moveForward(133, []() {
-        std::cout << "Moved 133 cm forward.\n";
+    carControl->moveForward(130, []() {
+        std::cout << "Moved 130 cm forward.\n";
     });
 
-    carControl->turnRight(90, []() {
+    carControl->turnRight(85, []() {
         std::cout << "Turned right by 90 degrees.\n";
     });
 
-    carControl->moveForward(57, []() {
-        std::cout << "Moved 57 cm forward.\n";
+    carControl->moveForward(45, []() {
+        std::cout << "Moved 45 cm forward.\n";
     });
 
 /*  carControl->moveForward(100, []() {
