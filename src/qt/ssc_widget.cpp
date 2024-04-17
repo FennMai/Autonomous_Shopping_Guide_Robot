@@ -58,7 +58,7 @@ SSC_Widget::SSC_Widget(QWidget *parent): QWidget(parent), ui(new Ui::SSC_Widget)
     connect(dataTimer, &QTimer::timeout, this, &SSC_Widget::getData);
 
     // car
-    CarControl* carControl = CarControl::getInstance();
+    carControl = CarControl::getInstance();
     carControl->initialize();
 }
 
@@ -73,7 +73,7 @@ SSC_Widget::~SSC_Widget()
     delete MapPlot;
     delete pclplot;
     delete dataTimer;
-    delete carControl;
+
 }
 
 void SSC_Widget::setupPlot()
@@ -299,3 +299,106 @@ void SSC_Widget::getData()
         }, Qt::QueuedConnection);
     }
 }
+
+void SSC_Widget::on_pushButton_clicked()
+{
+        /* open lidar */
+        // 启动雷达扫描
+        if (!drv) {  // 确保驱动已经被创建
+            qDebug() << "Lidar driver is not initialized!";
+            return;
+        }
+        if (checkSLAMTECLIDARHealth()) {  // 在启动前检查雷达健康状态
+            startLidarScan();
+            qDebug() << "Lidar scan started successfully.";
+            ui->txt_output->setText("Lidar status: running\nmode: free");
+        } else {
+            qDebug() << "Failed to start lidar scan due to health check failure.";
+        }
+}
+
+
+void SSC_Widget::on_pushButton_2_clicked()
+{
+    /* close lidar */
+    // 停止雷达扫描
+    if (!drv) {  // 确保驱动已经被创建
+        qDebug()<< "Lidar driver is not initialized!";
+        return;
+    }
+    stopLidarScan();
+    ui->txt_output->setText("Lidar status: stopping\nmode: stopping");
+    qDebug() << "Lidar scan stopped.";
+}
+
+
+void SSC_Widget::on_pushButton_3_clicked()
+{
+    /* 设定 地图绘制模式 */
+    ui->txt_output->setText("Lidar status: running\nmode: mapping");
+    dataTimer->start(3000);
+}
+
+
+void SSC_Widget::on_pushButton_4_clicked()
+{
+    //boundary of the shop
+    carControl->moveForward(155, []() {
+        std::cout << "Moved 155 cm forward.\n";
+    });
+
+    carControl->turnRight(90, []() {
+        std::cout << "Turned right by 90 degrees.\n";
+    });
+
+    carControl->moveForward(35, []() {
+        std::cout << "Moved 35 cm forward.\n";
+    });
+
+    carControl->turnRight(90, []() {
+        std::cout << "Turned right by 90 degrees.\n";
+    });
+
+    carControl->moveForward(133, []() {
+        std::cout << "Moved 133 cm forward.\n";
+    });
+
+    carControl->turnRight(90, []() {
+        std::cout << "Turned right by 90 degrees.\n";
+    });
+
+    carControl->moveForward(57, []() {
+        std::cout << "Moved 57 cm forward.\n";
+    });
+
+/*  carControl->moveForward(100, []() {
+        std::cout << "Moved 100 cm forward.\n";
+    });
+
+    carControl->turnRight(90, []() {
+        std::cout << "Turned right by 90 degrees.\n";
+    });
+
+    carControl->moveForward(100, []() {
+        std::cout << "Moved 100 cm forward.\n";
+    });
+
+    carControl->turnRight(90, []() {
+        std::cout << "Turned right by 90 degrees.\n";
+    });
+
+    carControl->moveForward(100, []() {
+        std::cout << "Moved 100 cm forward.\n";
+    });
+
+    carControl->turnRight(90, []() {
+        std::cout << "Turned right by 90 degrees.\n";
+    });
+
+    carControl->moveForward(100, []() {
+        std::cout << "Moved 100 cm forward.\n";
+    });
+*/
+
+}
+

@@ -15,14 +15,14 @@
 #include "sl_lidar.h"
 #include "sl_lidar_driver.h"
 #include "PCLDetect.h"
-
+#include "CarControl.hpp"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class SSC_Widget; }
 QT_END_NAMESPACE
 
 struct RT_location {
-    float x;
+    float x ;
     float y;
     float orientation;
 };
@@ -45,10 +45,18 @@ public:
     void saveLidarData(const QString &filePath);
 
 
+public slots:
+    void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
 
 private:
     Ui::SSC_Widget *ui;
+    CarControl* carControl;
     QCustomPlot *LidarPlot; // 添加一个 QCustomPlot 指针作为私有成员
     QCustomPlot *MapPlot;
     QCustomPlot *pclplot;

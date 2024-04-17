@@ -241,6 +241,7 @@ void CarControl::setSpeed(int forwardBackwardSpeed, int turnSpeed) {
 
 // Get current X position
 float CarControl::getXPosition() const {
+
     return _xPos;
 }
 
