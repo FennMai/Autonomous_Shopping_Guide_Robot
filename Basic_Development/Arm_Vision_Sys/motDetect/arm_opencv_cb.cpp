@@ -33,7 +33,7 @@ public:
     mg90s servo0, servo1, servo2, servo3;  // 初始化四个舵机控制器
     bool redDetected = false;  // 用于标志是否检测到红色物体
 
-    MyCallback() : servo0(21), servo1(16), servo2(20), servo3(26) {
+    MyCallback() : servo0(21), servo1(20), servo2(19), servo3(6) {
         initiateSLE(); // 启动SLE程序
     }
 
