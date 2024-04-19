@@ -17,21 +17,25 @@
 #include "PCLDetect.h"
 #include "CarControl.hpp"
 
+#include <QLabel>
+#include <QMovie>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class SSC_Widget; }
 QT_END_NAMESPACE
 
 struct RT_location {
-    float x ;
+    float x;
     float y;
     float orientation;
 };
+
 class SSC_Widget : public QWidget
 {
     Q_OBJECT
 
 public:
-    SSC_Widget(QWidget *parent = nullptr);
+    explicit SSC_Widget(QWidget *parent = nullptr);
     ~SSC_Widget();
 
     void setupPlot(); // 声明一个函数来设置和初始化 QCustomPlot
@@ -44,34 +48,33 @@ public:
     void getData();
     void saveLidarData(const QString &filePath);
 
-
 public slots:
     void on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
-
     void on_pushButton_3_clicked();
-
     void on_pushButton_4_clicked();
+    void handleAnimationFinished();
+    void checkLastFrame(int frameNumber);
 
 private:
     Ui::SSC_Widget *ui;
+    QLabel *animationLabel;
+    QMovie *animationMovie;
+
     CarControl* carControl;
     QCustomPlot *LidarPlot; // 添加一个 QCustomPlot 指针作为私有成员
     QCustomPlot *MapPlot;
     QCustomPlot *pclplot;
     QVector<double> cloud_x;
     QVector<double> cloud_y;
-    int scatter_size =30;
+    int scatter_size = 30;
     int currentIndex = 0; // 作为调用 timerEvent()的参数之一，直接结束定时器的参数
 
     // 设置一个多线程
     std::thread plotThread;
     bool keepPlotting = true;
-//    void plotData(); // Method to handle plotting in a separate thread
 
     sl::ILidarDriver *drv;
-//    std::unique_ptr<sl::ILidarDriver> drv;
     bool ctrl_c_pressed = false;
     // basic drive static parameter
     static const unsigned nDistance = 8192;

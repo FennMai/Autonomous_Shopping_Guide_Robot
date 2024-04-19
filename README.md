@@ -3,6 +3,8 @@
 - **Group 12**
 
 
+![alt text](assets/README/cart.jpeg)
+
 ## Project Introduction
 
 Smart shopping cart is a device designed for locating goods within a supermarket. This device is dedicated to assisting customers and staff in swiftly and accurately locating desired products or executing logical planning within the supermarket. Throughout its operation, it also aims to avoid foot traffic and attempts to re-plan routes accordingly.
@@ -70,11 +72,6 @@ https://fennmai.github.io/Real_Time_Embedded_Team_Project/
    - **Algorithm Implementation:** Develops and implements software algorithms on the Raspberry Pi to navigate to the selected destination efficiently, using established pathfinding algorithms like Dijkstra's or A*.
    - **Map Integration:** Incorporates a digital map of the environment into the pathfinding logic, allowing the system to calculate optimal routes to the desired destination based on the user's input.
 
-
-## Overview Projects
-<p align="center">
-    <img alt="Overview" src="https://github.com/FennMai/Real_Time_Embedded_Team_Project/assets/149116473/58b2ffab-b4ae-4944-85f9-0f804f81f86e.jpg" width="100%">
-</p>
 
 
 ## Guidence

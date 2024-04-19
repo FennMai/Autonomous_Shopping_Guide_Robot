@@ -8,8 +8,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets Gui Multimedia REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Gui Multimedia REQUIRED)
 find_package(PCL 1.8 REQUIRED)
 
 # Configure output directories
@@ -34,7 +34,6 @@ set(PROJECT_SOURCES
     ${Lidar_SDK_SOURCES}
     ${SYS_file_cpp}
     ${SYS_file_hpp}
-
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -45,11 +44,10 @@ else()
     add_executable(SSC ${PROJECT_SOURCES})
 endif()
 
-
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
-target_link_libraries(SSC PRIVATE ${PCL_LIBRARIES})
+target_link_libraries(SSC PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Gui Qt${QT_VERSION_MAJOR}::Multimedia ${PCL_LIBRARIES} pigpio)
 
 include_directories(${PROJECT_SOURCE_DIR}/include/qt)
 include_directories(${PROJECT_SOURCE_DIR}/include/utils)
@@ -58,7 +56,6 @@ include_directories(${PROJECT_SOURCE_DIR}/include/sys)
 include_directories(${PROJECT_SOURCE_DIR}/src/sys)
 include_directories(${PROJECT_SOURCE_DIR}/src/sensors)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets PrintSupport REQUIRED)
-target_link_libraries(SSC PRIVATE ${PCL_LIBRARIES} Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::PrintSupport pigpio)
 target_link_libraries(SSC PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::PrintSupport)
 target_include_directories(SSC PRIVATE ${PROJECT_SOURCE_DIR}/include/sensors)
 
