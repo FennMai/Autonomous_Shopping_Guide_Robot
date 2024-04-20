@@ -74,7 +74,7 @@ ul{
 }
 #head-section{
 	background: url('../img/2.jpg') fixed;
-	background-size: cover;
+	background-size: 1400px auto;
 	position: relative;
 	z-index: 10000;
 }
