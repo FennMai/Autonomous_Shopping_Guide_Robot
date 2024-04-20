@@ -44,6 +44,7 @@ else()
     add_executable(SSC ${PROJECT_SOURCES})
 endif()
 
+
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
@@ -56,6 +57,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include/sys)
 include_directories(${PROJECT_SOURCE_DIR}/src/sys)
 include_directories(${PROJECT_SOURCE_DIR}/src/sensors)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets PrintSupport REQUIRED)
+target_link_libraries(SSC PRIVATE ${PCL_LIBRARIES} Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::PrintSupport pigpio)
 target_link_libraries(SSC PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::PrintSupport)
 target_include_directories(SSC PRIVATE ${PROJECT_SOURCE_DIR}/include/sensors)
 

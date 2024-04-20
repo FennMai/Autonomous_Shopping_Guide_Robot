@@ -7,7 +7,7 @@
 
 ## Project Introduction
 
-Smart shopping cart is a device designed for locating goods within a supermarket. This device is dedicated to assisting customers and staff in swiftly and accurately locating desired products or executing logical planning within the supermarket. Throughout its operation, it also aims to avoid foot traffic and attempts to re-plan routes accordingly.
+Smart shopping cart is a device designed for locating goods within a supermarket. This device is dedicated to assisting customers and staff in swiftly and accurkvately locating desired products or executing logical planning within the supermarket. Throughout its operation, it also aims to avoid foot traffic and attempts to re-plan routes accordingly.
 ![alt text](assets/README/image.png)
 
 ## Build it
@@ -27,6 +27,15 @@ cd data/build
 cmake ../..
 make
 ```
+## The latest status
+
+>202400420：
+update the qt + lidar + car + voice system
+now status: voice receive the command, then control the system in real time
+bug: timer and thread
+how to fix the bug: test and rebuild the lidar timer and ...
+fix time : 20240501
+
 
 ## Project Members
 
@@ -78,11 +87,6 @@ https://fennmai.github.io/Real_Time_Embedded_Team_Project/
 1. **docs**: Display documents such as project plans and implementation technical routes.
 2. **sensors**: Program basic functions based on existing raspberrypi and sensors.
 3. **CMakeLists**: Using Cmake command to build excutable files.
-
-## The latest status
-
-202400304：
-Since most of the hardware and sensors on hand are still on the road, we will familiarize ourselves with some raspberrypi operations and write classes according to the course tutorials.
 
 ## Official Account
 <p align="center">

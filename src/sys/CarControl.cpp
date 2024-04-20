@@ -17,14 +17,14 @@
 // Singleton instance initialization
 CarControl* CarControl::instance = nullptr;
 
-const float speed_cm_per_sec_forward_backward = 26.0; // Car's speed in cm/s (30 dc motor speed)
+const float speed_cm_per_sec_forward_backward = 12.5; // Car's speed in cm/s (30 dc motor speed)
 const float speed_deg_per_sec_turn = 50.0; // Car's turning speed in degrees per second 
 
 // Constructor is private to enforce singleton pattern
 CarControl::CarControl() : _motorAPin1(5), _motorAPin2(13), _motorBPin1(26), _motorBPin2(16),
                            _encoderPinA(20), _encoderPinB(21), _ppr(360), _wheelCircumference(31.4),
                            _xPos(0.0), _yPos(0.0), _heading(0.0), _pulseCountA(0), _pulseCountB(0),
-                           _forwardBackwardSpeed(30), _turnSpeed(40) {
+                           _forwardBackwardSpeed(45), _turnSpeed(40) {
     _MS = Emakefun_MotorShield(); // Ensure this is correctly constructed
     _servo = nullptr; // Initial null setup, should be configured in initialize()
 }
@@ -55,7 +55,7 @@ void CarControl::initialize() {
 void CarControl::setupServo() {
     _MS.begin(50);
     _servo = _MS.getServo(1);
-    _servo->writeServo(81); // Center servo position is 80 not 90 
+    _servo->writeServo(83); // Center servo position is 80 not 90 
 }
 
 // Setup DC motors
@@ -150,7 +150,7 @@ void CarControl::turnRight(int degrees, std::function<void()> callback) {
     std::this_thread::sleep_for(std::chrono::milliseconds(int(degrees / speed_deg_per_sec_turn * 1000)));
 
     if (_servo) {
-        _servo->writeServo(81); // Reset to center position after the turn
+        _servo->writeServo(83); // Reset to center position after the turn
     }
 
     stopDCMotors();
@@ -205,7 +205,7 @@ void CarControl::turnLeft(int degrees, std::function<void()> callback) {
     std::this_thread::sleep_for(std::chrono::milliseconds(int(degrees / speed_deg_per_sec_turn * 1000)));
     
     if (_servo) {
-        _servo->writeServo(81); // Reset to center position after the turn
+        _servo->writeServo(83); // Reset to center position after the turn
     }
 
     stopDCMotors();
