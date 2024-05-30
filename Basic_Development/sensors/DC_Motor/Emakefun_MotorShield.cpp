@@ -1,126 +1,107 @@
-#include "Emakefun_MotorShield.h"
-#include <chrono>
-#include <thread>
-#include <pigpio.h>
+#include "Emakefun_MotorShield.h"  // 引入Emakefun Motor Shield的头文件
+
+// 根据不同的微步数定义微步曲线数组
 #if (MICROSTEPS == 8)
 static const uint8_t microstepcurve[] = {0, 50, 98, 142, 180, 212, 236, 250, 255};
 #elif (MICROSTEPS == 16)
 static const uint8_t microstepcurve[] = {0, 25, 50, 74, 98, 120, 141, 162, 180, 197, 212, 225, 236, 244, 250, 253, 255};
 #endif
 
+// Emakefun_MotorShield 类的构造函数，初始化I2C地址和PWM驱动器
 Emakefun_MotorShield::Emakefun_MotorShield(uint8_t addr) {
-  _addr = addr;
-  _pwm = Emakefun_MotorDriver(_addr);
+  _addr = addr;  // 保存I2C地址
+  _pwm = Emakefun_MotorDriver(_addr);  // 初始化PWM驱动器
 }
 
+// 初始化Motor Shield
 void Emakefun_MotorShield::begin(uint16_t freq) {
-  _pwm.begin();
-  _freq = freq;
-  _pwm.setPWMFreq(_freq);  // This is the maximum PWM frequency
+  _pwm.begin();  // 初始化PWM驱动器
+  _freq = freq;  // 设置PWM频率
+  _pwm.setPWMFreq(_freq);  // 设置PWM频率
   for (uint8_t i = 0; i < 16; i++) {
-    _pwm.setPWM(i, 0, 0);
+    _pwm.setPWM(i, 0, 0);  // 关闭所有PWM输出
   }
 }
 
+// 设置指定引脚的PWM值
 void Emakefun_MotorShield::setPWM(uint8_t pin, uint16_t value) {
-  // printf("[%s][%d] pin:%" PRIu8 ", value: %" PRIu16 "\n", __FUNCTION__,
-  //        __LINE__, pin, value);
   if (value > 4095) {
-    _pwm.setPWM(pin, 4096, 0);
-  } else
-    _pwm.setPWM(pin, 0, value);
+    _pwm.setPWM(pin, 4096, 0);  // 设置最大值，关闭PWM
+  } else {
+    _pwm.setPWM(pin, 0, value);  // 设置指定值
+  }
 }
+
+// 设置指定引脚的状态
 void Emakefun_MotorShield::setPin(uint8_t pin, uint8_t value) {
-  // printf("[%s][%d] pin:%" PRIu8 ", value: %" PRIu16 "\n", __FUNCTION__,
-  //        __LINE__, pin, value);
-  if (value == 0)
-    _pwm.setPWM(pin, 0, 0);
-  else
-    _pwm.setPWM(pin, 4096, 0);
+  if (value == 0) {
+    _pwm.setPWM(pin, 0, 0);  // 关闭引脚
+  } else {
+    _pwm.setPWM(pin, 4096, 0);  // 打开引脚
+  }
 }
 
+// 获取指定编号的直流电机
 Emakefun_DCMotor *Emakefun_MotorShield::getMotor(uint8_t num) {
-  if (num > 4) return NULL;
-
-  num--;
+  if (num > 4) return NULL;  // 电机编号超过范围返回空
+  num--;  // 调整为数组索引
 
   if (dcmotors[num].motornum == 0) {
-    dcmotors[num].motornum = num;
-    dcmotors[num].MC = this;
-    uint8_t in1 = 0;
-    uint8_t in2 = 0;
-    if (num == 0) {
-      in2 = 13;
-      in1 = 11;
-    } else if (num == 1) {
-      in2 = 8;
-      in1 = 10;
-    } else if (num == 2) {
-      in2 = 4;
-      in1 = 2;
-    } else if (num == 3) {
-      in2 = 7;
-      in1 = 5;
+    dcmotors[num].motornum = num;  // 设置电机编号
+    dcmotors[num].MC = this;  // 设置控制器
+    uint8_t in1 = 0, in2 = 0;
+    switch(num) {
+      case 0: in1 = 11; in2 = 13; break;
+      case 1: in1 = 10; in2 = 8; break;
+      case 2: in1 = 2; in2 = 4; break;
+      case 3: in1 = 5; in2 = 7; break;
     }
-    //    dcmotors[num].PWMpin = pwm;
     dcmotors[num].IN1pin = in1;
     dcmotors[num].IN2pin = in2;
   }
-  return &dcmotors[num];
+  return &dcmotors[num];  // 返回电机实例
 }
 
+// 获取指定编号的步进电机
 Emakefun_StepperMotor *Emakefun_MotorShield::getStepper(uint16_t steps, uint8_t num) {
-  if (num > 2) return NULL;
-
-  num--;
+  if (num > 2) return NULL;  // 步进电机编号超过范围返回空
+  num--;  // 调整为数组索引
 
   if (steppers[num].steppernum == 0) {
-    steppers[num].steppernum = num;
-    steppers[num].revsteps = steps;
-    steppers[num].MC = this;
-    // uint8_t pwma = 0;
-    // uint8_t pwmb = 0;
-    uint8_t ain1 = 0;
-    uint8_t ain2 = 0;
-    uint8_t bin1 = 0;
-    uint8_t bin2 = 0;
-    if (num == 0) {
-      ain1 = 8;
-      ain2 = 10;
-      bin1 = 11;
-      bin2 = 13;
-    } else if (num == 1) {
-      ain1 = 4;
-      ain2 = 2;
-      bin1 = 7;
-      bin2 = 5;
+    steppers[num].steppernum = num;  // 设置步进电机编号
+    steppers[num].revsteps = steps;  // 设置每转步数
+    steppers[num].MC = this;  // 设置控制器
+    uint8_t ain1 = 0, ain2 = 0, bin1 = 0, bin2 = 0;
+    switch(num) {
+      case 0: ain1 = 8; ain2 = 10; bin1 = 11; bin2 = 13; break;
+      case 1: ain1 = 4; ain2 = 2; bin1 = 7; bin2 = 5; break;
     }
-    // steppers[num].PWMApin = pwma;
-    // steppers[num].PWMBpin = pwmb;
     steppers[num].AIN1pin = ain1;
     steppers[num].AIN2pin = ain2;
     steppers[num].BIN1pin = bin1;
     steppers[num].BIN2pin = bin2;
   }
-  return &steppers[num];
+  return &steppers[num];  // 返回步进电机实例
 }
 
+// 获取指定编号的舵机
 Emakefun_Servo *Emakefun_MotorShield::getServo(uint8_t num) {
   uint8_t pwm_pin[8] = {0, 1, 14, 15, 9, 12, 3, 6};
-  if (num > 8) return NULL;
+  if (num > 8) return NULL;  // 舵机编号超过范围返回空
   if (servos[num].servonum == 0) {
-    servos[num].servonum = num;
-    servos[num].MC = this;
-    servos[num].PWMpin = pwm_pin[num - 1];
-    servos[num].PWMfreq = _freq;
+    servos[num].servonum = num;  // 设置舵机编号
+    servos[num].MC = this;  // 设置控制器
+    servos[num].PWMpin = pwm_pin[num - 1];  // 设置PWM引脚
+    servos[num].PWMfreq = _freq;  // 设置PWM频率
   }
-  return &servos[num];
+  return &servos[num];  // 返回舵机实例
 }
 
 /******************************************
                SERVOS
 ******************************************/
 
+// Emakefun_Servo 类的构造函数，初始化各参数
 Emakefun_Servo::Emakefun_Servo(void) {
   MC = NULL;
   servonum = 0;
@@ -128,23 +109,26 @@ Emakefun_Servo::Emakefun_Servo(void) {
   currentAngle = 0;
 }
 
+// 设置舵机脉冲
 void Emakefun_Servo::setServoPulse(double pulse) {
   double pulselength;
-  pulselength = 1000000;  // 1,000,000 us per second
-  pulselength /= 50;      // 50 Hz
-  pulselength /= 4096;    // 12 bits of resolution
+  pulselength = 1000000;  // 每秒1,000,000微秒
+  pulselength /= 50;  // 50 Hz
+  pulselength /= 4096;  // 12位分辨率
   pulse *= 1000;
   pulse /= pulselength;
   MC->setPWM(PWMpin, pulse);
 }
 
+// 设置舵机角度
 void Emakefun_Servo::writeServo(uint8_t angle) {
   double pulse;
   pulse = 0.5 + angle / 90.0;
   setServoPulse(pulse);
-  currentAngle = angle;
+  currentAngle = angle;  // 保存当前角度
 }
 
+// 设置舵机角度和速度
 void Emakefun_Servo::writeServo(uint8_t angle, uint8_t speed) {
   double pulse;
   if (speed == 10) {
@@ -153,324 +137,50 @@ void Emakefun_Servo::writeServo(uint8_t angle, uint8_t speed) {
   } else {
     if (angle < currentAngle) {
       for (int i = currentAngle; i > angle; i--) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(4 * (10 - speed)));
+        delay(4 * (10 - speed));
         pulse = 0.5 + i / 90.0;
         setServoPulse(pulse);
       }
     } else {
       for (int i = currentAngle; i < angle; i++) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(4 * (10 - speed)));
+        delay(4 * (10 - speed));
         pulse = 0.5 + i / 90.0;
         setServoPulse(pulse);
       }
     }
   }
-  currentAngle = angle;
+  currentAngle = angle;  // 保存当前角度
 }
 
+// 读取当前舵机角度
 uint8_t Emakefun_Servo::readDegrees() { return currentAngle; }
 
 /******************************************
                MOTORS
 ******************************************/
 
+// Emakefun_DCMotor 类的构造函数，初始化各参数
 Emakefun_DCMotor::Emakefun_DCMotor(void) {
   MC = NULL;
   motornum = 0;
   _speed = IN1pin = IN2pin = 0;
 }
 
+// 运行电机
 void Emakefun_DCMotor::run(uint8_t cmd) {
-  MDIR = cmd;
+  MDIR = cmd;  // 保存当前指令
   switch (cmd) {
     case FORWARD:
-      MC->setPin(IN2pin, 0);  // take 0 first to avoid 'break'
-      MC->setPWM(IN1pin, _speed * 16);
+      MC->setPin(IN2pin, 0);  // 先关闭IN2引脚，避免冲突
+      MC->setPWM(IN1pin, _speed * 16);  // 设置IN1引脚的PWM
       break;
     case BACKWARD:
-      MC->setPin(IN1pin, 0);  // take 0 first to avoid 'break'
-      MC->setPWM(IN2pin, _speed * 16);
+      MC->setPin(IN1pin, 0);  // 先关闭IN1引脚，避免冲突
+      MC->setPWM(IN2pin, _speed * 16);  // 设置IN2引脚的PWM
       break;
     case RELEASE:
-      MC->setPin(IN1pin, 0);
-      MC->setPin(IN2pin, 0);
+      MC->setPin(IN1pin, 0);  // 关闭IN1引脚
+      MC->setPin(IN2pin, 0);  // 关闭IN2引脚
       break;
     case BRAKE:
-      MC->setPin(IN1pin, 1);
-      MC->setPin(IN2pin, 1);
-      break;
-  }
-}
-
-void Emakefun_DCMotor::setSpeed(uint8_t speed) {
-  _speed = speed;
-  run(MDIR);
-}
-
-/******************************************
-               STEPPERS
-******************************************/
-Emakefun_StepperMotor::Emakefun_StepperMotor(void) { revsteps = steppernum = currentstep = 0; }
-
-/**************************************************************************/
-/*!
-    @brief  Set the delay for the Stepper Motor speed in RPM
-    @param  rpm The desired RPM, we will do our best to reach it!
-*/
-/**************************************************************************/
-// 设定一分钟旋转的圈速
-void Emakefun_StepperMotor::setSpeed(uint16_t rpm) {
-  // Serial.println("steps per rev: "); Serial.println(revsteps);
-  // Serial.println("RPM: "); Serial.println(rpm);
-
-  usperstep = 60000000 / ((uint32_t)revsteps * (uint32_t)rpm);
-}
-
-/**************************************************************************/
-/*!
-    @brief  Release all pins of the stepper motor so it free-spins
-*/
-/**************************************************************************/
-void Emakefun_StepperMotor::release(void) {
-  MC->setPin(AIN1pin, 0);
-  MC->setPin(AIN2pin, 0);
-  MC->setPin(BIN1pin, 0);
-  MC->setPin(BIN2pin, 0);
-}
-
-/**************************************************************************/
-/*!
-    @brief  Move the stepper motor with the given RPM speed, don't forget to
-   call
-    {@link Emakefun_StepperMotor.setSpeed} to set the speed!
-    @param  steps The number of steps we want to move
-    @param  dir The direction to go, can be FORWARD or BACKWARD
-    @param  style How to perform each step, can be SINGLE, DOUBLE, INTERLEAVE or
-   MICROSTEP
-*/
-/**************************************************************************/
-
-void Emakefun_StepperMotor::step(uint16_t steps, uint8_t dir, uint8_t style) {
-  uint32_t uspers = usperstep;
-  // uint8_t ret = 0;
-  if (style == INTERLEAVE) {
-    uspers /= 2;
-  } else if (style == MICROSTEP) {
-    uspers /= MICROSTEPS;
-    steps *= MICROSTEPS;
-#ifdef MOTORDEBUG
-    Serial.print("steps = ");
-    Serial.println(steps, DEC);
-#endif
-  }
-  // uint64_t time = CurrentTimeMs();
-  while (steps--) {
-    // Serial.println("step!"); Serial.println(uspers);
-    // time = CurrentTimeMs();
-    onestep(dir, style);
-    // usleep(uspers);
-    // LOG();
-    // printf("dir:%" PRIu8 ", time:%" PRIu64 ", steps:%" PRIu16 ", uspers:%" PRIu32 "\n", dir, CurrentTimeMs() - time, steps,
-    // uspers);
-    std::this_thread::sleep_for(std::chrono::microseconds(uspers));
-    // yield(); // required for ESP8266
-  }
-}
-
-/**************************************************************************/
-/*!
-    @brief  Move the stepper motor one step only, with no delays
-    @param  dir The direction to go, can be FORWARD or BACKWARD
-    @param  style How to perform each step, can be SINGLE, DOUBLE, INTERLEAVE or
-   MICROSTEP
-    @returns The current step/microstep index, useful for
-   Emakefun_StepperMotor.step to keep track of the current location, especially
-   when microstepping
-*/
-/**************************************************************************/
-uint8_t chang_state = 0xF;
-uint8_t chang_interleave_arr[8] = {4, 1, 8, 2, 1, 4, 2, 8};
-
-uint8_t Emakefun_StepperMotor::onestep(uint8_t dir, uint8_t style) {
-  // uint8_t a, b, c, d;
-  // uint8_t ocrb, ocra;
-
-  // ocra = ocrb = 255;
-
-  // next determine what sort of stepping procedure we're up to
-  if (style == SINGLE) {
-    if ((currentstep / (MICROSTEPS / 2)) % 2) {  // we're at an odd step, weird
-      if (dir == FORWARD) {
-        currentstep += MICROSTEPS / 2;
-      } else {
-        currentstep -= MICROSTEPS / 2;
-      }
-    } else {  // go to the next even step
-      if (dir == FORWARD) {
-        currentstep += MICROSTEPS;
-      } else {
-        currentstep -= MICROSTEPS;
-      }
-    }
-  } else if (style == DOUBLE) {
-    if (!(currentstep / (MICROSTEPS / 2) % 2)) {  // we're at an even step, weird
-      if (dir == FORWARD) {
-        currentstep += MICROSTEPS / 2;
-      } else {
-        currentstep -= MICROSTEPS / 2;
-      }
-    } else {  // go to the next odd step
-      if (dir == FORWARD) {
-        currentstep += MICROSTEPS;
-      } else {
-        currentstep -= MICROSTEPS;
-      }
-    }
-  } else if (style == INTERLEAVE) {
-    if (dir == FORWARD) {
-      currentstep += MICROSTEPS / 2;
-    } else {
-      currentstep -= MICROSTEPS / 2;
-    }
-  }
-  if (style == MICROSTEP) {
-    if (dir == FORWARD) {
-      currentstep++;
-    } else {
-      // BACKWARDS
-      currentstep--;
-    }
-    currentstep += MICROSTEPS * 4;
-    currentstep %= MICROSTEPS * 4;
-
-    // ocra = ocrb = 0;
-    // if ((currentstep >= 0) && (currentstep < MICROSTEPS)) {
-    //   ocra = microstepcurve[MICROSTEPS - currentstep];
-    //   ocrb = microstepcurve[currentstep];
-    // } else if ((currentstep >= MICROSTEPS) && (currentstep < MICROSTEPS * 2)) {
-    //   ocra = microstepcurve[currentstep - MICROSTEPS];
-    //   ocrb = microstepcurve[MICROSTEPS * 2 - currentstep];
-    // } else if ((currentstep >= MICROSTEPS * 2) && (currentstep < MICROSTEPS * 3)) {
-    //   ocra = microstepcurve[MICROSTEPS * 3 - currentstep];
-    //   ocrb = microstepcurve[currentstep - MICROSTEPS * 2];
-    // } else if ((currentstep >= MICROSTEPS * 3) && (currentstep < MICROSTEPS * 4)) {
-    //   ocra = microstepcurve[currentstep - MICROSTEPS * 3];
-    //   ocrb = microstepcurve[MICROSTEPS * 4 - currentstep];
-    // }
-  }
-  currentstep += MICROSTEPS * 4;
-  currentstep %= MICROSTEPS * 4;
-#ifdef MOTORDEBUG
-  Serial.print("current step: ");
-  Serial.println(currentstep, DEC);
-  Serial.print(" pwmA = ");
-  Serial.print(ocra, DEC);
-  Serial.print(" pwmB = ");
-  Serial.println(ocrb, DEC);
-#endif
-
-  // release all
-  uint8_t latch_state = 0, stp = 0;
-  ;  // all motor pins to 0
-  // Serial.println(step, DEC);
-  if (style == MICROSTEP) {
-    if ((currentstep >= 0) && (currentstep < MICROSTEPS)) latch_state |= 0x03;
-    if ((currentstep >= MICROSTEPS) && (currentstep < MICROSTEPS * 2)) latch_state |= 0x06;
-    if ((currentstep >= MICROSTEPS * 2) && (currentstep < MICROSTEPS * 3)) latch_state |= 0x0C;
-    if ((currentstep >= MICROSTEPS * 3) && (currentstep < MICROSTEPS * 4)) latch_state |= 0x09;
-  } else {
-    stp = currentstep / (MICROSTEPS / 2);
-    switch (stp) {
-      case 0:
-        latch_state |= 0x1;  // energize coil 1 only
-        chang_state = 0xc;
-        break;
-      case 1:
-        latch_state |= 0x3;  // energize coil 1+2
-        chang_state = 0x4;
-        break;
-      case 2:
-        latch_state |= 0x2;  // energize coil 2 only
-        chang_state = 0x08;
-        break;
-      case 3:
-        latch_state |= 0x6;  // energize coil 2+3
-        chang_state = 0x8;
-        break;
-      case 4:
-        latch_state |= 0x4;  // energize coil 3 only
-        chang_state = 0x03;
-        break;
-      case 5:
-        latch_state |= 0xC;  // energize coil 3+4
-        chang_state = 0x5;
-        break;
-      case 6:
-        latch_state |= 0x8;  // energize coil 4 only
-        chang_state = 0x06;
-        break;
-      case 7:
-        latch_state |= 0x9;  // energize coil 1+4
-        chang_state = 0xA;
-        break;
-    }
-    if (style == INTERLEAVE) {
-      chang_state = chang_interleave_arr[stp];
-    }
-  }
-#ifdef MOTORDEBUG
-  Serial.print("chang_state: 0x");
-  Serial.println(chang_state, HEX);
-  Serial.print("Latch: 0x");
-  Serial.println(latch_state, HEX);
-#endif
-F1_LOOP:
-  if (chang_state & 0x1) {
-    if (latch_state & 0x2) {
-      // Serial.println("AIN1 1");
-      MC->setPWM(AIN1pin, 4096);
-    } else {
-      // Serial.println("AIN1 0");
-      MC->setPin(AIN1pin, 0);
-    }
-  }
-  if (chang_state & 0x2) {
-    if (latch_state & 0x4) {
-      // Serial.println("BIN1 1");
-      MC->setPWM(BIN1pin, 4096);
-    } else {
-      // Serial.println("BIN1 0");
-      MC->setPin(BIN1pin, 0);
-    }
-  }
-  if (chang_state & 0x4) {
-    if (latch_state & 0x8) {
-      // Serial.println("AIN2 1");
-      MC->setPWM(AIN2pin, 4096);
-    } else {
-      // Serial.println("AIN2 0");
-      MC->setPin(AIN2pin, 0);
-      if (style == DOUBLE) {
-        chang_state = 1;
-        goto F1_LOOP;
-      }
-    }
-  }
-  if (chang_state & 0x8) {
-    if (latch_state & 0x1) {
-      // Serial.println("BIN2 1");
-      MC->setPWM(BIN2pin, 4096);
-    } else {
-      // Serial.println("BIN2 0");
-      MC->setPin(BIN2pin, 0);
-      if (style == SINGLE) {
-        chang_state = 1;
-        goto F1_LOOP;
-      } else if (style == DOUBLE) {
-        chang_state = 2;
-        goto F1_LOOP;
-      }
-    }
-  }
-  return currentstep;
-}
+      MC->setPin(IN1pin, 1);  // 打开IN1引脚

@@ -215,6 +215,7 @@
     <string/>
    </property>
   </widget>
+  <zorder>label_3</zorder>
   <zorder>pushButton_4</zorder>
   <zorder>label</zorder>
   <zorder>label_2</zorder>
@@ -227,7 +228,6 @@
   <zorder>pushButton_2</zorder>
   <zorder>pushButton_3</zorder>
   <zorder>mode_output</zorder>
-  <zorder>label_3</zorder>
  </widget>
  <resources/>
  <connections/>
