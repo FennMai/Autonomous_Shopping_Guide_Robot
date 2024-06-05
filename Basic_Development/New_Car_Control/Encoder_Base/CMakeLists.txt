@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 4.5)
 project(tt)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -18,7 +18,15 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 include_directories(${CMAKE_SOURCE_DIR})
 
 # Specify source files
-add_executable(tt ServoTest.cpp Emakefun_MotorDriver.cpp Emakefun_MotorShield.cpp Raspi_i2c.cpp)
+# tag-> for change
+# Emakefun_MotorShield.cpp
+add_executable(tt
+    EncoderMotTest.cpp
+    PID.cpp
+    encoder.cpp
+    EncoderShield.cpp
+    Emakefun_MotorDriver.cpp
+    Raspi_i2c.cpp)
 
 # Output target files to the bin directory
 set_target_properties(tt PROPERTIES

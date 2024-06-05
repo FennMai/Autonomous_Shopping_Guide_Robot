@@ -32,7 +32,12 @@ Raspi_i2c --> Emakefun_MotorDriver -->
 
     https://doc.embedfire.com/motor/motor_tutorial/zh/latest/improve_part/PID_parameter_tuning.html
 ### diary 
+
 20240528: 
 1. goal: learn the hardware and how to connect the pin for drive the motor
-20240528: 
+
+20240529: 
 1. goal: writing code 
+
+20240606:
+1. 

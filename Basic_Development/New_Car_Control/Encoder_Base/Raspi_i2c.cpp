@@ -1,3 +1,12 @@
+/** 
+ * 
+ * @author FENN MAI
+ * @date 06/05/2024
+ * @version Basic 4.0
+ * @brief 编码电机初次测试
+ */
+
+
 #include "Raspi_i2c.h"
 #include <pigpio.h>
 #include <iostream>
