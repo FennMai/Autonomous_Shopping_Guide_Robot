@@ -1,18 +1,10 @@
-/** 
- * 
- * @author FENN MAI
- * @date 06/05/2024
- * @version Basic 4.0
- * @brief 编码电机初次测试
- */
-
-#ifndef _PID_H_
-#define _PID_H_
+#ifndef PID_H
+#define PID_H
 
 class PID {
 public:
     PID(double kp, double ki, double kd);
-    double calculate(double setpoint, double measured_value);
+    double calculate(double setpoint, double pv);
 
 private:
     double kp;

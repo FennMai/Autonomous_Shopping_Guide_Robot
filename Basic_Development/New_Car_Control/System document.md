@@ -39,5 +39,7 @@ Raspi_i2c --> Emakefun_MotorDriver -->
 20240529: 
 1. goal: writing code 
 
-20240606:
-1. 
+20240607:
+1. pos-vol-pid control test
+2. motor2 still have bug
+3. the pos and pulse have bug
