@@ -53,39 +53,28 @@ void EncoderMotor::run(uint8_t cmd) {
     MDIR = cmd;
     uint16_t pwm_val = _speed * 16;  // Adjusted for the PCA9685 PWM range
     switch (cmd) {
-        // case FORWARD:
-        //     MC->setPin(IN2pin, 0);
-        //     MC->setPWM(IN1pin, pwm_val);
-        //     break;
-        // case BACKWARD:
-        //     MC->setPin(IN1pin, 0);
-        //     MC->setPWM(IN2pin, pwm_val);
-        //     break;
-        // case RELEASE:
-        //     MC->setPin(IN1pin, 0);
-        //     MC->setPin(IN2pin, 0);
-        //     break;
-        // case BRAKE:
-        //     MC->setPin(IN1pin, 1);
-        //     MC->setPin(IN2pin, 1);
-        //     break;
-        case FORWARD:
+        // BACKWARD：设置IN2pin为低电平（0），并为IN1pin设置PWM值。           
+        case BACKWARD:
             std::cout << "Setting IN2pin: " << static_cast<int>(IN2pin) << " to 0" << std::endl;
             std::cout << "Setting PWM IN1pin: " << static_cast<int>(IN1pin) << " to " << pwm_val << std::endl;
             MC->setPin(IN2pin, 0);
             MC->setPWM(IN1pin, pwm_val);
             break;
-        case BACKWARD:
+        // FORWARD：设置IN1pin为低电平（0），并为IN2pin设置PWM值。
+        case FORWARD:
             std::cout << "Setting IN1pin: " << static_cast<int>(IN1pin) << " to 0" << std::endl;
             std::cout << "Setting PWM IN2pin: " << static_cast<int>(IN2pin) << " to " << pwm_val << std::endl;
             MC->setPin(IN1pin, 0);
             MC->setPWM(IN2pin, pwm_val);
+            
             break;
+        // RELEASE：将IN1pin和IN2pin都设置为低电平（0），释放电机。
         case RELEASE:
             std::cout << "Releasing motor" << std::endl;
             MC->setPin(IN1pin, 0);
             MC->setPin(IN2pin, 0);
             break;
+        // BRAKE：将IN1pin和IN2pin都设置为高电平（1），刹车。
         case BRAKE:
             std::cout << "Braking motor" << std::endl;
             MC->setPin(IN1pin, 1);

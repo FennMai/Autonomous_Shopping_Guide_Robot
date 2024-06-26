@@ -1,36 +1,28 @@
-/** 
- * 
- * @author FENN MAI
- * @date 06/05/2024
- * @version Basic 4.0
- * @brief 编码电机初次测试
- */
-
-#ifndef _ENCODER_H_
-#define _ENCODER_H_
+#ifndef ENCODER_H
+#define ENCODER_H
 
 #include <pigpio.h>
 
-typedef void (*encoderCallback_t)(int);
+typedef void (*encoderCallback_t)(int direction);
 
 class Encoder {
 public:
     Encoder(int gpioA, int gpioB, encoderCallback_t callback = nullptr);
     ~Encoder();
-    int32_t getPosition();
+    int getPosition();
     void reset();
-    int getDirection(); // 新增方法，获取方向
+    int getDirection();
 
 private:
     int gpioA, gpioB;
-    int32_t position;
-    int lastGpio;
+    int position;
+    int direction;
     int levA, levB;
+    int lastGpio;
     encoderCallback_t callback;
-    int direction; // 记录方向
 
-    static void _pulseEx(int gpio, int level, uint32_t tick, void *user);
     void _pulse(int gpio, int level, uint32_t tick);
+    static void _pulseEx(int gpio, int level, uint32_t tick, void *user);
 };
 
-#endif
+#endif // ENCODER_H

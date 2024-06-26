@@ -43,3 +43,9 @@ Raspi_i2c --> Emakefun_MotorDriver -->
 1. pos-vol-pid control test
 2. motor2 still have bug
 3. the pos and pulse have bug
+
+20240626：
+1. 缠了黑色带子的电机--以我的视觉方向平行车头朝向，视觉上是是右边
+2. 现在的代码，可以测试可以运行
+3. 但是！一个很重要的问题，有个编码器没有变化
+4. 
